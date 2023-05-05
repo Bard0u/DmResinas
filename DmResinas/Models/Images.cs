@@ -15,5 +15,10 @@ namespace DmResinas.Models
         [Required(ErrorMessage = "Você precisa de pelo menos uma imagem")]
         //Required é usado quando algo é obrigado
         public string ImageCode { get; set; }
+
+        [Key]
+        public int ProdId { get; set; }
+        [ForeignKey("ProdId")]
+        public Product Product { get; set; }
     }
 }
