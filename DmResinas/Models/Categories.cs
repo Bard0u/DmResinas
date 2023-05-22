@@ -14,5 +14,8 @@ namespace DmResinas.Models
         [StringLength(30, ErrorMessage = "O nome da categoria deve possuir no maximo 30 caracteres")]
         public string CategorieName { get; set; }
 
+        public ICollection<ProductCategories> Products { get; set; }
+
+
     }
 }

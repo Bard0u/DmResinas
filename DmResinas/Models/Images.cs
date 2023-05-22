@@ -19,6 +19,6 @@ namespace DmResinas.Models
         [Key]
         public int ProdId { get; set; }
         [ForeignKey("ProdId")]
-        public Product Product { get; set; }
+        public Products Products { get; set; }
     }
 }

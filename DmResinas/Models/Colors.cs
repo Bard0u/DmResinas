@@ -22,4 +22,6 @@ public class Colors
 
     [Required(ErrorMessage = "Você precisa do codigo das cores")]
     public string ColorCode { get; set; }
+
+    public ICollection<ProductColors> Products { get; set; }
 }

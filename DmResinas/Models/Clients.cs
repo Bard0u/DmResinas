@@ -1,10 +1,11 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.AspNetCore.Identity;
 
 namespace DmResinas.Models
 {
     [Table("Client")]
-    public class Client
+    public class Clients : IdentityUser
     {
         [Key]
         public int IdClient { get; set; }
@@ -32,7 +33,7 @@ namespace DmResinas.Models
         [Key]
         public int ProdId { get; set; }
         [ForeignKey("ProdId")]
-        public Product Product { get; set; }
+        public Products Products { get; set; }
 
     }
 }

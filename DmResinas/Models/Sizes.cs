@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace DmResinas.Models
 {
     [Table("Size")]
-    public class Size
+    public class Sizes
     {
         [Key]
         public byte SizeId { get; set; }

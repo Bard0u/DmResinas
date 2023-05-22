@@ -5,7 +5,7 @@ namespace DmResinas.Models
 {
 
     [Table("Product")]
-    public class Product
+    public class Products
     {
         [Key]
         public int ProdId { get; set; }
@@ -31,8 +31,7 @@ namespace DmResinas.Models
         [Required(ErrorMessage = "O Codigo do produto é obrigatorio")]
         public byte ProdCode { get; set; }
 
-        public ICollection<Size> ProdSize { get; set; }
-        public ICollection<Colors> ProdColors { get; set; }
-        public ICollection<Categories> ProdCat { get; set; }
+            public ICollection<ProductColors> Colors { get; set; }
+            public ICollection<ProductCategories> Categories { get; set; }
     }
 }
