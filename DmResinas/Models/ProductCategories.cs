@@ -7,12 +7,12 @@ namespace DmResinas.Models
     public class ProductCategories
     {
         [Key, Column(Order = 1)]
-        public int ProductId { get; set; }
+        public int ProdId { get; set; }
         [ForeignKey("ProductId")]
         public Products Products { get; set; }
 
         [Key, Column(Order = 2)]
-        public string CategorieId { get; set; }
+        public byte CategorieId { get; set; }
         [ForeignKey("CategorieId")]
         public Categories Categorie { get; set; }
     }

@@ -8,12 +8,12 @@ namespace DmResinas.Models
     {
 
         [Key, Column(Order = 1)]
-        public int ProductId { get; set; }
+        public int ProdId { get; set; }
         [ForeignKey("ProductId")]
         public Products Products { get; set; }
 
         [Key, Column(Order = 2)]
-        public string ColorId { get; set; }
+        public byte ColorId { get; set; }
         [ForeignKey("ColorId")]
         public Colors Colors { get; set; }
 

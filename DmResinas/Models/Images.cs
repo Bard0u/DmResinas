@@ -16,9 +16,5 @@ namespace DmResinas.Models
         //Required é usado quando algo é obrigado
         public string ImageCode { get; set; }
 
-        [Key]
-        public int ProdId { get; set; }
-        [ForeignKey("ProdId")]
-        public Products Products { get; set; }
     }
 }

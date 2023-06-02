@@ -1,7 +1,26 @@
+using DmResinas.Data;
+using DmResinas.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+//objetos auxiliares de conexão
+string conn = builder.Configuration.GetConnectionString("DmResinas");
+var version = ServerVersion.AutoDetect(conn);
+
+//serviço de conexão do banco de dados
+builder.Services.AddDbContext<AppDbContext>(options=>
+    options.UseMySql(conn, version)
+);
+
+//serviço de gestão de usuarios m- identity
+builder.Services.AddIdentity<Clients, IdentityRole>()
+    .AddEntityFrameworkStores<AppDbContext>()
+    .AddDefaultTokenProviders();
 
 var app = builder.Build();
 
@@ -18,6 +37,8 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(
