@@ -7,8 +7,17 @@ a.navbar-brand {
   word-break: break-all;
 }
 
+.navbar-brand {
+  border: 50px;
+  border-width: 50px;
+}
+
 a {
   color: #0077cc;
+}
+
+.navbar{
+  border-bottom:20px solid #D7911A;
 }
 
 .btn-primary {
