@@ -18,11 +18,11 @@ a {
 }
 
 .navbar{
-  padding-right: 20px;
+  padding-right: 66px;
   padding-left: 20px;
   padding-top: 10px;
-  padding-bottom: 10px; 
-  border-bottom:20px solid #D7911A;
+  padding-bottom: 15px; 
+  border-bottom: 5px solid #D7911A;
 }
 
 .btn-primary {
