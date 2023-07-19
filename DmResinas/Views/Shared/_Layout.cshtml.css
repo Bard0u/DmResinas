@@ -7,7 +7,6 @@ a.navbar-brand {
   word-break: break-all;
 }
 
-
 .navbar-brand {
   border: 50px;
   border-width: 50px;
@@ -25,6 +24,10 @@ a {
   border-bottom: 5px solid #D7911A;
 }
 
+.justify-content-center {
+  margin: 0px
+}
+
 .btn-primary {
   color: #fff;
   background-color: #1b6ec2;
@@ -40,9 +43,6 @@ a {
 .border-top {
   border-top: 1px solid #e5e5e5;
 }
-.border-bottom {
-  border-bottom: 1px solid #e5e5e5;
-}
 
 .box-shadow {
   box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
@@ -54,8 +54,8 @@ button.accept-policy {
 }
 
 .footer {
-  position: absolute;
-  bottom: 0;
+  position: relative;
+  margin-bottom: 0px;
   width: 100%;
   white-space: nowrap;
   line-height: 60px;
