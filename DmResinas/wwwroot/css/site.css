@@ -2,6 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Italiana&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap');
 
 
 html {
@@ -14,12 +16,18 @@ html {
   }
 }
 
+* {
+  padding: 0;
+  margin: 0;
+}
+
 html {
   position: relative;
   min-height: 100%;
 }
 
 body {
+  overflow-x: hidden;
   margin: 0px
 }
 
@@ -29,7 +37,101 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+  margin-bottom: 50px;
 }
+
+
+/* CARROSSEL */
+.list {
+  height: 200px;
+  position: flex;
+  top: 50%;
+  left: 50%;
+}
+
+.list li {
+  list-style-type: none;
+  
+  width: 200px;
+  height: 200px;
+  opacity: .25;
+  position: absolute;
+  left: 50%;
+  margin-left: -100px;
+  border-radius: 2px;
+  background: #9C89B8;
+  transition: transform 1s, opacity 1s;
+}
+
+.list .act {
+  opacity: 1;
+}
+
+.list .prev,
+.list .next {
+  cursor: pointer;
+}
+
+.list .prev {
+  transform: translateX(-220px) scale(.85);
+}
+
+.list .prev1 {
+  transform: translateX(-420px) scale(.85);
+}
+
+.list .prev2 {
+  transform: translateX(-620px) scale(.85);
+}
+
+.list .prev3 {
+  transform: translateX(-820px) scale(.85);
+}
+
+.list .next {
+  transform: translateX(220px) scale(.85);
+}
+
+.list .next1 {
+  transform: translateX(420px) scale(.85);
+}
+
+.list .next2 {
+  transform: translateX(620px) scale(.85);
+}
+
+.list .next3 {
+  transform: translateX(820px) scale(.85);
+}
+
+
+.list .hide {
+  transform: translateX(-420px) scale(.85);
+}
+
+.list .new-next {
+  transform: translateX(420px) scale(.85);
+}
+
+.list .hide,
+.list .new-next {
+  opacity: 0;
+  transition: opacity .5s, transform .5s;
+}
+
+.swipe {
+  width: 270px;
+  height: 200px;
+  position: absolute;
+  background-color: green;
+  border-radius: 2px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  opacity: 0;
+}
+/* FIM DO CARROSSEL */
+
 
 #retangulo1 {
   background: #FFD9AC;
@@ -59,6 +161,17 @@ body {
   background: #E6BC74;
   width: 270px;
   height: 7px;
+}
+
+.imgdoseujeito {
+  border-top-right-radius: 200px;
+  border-bottom-right-radius: 200px;
+  width: 900px;
+  height: 400px;
+}
+
+.palavrado {
+text-align: right;
 }
 
 footer {

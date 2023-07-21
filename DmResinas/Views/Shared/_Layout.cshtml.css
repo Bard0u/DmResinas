@@ -16,6 +16,17 @@ a {
   color: #0077cc;
 }
 
+ul {
+  margin:0;
+  padding:0;
+  list-style-type:none;
+  text-align:center;
+}
+li {
+  display:inline-block;
+}
+
+
 .navbar{
   padding-right: 66px;
   padding-left: 20px;
