@@ -77,15 +77,15 @@ body {
 }
 
 .list .prev1 {
-  transform: translateX(-420px) scale(.85);
+  transform: translateX(-420px) scale(.79);
 }
 
 .list .prev2 {
-  transform: translateX(-620px) scale(.85);
+  transform: translateX(-620px) scale(.79);
 }
 
 .list .prev3 {
-  transform: translateX(-820px) scale(.85);
+  transform: translateX(-820px) scale(.79);
 }
 
 .list .next {
@@ -93,24 +93,24 @@ body {
 }
 
 .list .next1 {
-  transform: translateX(420px) scale(.85);
+  transform: translateX(420px) scale(.79);
 }
 
 .list .next2 {
-  transform: translateX(620px) scale(.85);
+  transform: translateX(620px) scale(.79);
 }
 
 .list .next3 {
-  transform: translateX(820px) scale(.85);
+  transform: translateX(820px) scale(.79);
 }
 
 
 .list .hide {
-  transform: translateX(-420px) scale(.85);
+  transform: translateX(-1020px) scale(.85);
 }
 
 .list .new-next {
-  transform: translateX(420px) scale(.85);
+  transform: translateX(1020px) scale(.85);
 }
 
 .list .hide,
