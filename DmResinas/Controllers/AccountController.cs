@@ -1,10 +1,14 @@
+using System.Net.Mail;
+using System.Security.Claims;
+using System.Text;
+using System.Text.Encodings.Web;
+using DmResinas.DTO;
+using DmResinas.Models;
+
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using DmResinas.Models;
-using DmResinas.DTO;
-using System.Net.Mail;
-using System.Security.Claims;
+using Microsoft.AspNetCore.WebUtilities;
 
 namespace DmResinas.Controllers;
 
@@ -17,6 +21,8 @@ public class AccountController : Controller
 
     private readonly UserManager<Clients> _userManager;
 
+
+
     public AccountController(ILogger<AccountController> logger,
     SignInManager<Clients> signInManager,
     UserManager<Clients> userManager)
@@ -24,6 +30,7 @@ public class AccountController : Controller
         _logger = logger;
         _signInManager = signInManager;
         _userManager = userManager;
+    
     }
 
     public IActionResult Index()
@@ -31,7 +38,7 @@ public class AccountController : Controller
         return View();
     }
 
-[HttpGet]
+    [HttpGet]
     [AllowAnonymous]
     public IActionResult Login(string returnUrl)
     {
@@ -44,7 +51,7 @@ public class AccountController : Controller
     [AllowAnonymous]
     public async Task<IActionResult> Login(LoginDto login)
     {
-       if (ModelState.IsValid)
+        if (ModelState.IsValid)
         {
             string userName = login.Email;
             if (IsValidEmail(login.Email))
@@ -57,17 +64,17 @@ public class AccountController : Controller
             var result = await _signInManager.PasswordSignInAsync(
                 userName, login.Password, login.RememberMe, true
             );
-            if(result.Succeeded)
+            if (result.Succeeded)
             {
                 _logger.LogInformation($"Usuario {login.Email} acessou o sistema");
                 return LocalRedirect(login.ReturnUrl);
             }
-            if(result.IsLockedOut)
+            if (result.IsLockedOut)
             {
                 _logger.LogWarning($"Usuario {login.Email} está bloqueado");
                 return RedirectToAction("Lockout");
             }
-            ModelState.AddModelError("login","Usuário e/ou Senha Inválidos!!!");
+            ModelState.AddModelError("login", "Usuário e/ou Senha Inválidos!!!");
 
         }
         return View(login);
@@ -85,21 +92,23 @@ public class AccountController : Controller
     [AllowAnonymous]
     public IActionResult Register()
     {
-      
+
         return View();
     }
+    
+
 
     private bool IsValidEmail(string email)
     {
-       try
-       {
-           MailAddress m = new(email);
-           return true;
-       }
-       catch (FormatException)
-       {
-           return false;
-       } 
+        try
+        {
+            MailAddress m = new(email);
+            return true;
+        }
+        catch (FormatException)
+        {
+            return false;
+        }
     }
 
 }

@@ -7,14 +7,9 @@
     <link rel="stylesheet" href="~/css/login.css">
 }
 
-<div class="text-center">
-    <h1 class="display-4">Login</h1>
-
-</div>
-
 <div class="container">
     <div class="row">
-        <div class="col-md-6 col-lg-4 m-auto">
+        <div class="col-md-6 col-lg-4 m-auto" style="border: solid 1px #D7911A; border-radius: 12px;">
             <form method="post" class="mt-4">
                 <div asp-validation-summary="All" class="text-danger" hidden></div>
                 <input type="hidden" asp-for="ReturnUrl">
@@ -36,12 +31,12 @@
                     <label class="form-check-label" asp-for="RememberMe"></label>
                 </div>
 
-                <button type="submit" class="w-100 btn btn-primary">Entrar</button>
+                <button type="submit" class="w-100 btn" style="background: #C58A3E; color: white">Entrar</button>
 
                 <a asp-action="Forget" class="d-block text-center mt-3 forgetPassword">Esqueceu sua senha?</a>
 
                 <div class="border-text"></div>
-                <a asp-action="Register" class="w-100 btn btn-success mt-1">Criar Conta</a>
+                <a asp-action="Register" class="w-100 btn mb-3 mt-1" style="color: #C58A3E; border: solid 1px #C58A3E">Primeiro acesso? Cadastre-se</a>
 
             </form>
         </div>

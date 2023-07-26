@@ -38,7 +38,7 @@ public class AppDbSeed
             new Clients(){
                 Id = Guid.NewGuid().ToString(),
                 ClientName="Pedro Luiz",
-                ClientAge = 17,
+                ClientAge = DateTime.Parse("22/03/2006"),
                 Email = "pedroarossettoo@gmail.com",
                 NormalizedEmail = "PEDROAROSSETTOO@GMAIL.COM",
                 UserName = "Bard0u",
