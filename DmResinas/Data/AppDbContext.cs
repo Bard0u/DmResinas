@@ -67,7 +67,7 @@ public class AppDbContext : IdentityDbContext
 
         builder.Entity<ProductCategories>()
         .HasOne(pc => pc.Products)
-        .WithMany(m => m.Categories)
+        .WithMany(ca => ca.Categories)
         .HasForeignKey(pc => pc.ProdId);
 
         builder.Entity<ProductCategories>()
@@ -85,7 +85,7 @@ public class AppDbContext : IdentityDbContext
 
         builder.Entity<ProductColors>()
             .HasOne(ps=> ps.Products)
-            .WithMany(m => m.Colors)
+            .WithMany(c=> c.Colors)
             .HasForeignKey(ps => ps.ProdId);
 
         builder.Entity<ProductColors>()

@@ -1,48 +1,32 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using DmResinas.Models;
+using DmResinas.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace DmResinas.Controllers;
 
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
+    private readonly AppDbContext _context;
 
-    public HomeController(ILogger<HomeController> logger)
+    public HomeController(ILogger<HomeController> logger, AppDbContext context)
     {
         _logger = logger;
+        _context = context;
     }
 
     public IActionResult Index()
     {
-        return View();
+        var products = _context.ProductCategorie.Include(pc => pc.Products).ThenInclude(c =>c.Categories).ToList();
+        return View(products);
     }
 
     public IActionResult Privacy()
     {
         return View();
     }
-
-    public IActionResult Sobre()
-    {
-        return View();
-    }
-
-    public IActionResult Dicas()
-    {
-        return View();
-    }
-
-    public IActionResult Catalogo()
-    {
-        return View();
-    }
-
-    public IActionResult Contato()
-    {
-        return View();
-    }
-
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
