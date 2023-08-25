@@ -112,12 +112,12 @@ function prev() {
 slide = element => {
   /* Next slide */
   
-  if (element.classList == 'next') {
+  if (element.classList.contains('next') || element.parentElement.classList.contains('next')) {
     next();
     
   /* Previous slide */
     
-  } else if (element.classList.contains('prev')) {
+  } else if (element.classList.contains('prev') || element.parentElement.classList.contains('prev')) {
     prev();
   }
 }
