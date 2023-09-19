@@ -102,7 +102,7 @@ public class AccountController : Controller
     }
 
 
-    [HttpPost]
+   [HttpPost]
     public async Task<IActionResult> Register(RegisterDto register)
     {
         if (ModelState.IsValid)

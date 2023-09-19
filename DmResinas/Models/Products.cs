@@ -29,9 +29,10 @@ namespace DmResinas.Models
 
         [Display(Name = "Codigo do Produto")]
         [Required(ErrorMessage = "O Codigo do produto é obrigatorio")]
-        public byte ProdCode { get; set; }
+
 
             public ICollection<ProductColors> Colors { get; set; }
             public ICollection<ProductCategories> Categories { get; set; }
+            public ICollection<ProductImages> Images { get; set; }
     }
 }

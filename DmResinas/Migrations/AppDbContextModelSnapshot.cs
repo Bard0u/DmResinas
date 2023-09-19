@@ -181,22 +181,22 @@ namespace DmResinas.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "2380e63d-1fa2-4b0d-8d0b-8e69e37ce271",
-                            ConcurrencyStamp = "a4391210-7a57-4b89-9e69-db491dcd8398",
+                            Id = "91ee144c-af5f-4f11-a8a2-8e2be3f5ff6c",
+                            ConcurrencyStamp = "137bf228-4fa9-48c9-bf2e-97c794acda14",
                             Name = "Administrador",
                             NormalizedName = "ADMINISTRADOR"
                         },
                         new
                         {
-                            Id = "2f1e2063-16d4-4e59-8279-7afd284e821e",
-                            ConcurrencyStamp = "a1af00eb-ce0b-4796-a92d-67c06314a417",
+                            Id = "6e458181-f3f8-4971-915f-0be18852e8e2",
+                            ConcurrencyStamp = "7dfaae6d-de40-4949-b5ad-8627fbaa418f",
                             Name = "Moderador",
                             NormalizedName = "MODERADOR"
                         },
                         new
                         {
-                            Id = "3453f7e2-22b7-4753-a129-90f6fe940abd",
-                            ConcurrencyStamp = "1632776b-3ed3-4951-91e5-f4918f4bf999",
+                            Id = "51e448ef-c856-42cc-bdce-09fe66297bed",
+                            ConcurrencyStamp = "5545e0e0-5af7-4321-aa33-03b461cdbe55",
                             Name = "Usuário",
                             NormalizedName = "USUÁRIO"
                         });
@@ -351,8 +351,8 @@ namespace DmResinas.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "e8591e63-e86f-45cc-8357-3fb1860aa551",
-                            RoleId = "2380e63d-1fa2-4b0d-8d0b-8e69e37ce271"
+                            UserId = "65d65b72-4157-445e-93be-72727af19ada",
+                            RoleId = "91ee144c-af5f-4f11-a8a2-8e2be3f5ff6c"
                         });
                 });
 
@@ -379,8 +379,8 @@ namespace DmResinas.Migrations
                 {
                     b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
 
-                    b.Property<byte>("ClientAge")
-                        .HasColumnType("tinyint unsigned");
+                    b.Property<DateTime>("ClientAge")
+                        .HasColumnType("datetime(6)");
 
                     b.Property<string>("ClientName")
                         .IsRequired()
@@ -395,21 +395,21 @@ namespace DmResinas.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "e8591e63-e86f-45cc-8357-3fb1860aa551",
+                            Id = "65d65b72-4157-445e-93be-72727af19ada",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "ae2215a1-e33a-47a7-b38e-7513d3fc014c",
+                            ConcurrencyStamp = "dcd3ff48-58a1-49a6-b719-d8dca2ec63e2",
                             Email = "pedroarossettoo@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "PEDROAROSSETTOO@GMAIL.COM",
                             NormalizedUserName = "BARD0U",
-                            PasswordHash = "AQAAAAEAACcQAAAAECmPLWlZ1tJFM0pG/brvvrvkl8Oyd1mT2KED1PjKyv9263Kscpl7tx0xXfojXE556g==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEOJk+6WYKx/uQR4flVa5WOp1ZYjQT6Hjk6pvqDdvODX0EHWGCWbbTy7iGFQQxB2WLA==",
                             PhoneNumber = "14997418713",
                             PhoneNumberConfirmed = true,
-                            SecurityStamp = "2497e5f5-d2fb-4ab1-921b-d9126c9f8bc2",
+                            SecurityStamp = "37c219cf-e7ca-47c7-adc8-575ea1be782b",
                             TwoFactorEnabled = false,
                             UserName = "Bard0u",
-                            ClientAge = (byte)17,
+                            ClientAge = new DateTime(2006, 3, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ClientName = "Pedro Luiz",
                             ClientPhone = (short)0
                         });

@@ -16,5 +16,7 @@ namespace DmResinas.Models
         //Required é usado quando algo é obrigado
         public string ImageCode { get; set; }
 
+        public ICollection<ProductImages> Products { get; set; }
+
     }
 }

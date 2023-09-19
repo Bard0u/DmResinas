@@ -1,0 +1,27 @@
+@model DmResinas.Models.Products
+@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="album py-5">
+    <div class="text-center mb-3">
+        <h1>@Model.ProdName</h1>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <img src="@Model.Images" alt="@Model.ProdName" class="img-fluid">
+            </div>
+            <div class="col-md-9">
+                <p>@Model.ProdDescription</p>
+                <p>Preço: @Model.ProdPrice</p>
+                <p>Estoque: @Model.ProdQtd</p>
+                @foreach(ProductCategories productcategories in Model.Categories)
+                {
+                    <span class="badge bg-secondary me-2">@productcategories.Categories.CategorieName</span>
+                }
+            </div>
+        </div>
+    </div>
+</div>

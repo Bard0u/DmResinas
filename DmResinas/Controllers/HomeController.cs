@@ -1,10 +1,10 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using DmResinas.Models;
-using DmResinas.Data;
+using DmResinas .Data;
 using Microsoft.EntityFrameworkCore;
 
-namespace DmResinas.Controllers;
+namespace GalloFlix.Controllers;
 
 public class HomeController : Controller
 {
@@ -19,7 +19,7 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        var products = _context.ProductCategorie.Include(pc => pc.Products).ThenInclude(c =>c.Categories).ToList();
+     var products = _context.ProductCategorie.Include(pc => pc.Products).ThenInclude(c =>c.Categories).ToList();
         return View(products);
     }
 
@@ -34,3 +34,5 @@ public class HomeController : Controller
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
 }
+
+

@@ -233,7 +233,7 @@ namespace DmResinas.Migrations
                     ClientName = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     ClientPhone = table.Column<short>(type: "smallint", nullable: false),
-                    ClientAge = table.Column<byte>(type: "tinyint unsigned", nullable: false)
+                    ClientAge = table.Column<DateTime>(type: "datetime(6)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -354,25 +354,25 @@ namespace DmResinas.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "2380e63d-1fa2-4b0d-8d0b-8e69e37ce271", "a4391210-7a57-4b89-9e69-db491dcd8398", "Administrador", "ADMINISTRADOR" },
-                    { "2f1e2063-16d4-4e59-8279-7afd284e821e", "a1af00eb-ce0b-4796-a92d-67c06314a417", "Moderador", "MODERADOR" },
-                    { "3453f7e2-22b7-4753-a129-90f6fe940abd", "1632776b-3ed3-4951-91e5-f4918f4bf999", "Usuário", "USUÁRIO" }
+                    { "51e448ef-c856-42cc-bdce-09fe66297bed", "5545e0e0-5af7-4321-aa33-03b461cdbe55", "Usuário", "USUÁRIO" },
+                    { "6e458181-f3f8-4971-915f-0be18852e8e2", "7dfaae6d-de40-4949-b5ad-8627fbaa418f", "Moderador", "MODERADOR" },
+                    { "91ee144c-af5f-4f11-a8a2-8e2be3f5ff6c", "137bf228-4fa9-48c9-bf2e-97c794acda14", "Administrador", "ADMINISTRADOR" }
                 });
 
             migrationBuilder.InsertData(
                 table: "Users",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "e8591e63-e86f-45cc-8357-3fb1860aa551", 0, "ae2215a1-e33a-47a7-b38e-7513d3fc014c", "pedroarossettoo@gmail.com", true, false, null, "PEDROAROSSETTOO@GMAIL.COM", "BARD0U", "AQAAAAEAACcQAAAAECmPLWlZ1tJFM0pG/brvvrvkl8Oyd1mT2KED1PjKyv9263Kscpl7tx0xXfojXE556g==", "14997418713", true, "2497e5f5-d2fb-4ab1-921b-d9126c9f8bc2", false, "Bard0u" });
+                values: new object[] { "65d65b72-4157-445e-93be-72727af19ada", 0, "dcd3ff48-58a1-49a6-b719-d8dca2ec63e2", "pedroarossettoo@gmail.com", true, false, null, "PEDROAROSSETTOO@GMAIL.COM", "BARD0U", "AQAAAAEAACcQAAAAEOJk+6WYKx/uQR4flVa5WOp1ZYjQT6Hjk6pvqDdvODX0EHWGCWbbTy7iGFQQxB2WLA==", "14997418713", true, "37c219cf-e7ca-47c7-adc8-575ea1be782b", false, "Bard0u" });
 
             migrationBuilder.InsertData(
                 table: "Client",
                 columns: new[] { "Id", "ClientAge", "ClientName", "ClientPhone" },
-                values: new object[] { "e8591e63-e86f-45cc-8357-3fb1860aa551", (byte)17, "Pedro Luiz", (short)0 });
+                values: new object[] { "65d65b72-4157-445e-93be-72727af19ada", new DateTime(2006, 3, 22, 0, 0, 0, 0, DateTimeKind.Unspecified), "Pedro Luiz", (short)0 });
 
             migrationBuilder.InsertData(
                 table: "UserRoles",
                 columns: new[] { "RoleId", "UserId" },
-                values: new object[] { "2380e63d-1fa2-4b0d-8d0b-8e69e37ce271", "e8591e63-e86f-45cc-8357-3fb1860aa551" });
+                values: new object[] { "91ee144c-af5f-4f11-a8a2-8e2be3f5ff6c", "65d65b72-4157-445e-93be-72727af19ada" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_ProductCategories_CategorieId",

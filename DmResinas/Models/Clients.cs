@@ -20,6 +20,7 @@ namespace DmResinas.Models
 
         [Display(Name = "Idade")]
         [Required(ErrorMessage = "A idade é obrigatorio")]
+        [DataType(DataType.Date)]
         public DateTime ClientAge { get; set; }
 
 

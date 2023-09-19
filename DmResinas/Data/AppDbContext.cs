@@ -71,7 +71,7 @@ public class AppDbContext : IdentityDbContext
         .HasForeignKey(pc => pc.ProdId);
 
         builder.Entity<ProductCategories>()
-        .HasOne(pc => pc.Categorie)
+        .HasOne(pc => pc.Categories)
         .WithMany(pr => pr .Products)
         .HasForeignKey(pc => pc.CategorieId);
 
@@ -94,6 +94,24 @@ public class AppDbContext : IdentityDbContext
         .HasForeignKey(ps => ps.ColorId);
 
         #endregion
+
+        #region Many to Many - ProductImages
+        builder.Entity<ProductImages>().HasKey(
+            pc => new { pc.ProdId, pc.ImageId }
+        );
+
+        builder.Entity<ProductImages>()
+        .HasOne(pc => pc.Products)
+        .WithMany(im => im.Images)
+        .HasForeignKey(pc => pc.ProdId);
+
+        builder.Entity<ProductImages>()
+        .HasOne(pc => pc.Images)
+        .WithMany(im => im.Products)
+        .HasForeignKey(pc => pc.ImageId);
+
+        #endregion
+
 
         
     }
