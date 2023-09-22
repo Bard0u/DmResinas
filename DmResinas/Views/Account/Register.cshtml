@@ -1,11 +1,14 @@
 @model DmResinas.DTO.RegisterDto
 @{
     ViewData["Title"] = "Criar Conta";
+    Layout = "~/Views/Shared/_LayoutAccount.cshtml";
 }
+
 
 @section Styles{
     <link rel="stylesheet" href="~/css/account.css">
 }
+
 
 <form class="form-register" method="post">
     <div class="text-center mb-4">
@@ -22,9 +25,9 @@
             <span asp-validation-for="Name" class="text-danger"></span>
         </div>
         <div class="col-lg-4 mb-3">
-            <label asp-for="DateOfBirth" class="form-label"></label>
-            <input asp-for="DateOfBirth" class="form-control">
-            <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+            <label asp-for="Age" class="form-label"></label>
+            <input asp-for="Age" class="form-control">
+            <span asp-validation-for="Age" class="text-danger"></span>
         </div>
     </div>
 

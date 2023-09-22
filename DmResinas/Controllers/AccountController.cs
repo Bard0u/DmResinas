@@ -110,7 +110,7 @@ public class AccountController : Controller
             var user = Activator.CreateInstance<Clients>();
 
             user.ClientName = register.Name;
-            user.ClientAge = register.DateOfBirth;
+            user.ClientAge = register.Age;
             user.Email = register.Email;
 
             await _userStore.SetUserNameAsync(user, register.Email, CancellationToken.None);
@@ -169,6 +169,8 @@ public class AccountController : Controller
         var result = await _userManager.ConfirmEmailAsync(user, code);
         return View(result.Succeeded);
     }
+
+
 
 
     [HttpGet]
@@ -237,6 +239,7 @@ public class AccountController : Controller
         );
         return View(reset);
     }
+
 
 
     private IUserEmailStore<Clients> GetEmailStore()

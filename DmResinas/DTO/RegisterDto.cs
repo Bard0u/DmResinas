@@ -12,7 +12,7 @@ public class RegisterDto
     [DataType(DataType.Date)]
     [Display(Name = "Data de Nascimento")]
     [Required(ErrorMessage = "Por favor, informe sua data de nascimento")]
-    public DateTime DateOfBirth { get; set; }
+    public DateTime Age { get; set; }
 
     [Required(ErrorMessage = "Por favor, informe seu Email")]
     [StringLength(100, ErrorMessage = "O Email deve possuir no maximo 100 caracteres")]
