@@ -4,7 +4,7 @@ using DmResinas.Models;
 using DmResinas .Data;
 using Microsoft.EntityFrameworkCore;
 
-namespace GalloFlix.Controllers;
+namespace DmResinas.Controllers;
 
 public class HomeController : Controller
 {
@@ -21,6 +21,22 @@ public class HomeController : Controller
     {
      var products = _context.ProductCategorie.Include(pc => pc.Products).ThenInclude(c =>c.Categories).ToList();
         return View(products);
+    }
+      public IActionResult Catalogo()
+    {
+        return View();
+    }
+        public IActionResult Contato()
+    {
+        return View();
+    }
+        public IActionResult Dicas()
+    {
+        return View();
+    }
+        public IActionResult Sobre()
+    {
+        return View();
     }
 
     public IActionResult Privacy()

@@ -62,19 +62,7 @@ namespace DmResinas.Controllers
                 await _context.SaveChangesAsync();
 
                 // Se tiver arquivo de imagem, salva a imagem no servidor com o ID do filme e adiciona o nome e caminho da imagem no banco
-                if (formFile != null)
-                {
-                    string wwwRootPath = _hostEnvironment.WebRootPath;
-                    string fileName = Images.ImageId.ToString("00") + Path.GetExtension(formFile.FileName);
-                    string uploads = Path.Combine(wwwRootPath, @"img\movies");
-                    string newFile = Path.Combine(uploads, fileName);
-                    using (var stream = new FileStream(newFile, FileMode.Create))
-                    {
-                        formFile.CopyTo(stream);
-                    }
-                    movie.Image = @"\img\movies\" + fileName;
-                    await _context.SaveChangesAsync();
-                }
+             
 
                 // Salva, se tiver, os Gêneros selecionados
                 Product.Categories = new List<ProductCategories>();
@@ -131,27 +119,7 @@ namespace DmResinas.Controllers
                 try
                 {
                     // Atualiza a Foto de Capa
-                    if (formFile != null)
-                    {
-                        string wwwRootPath = _hostEnvironment.WebRootPath;
-                        if (Product.Images != null)
-                        {
-                            string oldFile = Path.Combine(wwwRootPath, Product.Images.TrimStart('\\'));
-                            if (System.IO.File.Exists(oldFile))
-                            {
-                                System.IO.File.Delete(oldFile);
-                            }
-                        }
-
-                        string fileName = Product.ProdId.ToString("00") + Path.GetExtension(formFile.FileName);
-                        string uploads = Path.Combine(wwwRootPath, @"img\pokemons");
-                        string newFile = Path.Combine(uploads, fileName);
-                        using (var stream = new FileStream(newFile, FileMode.Create))
-                        {
-                            formFile.CopyTo(stream);
-                        }
-                        Product.Images = @"\img\Products\" + fileName;
-                    }
+                   
                     Product.Categories = _context.ProductCategorie.Where(mg => mg.ProdId == Product.ProdId).OrderBy(mg => mg.CategorieId).ToList();
                     _context.Update(Product);
                     _context.RemoveRange(Product.Categories);
