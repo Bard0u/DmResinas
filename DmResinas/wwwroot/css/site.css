@@ -21,6 +21,36 @@ html {
   margin: 0;
 }
 
+.doseujeito {
+  display: flex; 
+  align-items: center;
+  column-gap: 10px;
+  gap: 100px;
+}
+
+.fraseDestaque {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+}
+
+.fraseDestaque p {
+  font-family: 'Inter';
+  font-weight: 900;
+  font-size: 80px;
+  width: 100%;
+  margin: 0px;
+  line-height: 70px;
+  color: black;
+}
+
+.rosa {
+  font-family: 'Italiana';
+  width: 100%;
+  box-sizing: border-box;
+  color: #FF8CC1;
+}
+
 html {
   position: relative;
   min-height: 100%;
