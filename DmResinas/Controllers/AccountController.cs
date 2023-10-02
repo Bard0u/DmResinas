@@ -113,7 +113,7 @@ public class AccountController : Controller
             user.ClientAge = register.Age;
             user.Email = register.Email;
 
-            await _userStore.SetUserNameAsync(user, register.Email, CancellationToken.None);
+            await _userStore.SetUserNameAsync(user, register.Name, CancellationToken.None);
             await _emailStore.SetEmailAsync(user, register.Email, CancellationToken.None);
             var result = await _userManager.CreateAsync(user, register.Password);
 
