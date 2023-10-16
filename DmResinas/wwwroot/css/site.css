@@ -21,6 +21,44 @@ html {
   margin: 0;
 }
 
+.title {
+  font-size: 70px;
+}
+
+.italiana {
+  font-family: 'Italiana', serif;
+}
+
+.introduction {
+  margin-top: 50px;
+}
+
+.main {
+  margin: 30px 60px;
+}
+
+.block {
+  flex-flow: column;
+  margin: auto;
+}
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
+.figuraSobre {
+  display: inline-block;
+  text-align: left;
+}
+
+figcaption {
+  text-align: left;
+}
+
 .doseujeito {
   display: flex; 
   align-items: center;
