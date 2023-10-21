@@ -1,4 +1,4 @@
-@model DmResinas.Models.Produto
+@model DmResinas.Models.Products
 @{
     ViewData["Title"] = "Produtos";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
@@ -8,23 +8,28 @@
 <h4 class="display-6">Alterar</h4>
 <hr />
 <form asp-action="Edit" class="row" enctype="multipart/form-data">
-    <input type="hidden" asp-for="Id" />
+    <input type="hidden" asp-for="ProdId" />
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
     <div class="col-md-6 col-sm-12 col-xxl-7">
         <div class="col-12 mb-2">
-            <label asp-for="Nome" class="form-label"></label>
-            <input asp-for="Nome" class="form-control" />
-            <span asp-validation-for="Nome" class="text-danger"></span>
+            <label asp-for="ProdName" class="form-label"></label>
+            <input asp-for="ProdName" class="form-control" />
+            <span asp-validation-for="ProdName" class="text-danger"></span>
         </div>
         <div class="col-12 mb-2">
-            <label asp-for="Descricao" class="form-label"></label>
-            <textarea asp-for="Descricao" class="form-control" rows="3"></textarea>
-            <span asp-validation-for="Descricao" class="text-danger"></span>
+            <label asp-for="ProdQtd" class="form-label"></label>
+            <input asp-for="ProdQtd" class="form-control" />
+            <span asp-validation-for="ProdQtd" class="text-danger"></span>
+        </div>
+        <div class="col-12 mb-2">
+            <label asp-for="ProdDescription" class="form-label"></label>
+            <textarea asp-for="ProdDescription" class="form-control" rows="3"></textarea>
+            <span asp-validation-for="ProdDescription" class="text-danger"></span>
         </div>
             <div class="col-md-4">
-                <label asp-for="Preco" class="form-label"></label>
-                <input asp-for="Preco" class="form-control" />
-                <span asp-validation-for="Preco" class="text-danger"></span>
+                <label asp-for="ProdPrice" class="form-label"></label>
+                <input asp-for="ProdPrice" class="form-control" />
+                <span asp-validation-for="ProdPrice" class="text-danger"></span>
             </div>
         </div>
     </div>
@@ -32,6 +37,15 @@
         <label class="form-label">Categorias</label>
         <select class="form-select" multiple asp-items="ViewBag.Genres" name="Genres" size="15">
         </select>
+    </div>
+    <div class="col-md-4 col-sm-12 col-xxl-3">
+        <div class="form-group">
+            <label asp-for="Images" class="form-label"></label>
+            <img id="PreviewImage" src="@Model.Images" class="img-fluid w-100 pointer" onclick="changeImage()">
+            <input type="file" name="formFile" class="form-control" accept=".jpg,.jpeg,.png,.gif,.jfif" />
+            <input asp-for="Images" class="d-none" />
+            <span asp-validation-for="Images" class="text-danger"></span>
+        </div>
     </div>
     <div class="col-12 mt-4">
         <button type="submit" class="btn btn-success me-3"><i class="bi bi-save2-fill"></i> Salvar</button>

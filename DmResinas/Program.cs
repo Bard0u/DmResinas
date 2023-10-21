@@ -19,7 +19,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 );
 
 // Serviço de Gestão de Usuário - Identity
-builder.Services.AddIdentity<Usuario, IdentityRole>()
+builder.Services.AddIdentity<Clients, IdentityRole>()
     .AddEntityFrameworkStores<AppDbContext>()
     .AddDefaultTokenProviders();
 

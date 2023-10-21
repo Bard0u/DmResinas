@@ -10,85 +10,85 @@ using DmResinas.Models;
 
 namespace DmResinas.Controllers
 {
-    public class CategoriasController : Controller
+    public class CategoriesController : Controller
     {
         private readonly AppDbContext _context;
 
-        public CategoriasController(AppDbContext context)
+        public CategoriesController(AppDbContext context)
         {
             _context = context;
         }
 
-        // GET: Categorias
+        // GET: Categories
         public async Task<IActionResult> Index()
         {
-              return View(await _context.Categorias.ToListAsync());
+              return View(await _context.Categorie.ToListAsync());
         }
 
-        // GET: Categorias/Details/5
+        // GET: Categories/Details/5
         public async Task<IActionResult> Details(byte? id)
         {
-            if (id == null || _context.Categorias == null)
+            if (id == null || _context.Categorie == null)
             {
                 return NotFound();
             }
 
-            var Categorias = await _context.Categorias
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (Categorias == null)
+            var categories = await _context.Categorie
+                .FirstOrDefaultAsync(m => m.CategoriesId == id);
+            if (categories == null)
             {
                 return NotFound();
             }
 
-            return View(Categorias);
+            return View(categories);
         }
 
-        // GET: Categorias/Create
+        // GET: Categories/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Categorias/Create
+        // POST: Categories/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("CategoriasId,CategoriaName")] Categoria Categorias)
+        public async Task<IActionResult> Create([Bind("CategoriesId,CategorieName")] Categories categories)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(Categorias);
+                _context.Add(categories);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(Categorias);
+            return View(categories);
         }
 
-        // GET: Categorias/Edit/5
+        // GET: Categories/Edit/5
         public async Task<IActionResult> Edit(byte? id)
         {
-            if (id == null || _context.Categorias == null)
+            if (id == null || _context.Categorie == null)
             {
                 return NotFound();
             }
 
-            var Categorias = await _context.Categorias.FindAsync(id);
-            if (Categorias == null)
+            var categories = await _context.Categorie.FindAsync(id);
+            if (categories == null)
             {
                 return NotFound();
             }
-            return View(Categorias);
+            return View(categories);
         }
 
-        // POST: Categorias/Edit/5
+        // POST: Categories/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(byte id, [Bind("CategoriasId,CategoriaName")] Categoria Categorias)
+        public async Task<IActionResult> Edit(byte id, [Bind("CategoriesId,CategorieName")] Categories categories)
         {
-            if (id != Categorias.Id)
+            if (id != categories.CategoriesId)
             {
                 return NotFound();
             }
@@ -97,12 +97,12 @@ namespace DmResinas.Controllers
             {
                 try
                 {
-                    _context.Update(Categorias);
+                    _context.Update(categories);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!CategoriasExists(Categorias.Id))
+                    if (!CategoriesExists(categories.CategoriesId))
                     {
                         return NotFound();
                     }
@@ -113,49 +113,49 @@ namespace DmResinas.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(Categorias);
+            return View(categories);
         }
 
-        // GET: Categorias/Delete/5
+        // GET: Categories/Delete/5
         public async Task<IActionResult> Delete(byte? id)
         {
-            if (id == null || _context.Categorias == null)
+            if (id == null || _context.Categorie == null)
             {
                 return NotFound();
             }
 
-            var Categorias = await _context.Categorias
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (Categorias == null)
+            var categories = await _context.Categorie
+                .FirstOrDefaultAsync(m => m.CategoriesId == id);
+            if (categories == null)
             {
                 return NotFound();
             }
 
-            return View(Categorias);
+            return View(categories);
         }
 
-        // POST: Categorias/Delete/5
+        // POST: Categories/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(byte id)
         {
-            if (_context.Categorias == null)
+            if (_context.Categorie == null)
             {
-                return Problem("Entity set 'AppDbContext.Categoria'  is null.");
+                return Problem("Entity set 'AppDbContext.Categorie'  is null.");
             }
-            var Categorias = await _context.Categorias.FindAsync(id);
-            if (Categorias != null)
+            var categories = await _context.Categorie.FindAsync(id);
+            if (categories != null)
             {
-                _context.Categorias.Remove(Categorias);
+                _context.Categorie.Remove(categories);
             }
             
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool CategoriasExists(byte id)
+        private bool CategoriesExists(byte id)
         {
-          return _context.Categorias.Any(e => e.Id == id);
+          return _context.Categorie.Any(e => e.CategoriesId == id);
         }
     }
 }

@@ -1,4 +1,4 @@
-@model DmResinas.Models.Categoria
+@model DmResinas.Models.Categories
 
 @{
     ViewData["Title"] = "Create";
@@ -13,9 +13,9 @@
     <form asp-action="Create">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <div class="form-group">
-            <label asp-for="Nome" class="control-label"></label>
-            <input asp-for="Nome" class="form-control" />
-            <span asp-validation-for="Nome" class="text-danger"></span>
+            <label asp-for="CategorieName" class="control-label"></label>
+            <input asp-for="CategorieName" class="form-control" />
+            <span asp-validation-for="CategorieName" class="text-danger"></span>
         </div>
         <div class="form-group mt-4">
             <button type="submit" class="btn btn-success me-3"><i class="bi bi-save2-fill"></i> Salvar</button>

@@ -19,7 +19,7 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-     var products = _context.ProdutoCategorias.Include(pc => pc.Produto).ThenInclude(c =>c.Categorias).ToList();
+     var products = _context.ProductCategorie.Include(pc => pc.Products).ThenInclude(c =>c.Categories).ToList();
         return View(products);
     }
       public IActionResult Catalogo()

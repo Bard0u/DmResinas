@@ -1,7 +1,7 @@
 @*Layout da area adm*@
 @using Microsoft.AspNetCore.Identity
-@inject SignInManager<Usuario> signInManager
-@inject UserManager<Usuario> userManager
+@inject SignInManager<Clients> signInManager
+@inject UserManager<Clients> userManager
 @{
     var user = await userManager.GetUserAsync(User);
 }

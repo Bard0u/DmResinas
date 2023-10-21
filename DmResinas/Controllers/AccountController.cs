@@ -16,17 +16,17 @@ namespace DmResinas.Controllers;
 public class AccountController : Controller
 {
     private readonly ILogger<AccountController> _logger;
-    private readonly SignInManager<Usuario> _signInManager;
-    private readonly UserManager<Usuario> _userManager;
-    private readonly IUserStore<Usuario> _userStore;
-    private readonly IUserEmailStore<Usuario> _emailStore;
+    private readonly SignInManager<Clients> _signInManager;
+    private readonly UserManager<Clients> _userManager;
+    private readonly IUserStore<Clients> _userStore;
+    private readonly IUserEmailStore<Clients> _emailStore;
     private readonly IEmailSender _emailSender;
 
     public AccountController(
         ILogger<AccountController> logger,
-        SignInManager<Usuario> signInManager,
-        UserManager<Usuario> userManager,
-        IUserStore<Usuario> userStore,
+        SignInManager<Clients> signInManager,
+        UserManager<Clients> userManager,
+        IUserStore<Clients> userStore,
         IEmailSender emailSender
 )
     {
@@ -58,16 +58,16 @@ public class AccountController : Controller
     {
         if (ModelState.IsValid)
         {
-            string Nome = login.Email;
+            string userName = login.Email;
             if (IsValidEmail(login.Email))
             {
                 var user = await _userManager.FindByEmailAsync(login.Email);
                 if (user != null)
-                    Nome = user.Nome;
+                    userName = user.UserName;
             }
 
             var result = await _signInManager.PasswordSignInAsync(
-                Nome, login.Password, login.RememberMe, lockoutOnFailure: true
+                userName, login.Password, login.RememberMe, lockoutOnFailure: true
             );
             if (result.Succeeded)
             {
@@ -107,10 +107,10 @@ public class AccountController : Controller
     {
         if (ModelState.IsValid)
         {
-            var user = Activator.CreateInstance<Usuario>();
+            var user = Activator.CreateInstance<Clients>();
 
-            user.Nome = register.Name;
-            user.DataNascimento = register.Age;
+            user.ClientName = register.Name;
+            user.ClientAge = register.Age;
             user.Email = register.Email;
 
             await _userStore.SetUserNameAsync(user, register.Name, CancellationToken.None);
@@ -242,13 +242,13 @@ public class AccountController : Controller
 
 
 
-    private IUserEmailStore<Usuario> GetEmailStore()
+    private IUserEmailStore<Clients> GetEmailStore()
     {
         if (!_userManager.SupportsUserEmail)
         {
             throw new NotSupportedException("The default UI requires a user store with email support.");
         }
-        return (IUserEmailStore<Usuario>)_userStore;
+        return (IUserEmailStore<Clients>)_userStore;
     }
 
 
