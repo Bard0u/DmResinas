@@ -33,28 +33,34 @@ public class AppDbSeed
         builder.Entity<IdentityRole>().HasData(roles);
         #endregion
 
-        #region Popular Clients - Usuários
-        List<Clients> users= new(){
-            new Clients(){
+        #region Popular Usuario - Usuários
+        List<IdentityUser> users = new(){
+            new IdentityUser(){
                 Id = Guid.NewGuid().ToString(),
-                ClientName="Pedro Luiz",
-                ClientAge = DateTime.Parse("22/03/2006"),
-                Email = "pedroarossettoo@gmail.com",
-                NormalizedEmail = "PEDROAROSSETTOO@GMAIL.COM",
-                UserName = "Bard0u",
-                NormalizedUserName= "BARD0U",
+                Email = "admin@cozastore.com",
+                NormalizedEmail = "ADMIN@COZASTORE.COM",
+                UserName = "Admin",
+                NormalizedUserName = "ADMIN",
                 LockoutEnabled = false,
-                PhoneNumber = "14997418713",
-                PhoneNumberConfirmed = true,
-                EmailConfirmed = true
+                EmailConfirmed = true,
             }
         };
         foreach (var user in users)
         {
-            PasswordHasher<Clients> pass = new();
+            PasswordHasher<IdentityUser> pass = new();
             user.PasswordHash = pass.HashPassword(user, "@Etec123");
         }
-        builder.Entity<Clients>().HasData(users);
+        builder.Entity<IdentityUser>().HasData(users);
+
+        List<Usuario> usuarios = new(){
+            new Usuario(){
+                UsuarioId = users[0].Id,
+                Nome = "José Antonio Gallo Junior",
+                DataNascimento = DateTime.Parse("05/08/1981"),
+                Foto = "/images/usuarios/avatar.png"
+            }
+        };
+        builder.Entity<Usuario>().HasData(usuarios);
         #endregion
 
         #region Popular UserRole - Usuário com Perfil

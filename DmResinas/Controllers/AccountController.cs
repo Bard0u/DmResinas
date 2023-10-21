@@ -16,17 +16,17 @@ namespace DmResinas.Controllers;
 public class AccountController : Controller
 {
     private readonly ILogger<AccountController> _logger;
-    private readonly SignInManager<Clients> _signInManager;
-    private readonly UserManager<Clients> _userManager;
-    private readonly IUserStore<Clients> _userStore;
-    private readonly IUserEmailStore<Clients> _emailStore;
+    private readonly SignInManager<Usuario> _signInManager;
+    private readonly UserManager<Usuario> _userManager;
+    private readonly IUserStore<Usuario> _userStore;
+    private readonly IUserEmailStore<Usuario> _emailStore;
     private readonly IEmailSender _emailSender;
 
     public AccountController(
         ILogger<AccountController> logger,
-        SignInManager<Clients> signInManager,
-        UserManager<Clients> userManager,
-        IUserStore<Clients> userStore,
+        SignInManager<Usuario> signInManager,
+        UserManager<Usuario> userManager,
+        IUserStore<Usuario> userStore,
         IEmailSender emailSender
 )
     {
@@ -63,7 +63,7 @@ public class AccountController : Controller
             {
                 var user = await _userManager.FindByEmailAsync(login.Email);
                 if (user != null)
-                    userName = user.UserName;
+                    userName = user.Nome;
             }
 
             var result = await _signInManager.PasswordSignInAsync(
@@ -107,11 +107,10 @@ public class AccountController : Controller
     {
         if (ModelState.IsValid)
         {
-            var user = Activator.CreateInstance<Clients>();
+            var user = Activator.CreateInstance<Usuario>();
 
-            user.ClientName = register.Name;
-            user.ClientAge = register.Age;
-            user.Email = register.Email;
+            user.Nome = register.Name;
+            user.DataNascimento = register.Age;
 
             await _userStore.SetUserNameAsync(user, register.Name, CancellationToken.None);
             await _emailStore.SetEmailAsync(user, register.Email, CancellationToken.None);
@@ -119,7 +118,7 @@ public class AccountController : Controller
 
             if (result.Succeeded)
             {
-                _logger.LogInformation($"Novo usuário registrado com o email {user.Email}.");
+                _logger.LogInformation($"Novo usuário registrado com o email {user.Nome}.");
 
                 var userId = await _userManager.GetUserIdAsync(user);
                 var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
@@ -242,13 +241,13 @@ public class AccountController : Controller
 
 
 
-    private IUserEmailStore<Clients> GetEmailStore()
+    private IUserEmailStore<Usuario> GetEmailStore()
     {
         if (!_userManager.SupportsUserEmail)
         {
             throw new NotSupportedException("The default UI requires a user store with email support.");
         }
-        return (IUserEmailStore<Clients>)_userStore;
+        return (IUserEmailStore<Usuario>)_userStore;
     }
 
 

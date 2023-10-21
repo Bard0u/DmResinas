@@ -1,27 +1,23 @@
-@model DmResinas.Models.Products
+@model DmResinas.Models.Produto
 @{
     ViewData["Title"] = "Home";
 }
 
 <div class="album py-5">
     <div class="text-center mb-3">
-        <h1>@Model.ProdName</h1>
+        <h1>@Model.Nome</h1>
 
     </div>
 
     <div class="container">
         <div class="row">
-            <div class="col-md-3">
-                <img src="@Model.Images" alt="@Model.ProdName" class="img-fluid w-100">
-            </div>
             <div class="col-md-9">
-                <p>@Model.ProdDescription</p>
-                <p>Preço: @Model.ProdPrice</p>
-                <p>Estoque: @Model.ProdQtd</p>
-                @foreach(ProductCategories ProductCategories in Model.Categories)
-                {
-                    <span class="badge bg-secondary me-2">@ProductCategories.Categories.CategorieName</span>
-                }
+                <p>@Model.Descricao</p>
+                <p>Preço: @Model.Preco</p>
+                @foreach (ProdutoCategoria ProdutoCategorias in Model.Categorias)
+            {
+                <h2><span class="badge bg-secondary me-2">@ProdutoCategorias.Categoria.Nome</span></h2>
+            }
             </div>
         </div>
     </div>

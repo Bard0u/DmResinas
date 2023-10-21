@@ -22,25 +22,25 @@ namespace DmResinas.Controllers
         // GET: Categories
         public async Task<IActionResult> Index()
         {
-              return View(await _context.Categorie.ToListAsync());
+              return View(await _context.Categorias.ToListAsync());
         }
 
         // GET: Categories/Details/5
         public async Task<IActionResult> Details(byte? id)
         {
-            if (id == null || _context.Categorie == null)
+            if (id == null || _context.Categorias == null)
             {
                 return NotFound();
             }
 
-            var categories = await _context.Categorie
-                .FirstOrDefaultAsync(m => m.CategoriesId == id);
-            if (categories == null)
+            var Categorias = await _context.Categorias
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (Categorias == null)
             {
                 return NotFound();
             }
 
-            return View(categories);
+            return View(Categorias);
         }
 
         // GET: Categories/Create
@@ -54,31 +54,31 @@ namespace DmResinas.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("CategoriesId,CategorieName")] Categories categories)
+        public async Task<IActionResult> Create([Bind("Id,Nome")] Categoria Categorias)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(categories);
+                _context.Add(Categorias);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(categories);
+            return View(Categorias);
         }
 
         // GET: Categories/Edit/5
         public async Task<IActionResult> Edit(byte? id)
         {
-            if (id == null || _context.Categorie == null)
+            if (id == null || _context.Categorias == null)
             {
                 return NotFound();
             }
 
-            var categories = await _context.Categorie.FindAsync(id);
-            if (categories == null)
+            var Categoria = await _context.Categorias.FindAsync(id);
+            if (Categoria == null)
             {
                 return NotFound();
             }
-            return View(categories);
+            return View(Categoria);
         }
 
         // POST: Categories/Edit/5
@@ -86,9 +86,9 @@ namespace DmResinas.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(byte id, [Bind("CategoriesId,CategorieName")] Categories categories)
+        public async Task<IActionResult> Edit(byte id, [Bind("CategoriesId,CategorieName")] Categoria Categorias)
         {
-            if (id != categories.CategoriesId)
+            if (id != Categorias.Id)
             {
                 return NotFound();
             }
@@ -97,12 +97,12 @@ namespace DmResinas.Controllers
             {
                 try
                 {
-                    _context.Update(categories);
+                    _context.Update(Categorias);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!CategoriesExists(categories.CategoriesId))
+                    if (!CategoriesExists(Categorias.Id))
                     {
                         return NotFound();
                     }
@@ -113,25 +113,25 @@ namespace DmResinas.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(categories);
+            return View(Categorias);
         }
 
         // GET: Categories/Delete/5
         public async Task<IActionResult> Delete(byte? id)
         {
-            if (id == null || _context.Categorie == null)
+            if (id == null || _context.Categorias == null)
             {
                 return NotFound();
             }
 
-            var categories = await _context.Categorie
-                .FirstOrDefaultAsync(m => m.CategoriesId == id);
-            if (categories == null)
+            var categorias = await _context.Categorias
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (categorias == null)
             {
                 return NotFound();
             }
 
-            return View(categories);
+            return View(categorias);
         }
 
         // POST: Categories/Delete/5
@@ -139,14 +139,14 @@ namespace DmResinas.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(byte id)
         {
-            if (_context.Categorie == null)
+            if (_context.Categorias == null)
             {
                 return Problem("Entity set 'AppDbContext.Categorie'  is null.");
             }
-            var categories = await _context.Categorie.FindAsync(id);
-            if (categories != null)
+            var categorias = await _context.Categorias.FindAsync(id);
+            if (categorias != null)
             {
-                _context.Categorie.Remove(categories);
+                _context.Categorias.Remove(categorias);
             }
             
             await _context.SaveChangesAsync();
@@ -155,7 +155,7 @@ namespace DmResinas.Controllers
 
         private bool CategoriesExists(byte id)
         {
-          return _context.Categorie.Any(e => e.CategoriesId == id);
+          return _context.Categorias.Any(e => e.Id == id);
         }
     }
 }

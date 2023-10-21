@@ -6,12 +6,12 @@ using DmResinas.Models;
 
 namespace DmResinas.Controllers
 {
-    public class ProductsController : Controller
+    public class ProdutosController : Controller
     {
         private readonly AppDbContext _context;
         private readonly IWebHostEnvironment _hostEnvironment;
 
-        public ProductsController(AppDbContext context, IWebHostEnvironment hostEnvironment)
+        public ProdutosController(AppDbContext context, IWebHostEnvironment hostEnvironment)
         {
             _context = context;
             _hostEnvironment = hostEnvironment;
@@ -20,31 +20,31 @@ namespace DmResinas.Controllers
         // GET: Products
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Product.ToListAsync());
+            return View(await _context.Produtos.ToListAsync());
         }
 
         // GET: Products/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.Product == null)
+            if (id == null || _context.Produtos == null)
             {
                 return NotFound();
             }
-            var Product = await _context.Product
-                .Where(m => m.ProdId == id)
-                .Include(m => m.Categories).ThenInclude(g => g.Categories)
+            var Produto = await _context.Produtos
+                .Where(p => p.Id == id)
+                .Include(p => p.Categorias).ThenInclude(c => c.Categoria)
                 .SingleOrDefaultAsync();
-            if (Product == null)
+            if (Produto == null)
             {
                 return NotFound();
             }
-            return View(Product);
+            return View(Produto);
         }
 
         // GET: Products/Create
         public IActionResult Create()
         {
-            ViewData["Categories"] = new MultiSelectList(_context.Categorie.OrderBy(t => t.CategorieName), "Id", "Name");
+            ViewData["Categories"] = new MultiSelectList(_context.Categorias.OrderBy(t => t.Nome), "Id", "Name");
             return View();
         }
 
@@ -53,53 +53,53 @@ namespace DmResinas.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Title,OriginalTitle,Synopsis,ProductYear,Duration,AgeRating,Image")] Products Product, IFormFile formFile, List<string> Categories)
+        public async Task<IActionResult> Create([Bind("Id,Title,OriginalTitle,Synopsis,ProductYear,Duration,AgeRating,Image")] Produto Produtos, IFormFile formFile, List<string> Categorias)
         {
             if (ModelState.IsValid)
             {
                 // Salva o Filme
-                _context.Add(Product);
+                _context.Add(Produtos);
                 await _context.SaveChangesAsync();
 
                 // Se tiver arquivo de imagem, salva a imagem no servidor com o ID do filme e adiciona o nome e caminho da imagem no banco
              
 
                 // Salva, se tiver, os Gêneros selecionados
-                Product.Categories = new List<ProductCategories>();
-                foreach (var Categorie in Categories)
+                Produtos.Categorias = new List<ProdutoCategoria>();
+                foreach (var Categoria in Categorias)
                 {
-                    Product.Categories.Add(new ProductCategories()
+                    Produtos.Categorias.Add(new ProdutoCategoria()
                     {
-                        CategorieId = byte.Parse(Categorie),
-                        ProdId = Product.ProdId
+                        CategoriaId = byte.Parse(Categoria),
+                        ProdutoId = Produtos.Id
                     });
                 }
-                if (Categories.Count > 0) await _context.SaveChangesAsync();
+                if (Categorias.Count > 0) await _context.SaveChangesAsync();
 
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["Categories"] = new MultiSelectList(_context.Categorie.OrderBy(t => t.CategorieName), "Id", "Name");
-            return View(Product);
+            ViewData["Categoria"] = new MultiSelectList(_context.Categorias.OrderBy(t => t.Nome), "Id", "Name");
+            return View(Produtos);
         }
 
         // GET: Products/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _context.Product == null)
+            if (id == null || _context.Produtos == null)
             {
                 return NotFound();
             }
-            var Product = await _context.Product
-                .Where(m => m.ProdId == id)
-                .Include(m => m.Categories).ThenInclude(g => g.Categories)
+            var Produtos = await _context.Produtos
+                .Where(p =>p.Id == id)
+                .Include(p =>p .Categorias).ThenInclude(g => g.Categoria)
                 .SingleOrDefaultAsync();
-            if (Product == null)
+            if (Produtos == null)
             {
                 return NotFound();
             }
-            var x = new MultiSelectList(_context.Categorie.OrderBy(t => t.CategorieName), "Id", "Name", Product.Categories.Select(g => g.Categories.CategoriesId.ToString()));
+            var x = new MultiSelectList(_context.Categorias.OrderBy(t => t.Nome), "Id", "Name", Produtos.Categorias.Select(g => g.Categoria.Id.ToString()));
             ViewData["Categories"] = x;
-            return View(Product);
+            return View(Produtos);
         }
 
         // POST: Products/Edit/5
@@ -107,9 +107,9 @@ namespace DmResinas.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,OriginalTitle,Synopsis,ProductYear,Duration,AgeRating,Image")] Products Product, IFormFile formFile, List<string> Categories)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,Descricao,Image")] Produto Produto, IFormFile formFile, List<string> Categorias)
         {
-            if (id != Product.ProdId)
+            if (id != Produto.Id)
             {
                 return NotFound();
             }
@@ -120,17 +120,17 @@ namespace DmResinas.Controllers
                 {
                     // Atualiza a Foto de Capa
                    
-                    Product.Categories = _context.ProductCategorie.Where(mg => mg.ProdId == Product.ProdId).OrderBy(mg => mg.CategorieId).ToList();
-                    _context.Update(Product);
-                    _context.RemoveRange(Product.Categories);
+                    Produto.Categorias = _context.ProdutoCategorias.Where(pc => pc.ProdutoId == Produto.Id).OrderBy(ca => ca.CategoriaId).ToList();
+                    _context.Update(Produto);
+                    _context.RemoveRange(Produto.Categorias);
                     await _context.SaveChangesAsync();
 
                     // Adiciona os Gêneros do Filme
-                    Categories.ForEach(g => _context.ProductCategorie.Add(
-                        new ProductCategories()
+                    Categorias.ForEach(g => _context.ProdutoCategorias.Add(
+                        new ProdutoCategoria()
                         {
-                            ProdId = Product.ProdId,
-                            CategorieId = byte.Parse(g)
+                            ProdutoId = Produto.Id,
+                            CategoriaId = byte.Parse(g)
                         }
                     ));
                     await _context.SaveChangesAsync();
@@ -138,7 +138,7 @@ namespace DmResinas.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ProductExists(Product.ProdId))
+                    if (!ProductExists(Produto.Id))
                     {
                         return NotFound();
                     }
@@ -149,21 +149,21 @@ namespace DmResinas.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["Categories"] = new SelectList(_context.Categorie.OrderBy(t => t.CategorieName), "Id", "Name");
-            return View(Product);
+            ViewData["Categories"] = new SelectList(_context.Categorias.OrderBy(n => n.Nome), "Id", "Name");
+            return View(Produto);
         }
 
         // GET: Products/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.Product == null)
+            if (id == null || _context.Produtos == null)
             {
                 return NotFound();
             }
 
-            var Product = await _context.Product
-                .Where(m => m.ProdId == id)
-                .Include(m => m.Categories).ThenInclude(g => g.Categories)
+            var Product = await _context.Produtos
+                .Where(p => p.Id == id)
+                .Include(p => p.Categorias).ThenInclude(c => c.Categoria)
                 .SingleOrDefaultAsync();
             if (Product == null)
             {
@@ -178,16 +178,16 @@ namespace DmResinas.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.Product == null)
+            if (_context.Produtos == null)
             {
                 return Problem("Entity set 'AppDbContext.Products'  is null.");
             }
-            var Product = await _context.Product.FindAsync(id);
-            if (Product != null)
+            var Produto = await _context.Produtos.FindAsync(id);
+            if (Produto != null)
             {
-                var ProductCategories = await _context.ProductCategorie.Where(mg => mg.ProdId == id).ToListAsync();
-                _context.ProductCategorie.RemoveRange(ProductCategories);
-                _context.Product.Remove(Product);
+                var ProdutoCategorias = await _context.ProdutoCategorias.Where(p => p.ProdutoId == id).ToListAsync();
+                _context.ProdutoCategorias.RemoveRange(ProdutoCategorias);
+                _context.Produtos.Remove(Produto);
             }
 
             await _context.SaveChangesAsync();
@@ -196,7 +196,7 @@ namespace DmResinas.Controllers
 
         private bool ProductExists(int id)
         {
-            return _context.Product.Any(e => e.ProdId == id);
+            return _context.Produtos.Any(e => e.Id == id);
         }
     }
 }

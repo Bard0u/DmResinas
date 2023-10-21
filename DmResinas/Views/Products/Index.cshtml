@@ -1,4 +1,4 @@
-@model IEnumerable<DmResinas.Models.Products>
+@model IEnumerable<DmResinas.Models.Produto>
 @{
     ViewData["Title"] = "Produtos";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
@@ -19,16 +19,13 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.ProdName)
+                @Html.DisplayNameFor(model => model.Nome)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ProdPrice)
+                @Html.DisplayNameFor(model => model.Preco)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ProdQtd)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ProdDescription)
+                @Html.DisplayNameFor(model => model.Descricao)
             </th>
             <th>Ações</th>
         </tr>
@@ -38,21 +35,18 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.ProdName)
+                    @Html.DisplayFor(modelItem => item.Nome)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.ProdPrice)
+                    @Html.DisplayFor(modelItem => item.Preco)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.ProdQtd)
+                    @Html.DisplayFor(modelItem => item.Descricao)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.ProdDescription)
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.ProdId" data-bs-toggle="tooltip" data-bs-title="Editar Produto"><i class="bi bi-pencil-fill me-2"></i></a> 
-                    <a asp-action="Details" asp-route-id="@item.ProdId" data-bs-toggle="tooltip" data-bs-title="Exibir Detalhes"><i class="bi bi-search me-2"></i></a> 
-                    <a asp-action="Delete" asp-route-id="@item.ProdId" data-bs-toggle="tooltip" data-bs-title="Excluir Produto"><i class="bi bi-trash-fill"></i></a>
+                    <a asp-action="Edit" asp-route-id="@item.Id" data-bs-toggle="tooltip" data-bs-title="Editar Produto"><i class="bi bi-pencil-fill me-2"></i></a> 
+                    <a asp-action="Details" asp-route-id="@item.Id" data-bs-toggle="tooltip" data-bs-title="Exibir Detalhes"><i class="bi bi-search me-2"></i></a> 
+                    <a asp-action="Delete" asp-route-id="@item.Id" data-bs-toggle="tooltip" data-bs-title="Excluir Produto"><i class="bi bi-trash-fill"></i></a>
                 </td>
             </tr>
         }

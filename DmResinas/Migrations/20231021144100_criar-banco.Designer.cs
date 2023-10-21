@@ -11,148 +11,236 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DmResinas.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230919141846_criar-banco")]
+    [Migration("20231021144100_criar-banco")]
     partial class criarbanco
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.16")
+                .HasAnnotation("ProductVersion", "6.0.20")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
-            modelBuilder.Entity("DmResinas.Models.Categories", b =>
+            modelBuilder.Entity("DmResinas.Models.Categoria", b =>
                 {
-                    b.Property<byte>("CategoriesId")
+                    b.Property<byte>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("tinyint unsigned");
 
-                    b.Property<string>("CategorieName")
+                    b.Property<bool>("Banner")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<byte?>("CategoriaPaiId")
+                        .HasColumnType("tinyint unsigned");
+
+                    b.Property<bool>("Filtrar")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<string>("Foto")
+                        .HasMaxLength(300)
+                        .HasColumnType("varchar(300)");
+
+                    b.Property<string>("Nome")
                         .IsRequired()
                         .HasMaxLength(30)
                         .HasColumnType("varchar(30)");
 
-                    b.HasKey("CategoriesId");
+                    b.HasKey("Id");
 
-                    b.ToTable("Categories");
+                    b.HasIndex("CategoriaPaiId");
+
+                    b.ToTable("Categoria");
                 });
 
-            modelBuilder.Entity("DmResinas.Models.Colors", b =>
+            modelBuilder.Entity("DmResinas.Models.Cor", b =>
                 {
-                    b.Property<byte>("CorId")
+                    b.Property<byte>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("tinyint unsigned");
 
-                    b.Property<string>("ColorCode")
+                    b.Property<string>("CodigoHexa")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasMaxLength(7)
+                        .HasColumnType("varchar(7)");
 
-                    b.Property<string>("ColorName")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.HasKey("CorId");
-
-                    b.ToTable("Colors");
-                });
-
-            modelBuilder.Entity("DmResinas.Models.Images", b =>
-                {
-                    b.Property<byte>("ImageId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("tinyint unsigned");
-
-                    b.Property<string>("ImageCode")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.HasKey("ImageId");
-
-                    b.ToTable("Images");
-                });
-
-            modelBuilder.Entity("DmResinas.Models.ProductCategories", b =>
-                {
-                    b.Property<int>("ProdId")
-                        .HasColumnType("int")
-                        .HasColumnOrder(1);
-
-                    b.Property<byte>("CategorieId")
-                        .HasColumnType("tinyint unsigned")
-                        .HasColumnOrder(2);
-
-                    b.Property<int?>("ProductId")
-                        .HasColumnType("int");
-
-                    b.HasKey("ProdId", "CategorieId");
-
-                    b.HasIndex("CategorieId");
-
-                    b.ToTable("ProductCategories");
-                });
-
-            modelBuilder.Entity("DmResinas.Models.ProductColors", b =>
-                {
-                    b.Property<int>("ProdId")
-                        .HasColumnType("int")
-                        .HasColumnOrder(1);
-
-                    b.Property<byte>("ColorId")
-                        .HasColumnType("tinyint unsigned")
-                        .HasColumnOrder(2);
-
-                    b.Property<int?>("ProductId")
-                        .HasColumnType("int");
-
-                    b.HasKey("ProdId", "ColorId");
-
-                    b.HasIndex("ColorId");
-
-                    b.ToTable("ProductColors");
-                });
-
-            modelBuilder.Entity("DmResinas.Models.Products", b =>
-                {
-                    b.Property<int>("ProdId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<byte>("ProdCode")
-                        .HasColumnType("tinyint unsigned");
-
-                    b.Property<string>("ProdDescription")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("ProdName")
+                    b.Property<string>("Nome")
                         .IsRequired()
                         .HasMaxLength(30)
                         .HasColumnType("varchar(30)");
 
-                    b.Property<double>("ProdPrice")
-                        .HasColumnType("double");
+                    b.HasKey("Id");
 
-                    b.Property<byte>("ProdQtd")
-                        .HasColumnType("tinyint unsigned");
-
-                    b.HasKey("ProdId");
-
-                    b.ToTable("Product");
+                    b.ToTable("Cor");
                 });
 
-            modelBuilder.Entity("DmResinas.Models.Sizes", b =>
+            modelBuilder.Entity("DmResinas.Models.Produto", b =>
                 {
-                    b.Property<byte>("SizeId")
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("Descricao")
+                        .HasMaxLength(8000)
+                        .HasColumnType("varchar(8000)");
+
+                    b.Property<string>("Descricaoresumida")
+                        .HasMaxLength(300)
+                        .HasColumnType("varchar(300)");
+
+                    b.Property<bool>("Destaque")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<string>("Dimensao")
+                        .HasMaxLength(20)
+                        .HasColumnType("varchar(20)");
+
+                    b.Property<string>("Material")
+                        .HasMaxLength(30)
+                        .HasColumnType("varchar(30)");
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasMaxLength(60)
+                        .HasColumnType("varchar(60)");
+
+                    b.Property<decimal>("Peso")
+                        .HasColumnType("decimal(6,3)");
+
+                    b.Property<decimal>("Preco")
+                        .HasColumnType("decimal(8,2)");
+
+                    b.Property<decimal>("PrecoDesconto")
+                        .HasColumnType("decimal(8,2)");
+
+                    b.Property<string>("SKU")
+                        .HasMaxLength(10)
+                        .HasColumnType("varchar(10)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Produto");
+                });
+
+            modelBuilder.Entity("DmResinas.Models.ProdutoAvaliacao", b =>
+                {
+                    b.Property<int>("ProdutoId")
+                        .HasColumnType("int")
+                        .HasColumnOrder(1);
+
+                    b.Property<string>("UsuarioId")
+                        .HasColumnType("varchar(255)")
+                        .HasColumnOrder(2);
+
+                    b.Property<DateTime>("AvaliacaoData")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("AvaliacaoTexto")
+                        .IsRequired()
+                        .HasMaxLength(300)
+                        .HasColumnType("varchar(300)");
+
+                    b.Property<byte?>("ProdutoNota")
                         .HasColumnType("tinyint unsigned");
 
-                    b.Property<double>("height")
-                        .HasColumnType("double");
+                    b.HasKey("ProdutoId", "UsuarioId");
 
-                    b.Property<double>("width")
-                        .HasColumnType("double");
+                    b.HasIndex("UsuarioId");
 
-                    b.HasKey("SizeId");
+                    b.ToTable("ProdutoAvaliacao");
+                });
 
-                    b.ToTable("Size");
+            modelBuilder.Entity("DmResinas.Models.ProdutoCategoria", b =>
+                {
+                    b.Property<int>("ProdutoId")
+                        .HasColumnType("int")
+                        .HasColumnOrder(1);
+
+                    b.Property<byte>("CategoriaId")
+                        .HasColumnType("tinyint unsigned")
+                        .HasColumnOrder(2);
+
+                    b.HasKey("ProdutoId", "CategoriaId");
+
+                    b.HasIndex("CategoriaId");
+
+                    b.ToTable("ProdtoCategoria");
+                });
+
+            modelBuilder.Entity("DmResinas.Models.ProdutoFoto", b =>
+                {
+                    b.Property<int>("Id")
+                        .HasColumnType("int")
+                        .HasColumnOrder(1);
+
+                    b.Property<int>("ProdutoId")
+                        .HasColumnType("int")
+                        .HasColumnOrder(2);
+
+                    b.Property<string>("ArquivoFoto")
+                        .IsRequired()
+                        .HasMaxLength(300)
+                        .HasColumnType("varchar(300)");
+
+                    b.Property<bool>("Destaque")
+                        .HasColumnType("tinyint(1)");
+
+                    b.HasKey("Id", "ProdutoId");
+
+                    b.HasIndex("ProdutoId");
+
+                    b.ToTable("ProdutoFotos");
+                });
+
+            modelBuilder.Entity("DmResinas.Models.Tamanho", b =>
+                {
+                    b.Property<byte>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("tinyint unsigned");
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasMaxLength(30)
+                        .HasColumnType("varchar(30)");
+
+                    b.Property<string>("Sigla")
+                        .IsRequired()
+                        .HasMaxLength(5)
+                        .HasColumnType("varchar(5)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Tamanho");
+                });
+
+            modelBuilder.Entity("DmResinas.Models.Usuario", b =>
+                {
+                    b.Property<string>("UsuarioId")
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<DateTime>("DataNascimento")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("Foto")
+                        .HasMaxLength(300)
+                        .HasColumnType("varchar(300)");
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasMaxLength(60)
+                        .HasColumnType("varchar(60)");
+
+                    b.HasKey("UsuarioId");
+
+                    b.ToTable("Usuario");
+
+                    b.HasData(
+                        new
+                        {
+                            UsuarioId = "2dbd45c4-b25a-466b-992c-4d982993205e",
+                            DataNascimento = new DateTime(1981, 8, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Foto = "/images/usuarios/avatar.png",
+                            Nome = "José Antonio Gallo Junior"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -178,27 +266,27 @@ namespace DmResinas.Migrations
                         .IsUnique()
                         .HasDatabaseName("RoleNameIndex");
 
-                    b.ToTable("Roles", (string)null);
+                    b.ToTable("AspNetRoles", (string)null);
 
                     b.HasData(
                         new
                         {
-                            Id = "91ee144c-af5f-4f11-a8a2-8e2be3f5ff6c",
-                            ConcurrencyStamp = "137bf228-4fa9-48c9-bf2e-97c794acda14",
+                            Id = "dd3d1a64-c2de-4c78-bc4f-d8296f49e756",
+                            ConcurrencyStamp = "6c622c6c-dfee-4e43-8071-fec941277ace",
                             Name = "Administrador",
                             NormalizedName = "ADMINISTRADOR"
                         },
                         new
                         {
-                            Id = "6e458181-f3f8-4971-915f-0be18852e8e2",
-                            ConcurrencyStamp = "7dfaae6d-de40-4949-b5ad-8627fbaa418f",
+                            Id = "65bb422f-a047-412c-b0f4-b034b951f2fb",
+                            ConcurrencyStamp = "c49b1ab6-71b1-4ad7-abda-7b35d2c1b2bc",
                             Name = "Moderador",
                             NormalizedName = "MODERADOR"
                         },
                         new
                         {
-                            Id = "51e448ef-c856-42cc-bdce-09fe66297bed",
-                            ConcurrencyStamp = "5545e0e0-5af7-4321-aa33-03b461cdbe55",
+                            Id = "014b90d0-8f96-44a8-b837-19ba28dc7e61",
+                            ConcurrencyStamp = "f35f30be-0f4f-4619-86e1-4b1a8ffd49fd",
                             Name = "Usuário",
                             NormalizedName = "USUÁRIO"
                         });
@@ -224,7 +312,7 @@ namespace DmResinas.Migrations
 
                     b.HasIndex("RoleId");
 
-                    b.ToTable("RolesClaims", (string)null);
+                    b.ToTable("AspNetRoleClaims", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUser", b =>
@@ -288,7 +376,25 @@ namespace DmResinas.Migrations
                         .IsUnique()
                         .HasDatabaseName("UserNameIndex");
 
-                    b.ToTable("Users", (string)null);
+                    b.ToTable("AspNetUsers", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "2dbd45c4-b25a-466b-992c-4d982993205e",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "eeaffe1e-5069-4853-97c2-651aec605bff",
+                            Email = "admin@cozastore.com",
+                            EmailConfirmed = true,
+                            LockoutEnabled = false,
+                            NormalizedEmail = "ADMIN@COZASTORE.COM",
+                            NormalizedUserName = "ADMIN",
+                            PasswordHash = "AQAAAAEAACcQAAAAEMorb+1bFWLa/oVJYttNbVFcCQs5fXr+ja1Ing+MTpgJHwNOpOJX6Jeg4QtzENRAhw==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "56ed29df-1c55-4ba3-96e4-a4409ab3ff78",
+                            TwoFactorEnabled = false,
+                            UserName = "Admin"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
@@ -311,7 +417,7 @@ namespace DmResinas.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("UserClaims", (string)null);
+                    b.ToTable("AspNetUserClaims", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
@@ -333,7 +439,7 @@ namespace DmResinas.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("UserLogins", (string)null);
+                    b.ToTable("AspNetUserLogins", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
@@ -348,13 +454,13 @@ namespace DmResinas.Migrations
 
                     b.HasIndex("RoleId");
 
-                    b.ToTable("UserRoles", (string)null);
+                    b.ToTable("AspNetUserRoles", (string)null);
 
                     b.HasData(
                         new
                         {
-                            UserId = "65d65b72-4157-445e-93be-72727af19ada",
-                            RoleId = "91ee144c-af5f-4f11-a8a2-8e2be3f5ff6c"
+                            UserId = "2dbd45c4-b25a-466b-992c-4d982993205e",
+                            RoleId = "dd3d1a64-c2de-4c78-bc4f-d8296f49e756"
                         });
                 });
 
@@ -374,85 +480,76 @@ namespace DmResinas.Migrations
 
                     b.HasKey("UserId", "LoginProvider", "Name");
 
-                    b.ToTable("UserTokens", (string)null);
+                    b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("DmResinas.Models.Clients", b =>
+            modelBuilder.Entity("DmResinas.Models.Categoria", b =>
                 {
-                    b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
+                    b.HasOne("DmResinas.Models.Categoria", "CategoriaPai")
+                        .WithMany()
+                        .HasForeignKey("CategoriaPaiId");
 
-                    b.Property<DateTime>("ClientAge")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<string>("ClientName")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("varchar(50)");
-
-                    b.Property<short>("ClientPhone")
-                        .HasColumnType("smallint");
-
-                    b.ToTable("Client");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = "65d65b72-4157-445e-93be-72727af19ada",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "dcd3ff48-58a1-49a6-b719-d8dca2ec63e2",
-                            Email = "pedroarossettoo@gmail.com",
-                            EmailConfirmed = true,
-                            LockoutEnabled = false,
-                            NormalizedEmail = "PEDROAROSSETTOO@GMAIL.COM",
-                            NormalizedUserName = "BARD0U",
-                            PasswordHash = "AQAAAAEAACcQAAAAEOJk+6WYKx/uQR4flVa5WOp1ZYjQT6Hjk6pvqDdvODX0EHWGCWbbTy7iGFQQxB2WLA==",
-                            PhoneNumber = "14997418713",
-                            PhoneNumberConfirmed = true,
-                            SecurityStamp = "37c219cf-e7ca-47c7-adc8-575ea1be782b",
-                            TwoFactorEnabled = false,
-                            UserName = "Bard0u",
-                            ClientAge = new DateTime(2006, 3, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            ClientName = "Pedro Luiz",
-                            ClientPhone = (short)0
-                        });
+                    b.Navigation("CategoriaPai");
                 });
 
-            modelBuilder.Entity("DmResinas.Models.ProductCategories", b =>
+            modelBuilder.Entity("DmResinas.Models.ProdutoAvaliacao", b =>
                 {
-                    b.HasOne("DmResinas.Models.Categories", "Categorie")
-                        .WithMany("Products")
-                        .HasForeignKey("CategorieId")
+                    b.HasOne("DmResinas.Models.Produto", "Produto")
+                        .WithMany("Avaliacoes")
+                        .HasForeignKey("ProdutoId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("DmResinas.Models.Products", "Products")
-                        .WithMany("Categories")
-                        .HasForeignKey("ProdId")
+                    b.HasOne("DmResinas.Models.Usuario", "Usuario")
+                        .WithMany("Avaliacoes")
+                        .HasForeignKey("UsuarioId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Categorie");
+                    b.Navigation("Produto");
 
-                    b.Navigation("Products");
+                    b.Navigation("Usuario");
                 });
 
-            modelBuilder.Entity("DmResinas.Models.ProductColors", b =>
+            modelBuilder.Entity("DmResinas.Models.ProdutoCategoria", b =>
                 {
-                    b.HasOne("DmResinas.Models.Colors", "Colors")
-                        .WithMany("Products")
-                        .HasForeignKey("ColorId")
+                    b.HasOne("DmResinas.Models.Categoria", "Categoria")
+                        .WithMany("Produtos")
+                        .HasForeignKey("CategoriaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("DmResinas.Models.Products", "Products")
-                        .WithMany("Colors")
-                        .HasForeignKey("ProdId")
+                    b.HasOne("DmResinas.Models.Produto", "Produto")
+                        .WithMany("Categorias")
+                        .HasForeignKey("ProdutoId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Colors");
+                    b.Navigation("Categoria");
 
-                    b.Navigation("Products");
+                    b.Navigation("Produto");
+                });
+
+            modelBuilder.Entity("DmResinas.Models.ProdutoFoto", b =>
+                {
+                    b.HasOne("DmResinas.Models.Produto", "Produto")
+                        .WithMany()
+                        .HasForeignKey("ProdutoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Produto");
+                });
+
+            modelBuilder.Entity("DmResinas.Models.Usuario", b =>
+                {
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "AccountUser")
+                        .WithMany()
+                        .HasForeignKey("UsuarioId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("AccountUser");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -506,30 +603,21 @@ namespace DmResinas.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("DmResinas.Models.Clients", b =>
+            modelBuilder.Entity("DmResinas.Models.Categoria", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
-                        .WithOne()
-                        .HasForeignKey("DmResinas.Models.Clients", "Id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.Navigation("Produtos");
                 });
 
-            modelBuilder.Entity("DmResinas.Models.Categories", b =>
+            modelBuilder.Entity("DmResinas.Models.Produto", b =>
                 {
-                    b.Navigation("Products");
+                    b.Navigation("Avaliacoes");
+
+                    b.Navigation("Categorias");
                 });
 
-            modelBuilder.Entity("DmResinas.Models.Colors", b =>
+            modelBuilder.Entity("DmResinas.Models.Usuario", b =>
                 {
-                    b.Navigation("Products");
-                });
-
-            modelBuilder.Entity("DmResinas.Models.Products", b =>
-                {
-                    b.Navigation("Categories");
-
-                    b.Navigation("Colors");
+                    b.Navigation("Avaliacoes");
                 });
 #pragma warning restore 612, 618
         }
