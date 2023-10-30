@@ -10,23 +10,24 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.WebUtilities;
+using DmResinas.Data;
 
 namespace DmResinas.Controllers;
 
 public class AccountController : Controller
 {
     private readonly ILogger<AccountController> _logger;
-    private readonly SignInManager<Usuario> _signInManager;
-    private readonly UserManager<Usuario> _userManager;
-    private readonly IUserStore<Usuario> _userStore;
-    private readonly IUserEmailStore<Usuario> _emailStore;
+    private readonly SignInManager<IdentityUser> _signInManager;
+    private readonly UserManager<IdentityUser> _userManager;
+    private readonly IUserStore<IdentityUser> _userStore;
+    private readonly IUserEmailStore<IdentityUser> _emailStore;
     private readonly IEmailSender _emailSender;
 
     public AccountController(
         ILogger<AccountController> logger,
-        SignInManager<Usuario> signInManager,
-        UserManager<Usuario> userManager,
-        IUserStore<Usuario> userStore,
+        SignInManager<IdentityUser> signInManager,
+        UserManager<IdentityUser> userManager,
+        IUserStore<IdentityUser> userStore,
         IEmailSender emailSender
 )
     {
@@ -54,34 +55,36 @@ public class AccountController : Controller
 
 
     [HttpPost]
-    public async Task<IActionResult> Login(LoginDto login)
+    public async Task<IActionResult> Login(LoginDto Login)
     {
         if (ModelState.IsValid)
         {
-            string userName = login.Email;
-            if (IsValidEmail(login.Email))
+            string userName = Login.Email;
+            if (IsValidEmail(Login.Email))
             {
-                var user = await _userManager.FindByEmailAsync(login.Email);
+                var user = await _userManager.FindByEmailAsync(Login.Email);
                 if (user != null)
-                    userName = user.Nome;
+                    userName = user.UserName;
             }
 
             var result = await _signInManager.PasswordSignInAsync(
-                userName, login.Password, login.RememberMe, lockoutOnFailure: true
+              userName, Login.Password, Login.RememberMe, lockoutOnFailure: true
             );
+
             if (result.Succeeded)
             {
-                _logger.LogInformation($"Usuário {login.Email} acessou o sistema");
-                return LocalRedirect(login.ReturnUrl);
+                _logger.LogInformation($"Usuario {Login.Email} acessou o sistema");
+                return LocalRedirect(Login.ReturnUrl);
             }
             if (result.IsLockedOut)
             {
-                _logger.LogWarning($"Usuário {login.Email} está bloqueado");
+                _logger.LogWarning($"Usuario {Login.Email} está bloqueado");
                 return RedirectToAction("Lockout");
             }
-            ModelState.AddModelError("login", "Usuário e/ou Senha Inválidos!!!");
+            ModelState.AddModelError(string.Empty, "Usuario e/ou senha invalidos !");
+
         }
-        return View(login);
+        return View(Login);
     }
 
 
@@ -102,33 +105,32 @@ public class AccountController : Controller
     }
 
 
-   [HttpPost]
+    [HttpPost]
     public async Task<IActionResult> Register(RegisterDto register)
     {
         if (ModelState.IsValid)
         {
-            var user = Activator.CreateInstance<Usuario>();
+            var users = Activator.CreateInstance<IdentityUser>();
 
-            user.Nome = register.Name;
-            user.DataNascimento = register.Age;
+            users.UserName = register.Name;
 
-            await _userStore.SetUserNameAsync(user, register.Name, CancellationToken.None);
-            await _emailStore.SetEmailAsync(user, register.Email, CancellationToken.None);
-            var result = await _userManager.CreateAsync(user, register.Password);
+            await _userStore.SetUserNameAsync(users, register.Name, CancellationToken.None);
+            await _emailStore.SetEmailAsync(users, register.Email, CancellationToken.None);
+            var result = await _userManager.CreateAsync(users, register.Password);
 
             if (result.Succeeded)
             {
-                _logger.LogInformation($"Novo usuário registrado com o email {user.Nome}.");
+                _logger.LogInformation($"Novo usuário registrado com o email {users.UserName}.");
 
-                var userId = await _userManager.GetUserIdAsync(user);
-                var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
+                var userId = await _userManager.GetUserIdAsync(users);
+                var code = await _userManager.GenerateEmailConfirmationTokenAsync(users);
                 code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
                 var callbackUrl = Url.Action(
                     "ConfirmEmail", "Account",
                     new { userId, code },
                     protocol: Request.Scheme);
 
-                await _userManager.AddToRoleAsync(user, "Usuário");
+                await _userManager.AddToRoleAsync(users, "Usuário");
 
                 await _emailSender.SendEmailAsync(register.Email, "EtecBook - Criação de Conta",
                     $"Por favor, confirme a criação de sua conta <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicando aqui</a>.");
@@ -241,13 +243,13 @@ public class AccountController : Controller
 
 
 
-    private IUserEmailStore<Usuario> GetEmailStore()
+    private IUserEmailStore<IdentityUser> GetEmailStore()
     {
         if (!_userManager.SupportsUserEmail)
         {
             throw new NotSupportedException("The default UI requires a user store with email support.");
         }
-        return (IUserEmailStore<Usuario>)_userStore;
+        return (IUserEmailStore<IdentityUser>)_userStore;
     }
 
 
