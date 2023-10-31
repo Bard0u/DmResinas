@@ -9,4 +9,6 @@ public class ForgetDto
     [StringLength(100, ErrorMessage = "O Email deve possuir no máximo 100 caracteres")]
     [Display(Name = "Informe seu Email de Cadastro que enviaremos as instruções para recuperar sua senha")]
     public string Email { get; set; }
+
+    public bool Sended { get; set; } = false;
 }

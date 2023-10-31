@@ -18,6 +18,8 @@ public class ResetPasswordDto
     public string ConfirmPassword { get; set; }
 
     public string Code { get; private set; }
+    
+    public bool Sended { get; set; } = false;
 
     public ResetPasswordDto(string email, string code)
     {

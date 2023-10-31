@@ -16,26 +16,31 @@ namespace DmResinas.Controllers;
 
 public class AccountController : Controller
 {
-    private readonly ILogger<AccountController> _logger;
+     private readonly ILogger<AccountController> _logger;
     private readonly SignInManager<IdentityUser> _signInManager;
     private readonly UserManager<IdentityUser> _userManager;
     private readonly IUserStore<IdentityUser> _userStore;
     private readonly IUserEmailStore<IdentityUser> _emailStore;
+    private readonly IWebHostEnvironment _hostEnvironment;
     private readonly IEmailSender _emailSender;
-
+    private readonly AppDbContext _contexto;
     public AccountController(
         ILogger<AccountController> logger,
         SignInManager<IdentityUser> signInManager,
         UserManager<IdentityUser> userManager,
         IUserStore<IdentityUser> userStore,
-        IEmailSender emailSender
-)
+        IWebHostEnvironment hostEnvironment,
+        IEmailSender emailSender,
+        AppDbContext contexto)
+
     {
         _logger = logger;
         _signInManager = signInManager;
         _userManager = userManager;
         _userStore = userStore;
         _emailStore = GetEmailStore();
+        _hostEnvironment = hostEnvironment;
+        _contexto = contexto;
         _emailSender = emailSender;
     }
 
@@ -45,46 +50,47 @@ public class AccountController : Controller
         return View();
     }
 
-    [HttpGet]
+      [HttpGet]
     public IActionResult Login(string returnUrl)
     {
-        LoginDto login = new();
-        login.ReturnUrl = returnUrl ?? Url.Content("~/");
+        LoginDto login = new()
+        {
+            ReturnUrl = returnUrl ?? Url.Content("~/")
+        };
         return View(login);
     }
 
 
     [HttpPost]
-    public async Task<IActionResult> Login(LoginDto Login)
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> Login(LoginDto login)
     {
         if (ModelState.IsValid)
         {
-            string userName = Login.Email;
-            if (IsValidEmail(Login.Email))
+            string userName = login.Email;
+            if (IsValidEmail(login.Email))
             {
-                var user = await _userManager.FindByEmailAsync(Login.Email);
+                var user = await _userManager.FindByEmailAsync(login.Email);
                 if (user != null)
                     userName = user.UserName;
             }
 
             var result = await _signInManager.PasswordSignInAsync(
-              userName, Login.Password, Login.RememberMe, lockoutOnFailure: true
+                userName, login.Password, login.RememberMe, lockoutOnFailure: true
             );
-
             if (result.Succeeded)
             {
-                _logger.LogInformation($"Usuario {Login.Email} acessou o sistema");
-                return LocalRedirect(Login.ReturnUrl);
+                _logger.LogInformation($"Usuário {login.Email} acessou o sistema");
+                return LocalRedirect(login.ReturnUrl);
             }
             if (result.IsLockedOut)
             {
-                _logger.LogWarning($"Usuario {Login.Email} está bloqueado");
+                _logger.LogWarning($"Usuário {login.Email} está bloqueado");
                 return RedirectToAction("Lockout");
             }
-            ModelState.AddModelError(string.Empty, "Usuario e/ou senha invalidos !");
-
+            ModelState.AddModelError(string.Empty, "Usuário e/ou Senha Inválidos!!!");
         }
-        return View(Login);
+        return View(login);
     }
 
 
@@ -101,18 +107,17 @@ public class AccountController : Controller
     [HttpGet]
     public IActionResult Register()
     {
-        return View();
+        RegisterDto register = new();
+        return View(register);
     }
 
 
     [HttpPost]
-    public async Task<IActionResult> Register(RegisterDto register)
+    public async Task<IActionResult> Register(RegisterDto register, IFormFile Foto)
     {
         if (ModelState.IsValid)
         {
             var users = Activator.CreateInstance<IdentityUser>();
-
-            users.UserName = register.Name;
 
             await _userStore.SetUserNameAsync(users, register.Name, CancellationToken.None);
             await _emailStore.SetEmailAsync(users, register.Email, CancellationToken.None);
@@ -130,18 +135,37 @@ public class AccountController : Controller
                     new { userId, code },
                     protocol: Request.Scheme);
 
-                await _userManager.AddToRoleAsync(users, "Usuário");
+                await _userManager.AddToRoleAsync(users, "Cliente");
 
-                await _emailSender.SendEmailAsync(register.Email, "EtecBook - Criação de Conta",
+                await _emailSender.SendEmailAsync(register.Email, "DmResinas - Criação de Conta",
                     $"Por favor, confirme a criação de sua conta <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicando aqui</a>.");
 
-                return RedirectToAction("RegisterConfirmation");
+                Usuario usuario = new()
+                {
+                    UsuarioId = userId,
+                    DataNascimento = register.Age ?? DateTime.Now,
+                    Nome = register.Name
+                };
+                if (Foto != null)
+                {
+                    string fileName = userId + Path.GetExtension(Foto.FileName);
+                    string uploads = Path.Combine(_hostEnvironment.WebRootPath, @"images\usuarios");
+                    string newFile = Path.Combine(uploads, fileName);
+                    using (var stream = new FileStream(newFile, FileMode.Create))
+                    {
+                        Foto.CopyTo(stream);
+                    }
+                    usuario.Foto = @"\images\usuarios\" + fileName;
+                }
+                _contexto.Add(usuario);
+                await _contexto.SaveChangesAsync();
             }
             foreach (var error in result.Errors)
             {
                 ModelState.AddModelError(string.Empty, TranslateIdentityErrors.TranslateErrorMessage(error.Code));
             }
         }
+        register.Sended = ModelState.IsValid;
         return View(register);
     }
 
@@ -177,38 +201,36 @@ public class AccountController : Controller
     [HttpGet]
     public IActionResult Forget()
     {
-        return View();
+        ForgetDto forget = new();
+        return View(forget);
     }
 
 
-    [HttpPost]
+[HttpPost]
+    [ValidateAntiForgeryToken]
     public async Task<IActionResult> Forget(ForgetDto forget)
     {
         if (ModelState.IsValid)
         {
             var user = await _userManager.FindByEmailAsync(forget.Email);
-            if (user == null || !(await _userManager.IsEmailConfirmedAsync(user)))
+            if (user != null && await _userManager.IsEmailConfirmedAsync(user))
             {
-                // Não revelar que o usuário não existe ou que não está confirmado
-                return RedirectToAction("ForgotPasswordConfirmation");
+                var code = await _userManager.GeneratePasswordResetTokenAsync(user);
+                code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
+                var callbackUrl = Url.Action(
+                    action: "ResetPassword",
+                    controller: "Account",
+                    values: new { email = forget.Email, code = code },
+                    protocol: Request.Scheme);
+
+                await _emailSender.SendEmailAsync(
+                    email: forget.Email,
+                    subject: "Recuperar Senha",
+                    htmlMessage: $"Para definir uma nova senha <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clique aqui</a>.");
             }
-
-            var code = await _userManager.GeneratePasswordResetTokenAsync(user);
-            code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
-            var callbackUrl = Url.Action(
-                action: "ResetPassword",
-                controller: "Account",
-                values: new { email = forget.Email, code = code },
-                protocol: Request.Scheme);
-
-            await _emailSender.SendEmailAsync(
-                email: forget.Email,
-                subject: "Recuperar Senha",
-                htmlMessage: $"Para definir uma nova senha <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clique aqui</a>.");
-
-            return RedirectToAction("ForgotPasswordConfirmation");
         }
-        return View();
+        forget.Sended = ModelState.IsValid;
+        return View(forget);
     }
 
 
@@ -226,19 +248,25 @@ public class AccountController : Controller
     }
 
 
-    [HttpGet]
-    public IActionResult ResetPassword(string email, string code)
+      [HttpPost]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> ResetPassword(ResetPasswordDto resetPassword)
     {
-        if (code == null || string.IsNullOrEmpty(email))
+        if (ModelState.IsValid)
         {
-            return BadRequest("Solicitação Inválida!!!");
+            var user = await _userManager.FindByEmailAsync(resetPassword.Email);
+            if (user != null)
+            {
+                var result = await _userManager.ResetPasswordAsync(user, resetPassword.Code, resetPassword.Password);
+                
+                foreach (var error in result.Errors)
+                {
+                    ModelState.AddModelError(string.Empty, TranslateIdentityErrors.TranslateErrorMessage(error.Code));
+                }
+            }
         }
-        ResetPasswordDto reset = new
-        (
-            email: email,
-            code: Encoding.UTF8.GetString(WebEncoders.Base64UrlDecode(code))
-        );
-        return View(reset);
+        resetPassword.Sended = ModelState.IsValid;
+        return View(resetPassword);
     }
 
 

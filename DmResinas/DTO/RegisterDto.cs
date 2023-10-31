@@ -9,10 +9,10 @@ public class RegisterDto
     [StringLength(60, ErrorMessage = "O nome deve possuir no maximo 60 caracteres")]
     public string Name { get; set; }
 
-    [DataType(DataType.Date)]
     [Display(Name = "Data de Nascimento")]
     [Required(ErrorMessage = "Por favor, informe sua data de nascimento")]
-    public DateTime Age { get; set; }
+    [DataType(DataType.Date)]
+    public DateTime? Age { get; set; }
 
     [Required(ErrorMessage = "Por favor, informe seu Email")]
     [StringLength(100, ErrorMessage = "O Email deve possuir no maximo 100 caracteres")]
@@ -31,5 +31,11 @@ public class RegisterDto
     [Compare("Password", ErrorMessage ="As Senhas não Conferem")]
    
     public string ConfirmPassword { get; set; }
+    
+    public string Foto { get; set; }
+    
+    public bool Termos { get; set; } = false;
+
+    public bool Sended { get; set; } = false;
 
 }
