@@ -54,7 +54,7 @@ namespace DmResinas.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Nome")] Categoria Categorias)
+        public async Task<IActionResult> Create([Bind("Id,Nome,Filtrar,Banner")] Categoria Categorias)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace DmResinas.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(byte id, [Bind("CategoriesId,CategorieName")] Categoria Categorias)
+        public async Task<IActionResult> Edit(byte id, [Bind("Id,Nome,Filtrar,Banner")] Categoria Categorias)
         {
             if (id != Categorias.Id)
             {

@@ -119,7 +119,7 @@ public class AccountController : Controller
         {
             var users = Activator.CreateInstance<IdentityUser>();
 
-            await _userStore.SetUserNameAsync(users, register.Name, CancellationToken.None);
+            await _userStore.SetUserNameAsync(users, register.Email, CancellationToken.None);
             await _emailStore.SetEmailAsync(users, register.Email, CancellationToken.None);
             var result = await _userManager.CreateAsync(users, register.Password);
 
@@ -135,7 +135,7 @@ public class AccountController : Controller
                     new { userId, code },
                     protocol: Request.Scheme);
 
-                await _userManager.AddToRoleAsync(users, "Cliente");
+                await _userManager.AddToRoleAsync(users, "usuarios");
 
                 await _emailSender.SendEmailAsync(register.Email, "DmResinas - Criação de Conta",
                     $"Por favor, confirme a criação de sua conta <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicando aqui</a>.");

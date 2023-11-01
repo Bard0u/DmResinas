@@ -25,7 +25,7 @@
                 @Html.DisplayNameFor(model => model.Preco)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Descricao)
+                @Html.DisplayNameFor(model => model.Descricaoresumida)
             </th>
             <th>Ações</th>
         </tr>
@@ -41,12 +41,15 @@
                     @Html.DisplayFor(modelItem => item.Preco)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Descricao)
+                    @Html.DisplayFor(modelItem => item.Descricaoresumida)
                 </td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id" data-bs-toggle="tooltip" data-bs-title="Editar Produto"><i class="bi bi-pencil-fill me-2"></i></a> 
-                    <a asp-action="Details" asp-route-id="@item.Id" data-bs-toggle="tooltip" data-bs-title="Exibir Detalhes"><i class="bi bi-search me-2"></i></a> 
-                    <a asp-action="Delete" asp-route-id="@item.Id" data-bs-toggle="tooltip" data-bs-title="Excluir Produto"><i class="bi bi-trash-fill"></i></a>
+                    <a asp-action="Edit" asp-route-id="@item.Id" data-bs-toggle="tooltip" data-bs-title="Editar Produto"><i
+                            class="bi bi-pencil-fill me-2"></i></a>
+                    <a asp-action="Details" asp-route-id="@item.Id" data-bs-toggle="tooltip"
+                        data-bs-title="Exibir Detalhes"><i class="bi bi-search me-2"></i></a>
+                    <a asp-action="Delete" asp-route-id="@item.Id" data-bs-toggle="tooltip"
+                        data-bs-title="Excluir Produto"><i class="bi bi-trash-fill"></i></a>
                 </td>
             </tr>
         }

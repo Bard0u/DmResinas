@@ -30,10 +30,6 @@ public class Produto
     [Column(TypeName = "decimal(8,2)")]
     [Required(ErrorMessage ="Informe o preço de venda")]
     public decimal Preco { get; set; }
-    
-    [Display(Name = "preço com desconto")]
-    [Column(TypeName = "decimal(8,2)")]
-    public decimal PrecoDesconto { get; set; }
 
     [Display(Name = "Produto em Destaque?")]
     public bool Destaque { get; set;}= false;

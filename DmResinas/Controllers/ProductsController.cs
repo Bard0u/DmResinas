@@ -44,7 +44,7 @@ namespace DmResinas.Controllers
         // GET: Products/Create
         public IActionResult Create()
         {
-            ViewData["Categories"] = new MultiSelectList(_context.Categorias.OrderBy(t => t.Nome), "Id", "Name");
+            ViewData["Categorias"] = new MultiSelectList(_context.Categorias.OrderBy(t => t.Nome), "Id", "Nome");
             return View();
         }
 
@@ -53,7 +53,7 @@ namespace DmResinas.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Title,OriginalTitle,Synopsis,ProductYear,Duration,AgeRating,Image")] Produto Produtos, IFormFile formFile, List<string> Categorias)
+        public async Task<IActionResult> Create([Bind("Id,Nome,Descricao,Descricaoresumida,Foto,Cor,Material,Dimensao,Preco,Categoria")] Produto Produtos, IFormFile formFile, List<string> Categorias)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace DmResinas.Controllers
 
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["Categoria"] = new MultiSelectList(_context.Categorias.OrderBy(t => t.Nome), "Id", "Name");
+            ViewData["Categoria"] = new MultiSelectList(_context.Categorias.OrderBy(t => t.Nome), "Id", "Nome");
             return View(Produtos);
         }
 
@@ -98,7 +98,7 @@ namespace DmResinas.Controllers
                 return NotFound();
             }
             var x = new MultiSelectList(_context.Categorias.OrderBy(t => t.Nome), "Id", "Name", Produtos.Categorias.Select(g => g.Categoria.Id.ToString()));
-            ViewData["Categories"] = x;
+            ViewData["Categorias"] = x;
             return View(Produtos);
         }
 
@@ -107,7 +107,7 @@ namespace DmResinas.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,Descricao,Image")] Produto Produto, IFormFile formFile, List<string> Categorias)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,Descricao,Descricaoresumida,Foto,Cor,Material,Dimensao,Preco,Categoria")] Produto Produto, IFormFile formFile, List<string> Categorias)
         {
             if (id != Produto.Id)
             {

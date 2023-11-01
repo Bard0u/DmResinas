@@ -35,8 +35,8 @@ public class AppDbSeed
         List<IdentityUser> users = new(){
             new IdentityUser(){
                 Id = Guid.NewGuid().ToString(),
-                Email = "admin@cozastore.com",
-                NormalizedEmail = "ADMIN@COZASTORE.COM",
+                Email = "admin@dmresinas.com",
+                NormalizedEmail = "ADMIN@DMRESINAS.COM",
                 UserName = "Admin",
                 NormalizedUserName = "ADMIN",
                 LockoutEnabled = false,
@@ -53,8 +53,8 @@ public class AppDbSeed
         List<Usuario> usuarios = new(){
             new Usuario(){
                 UsuarioId = users[0].Id,
-                Nome = "José Antonio Gallo Junior",
-                DataNascimento = DateTime.Parse("05/08/1981"),
+                Nome = "Bard0u",
+                DataNascimento = DateTime.Parse("22/03/2006"),
                 Foto = "/img/users/avatar.png"
             }
         };

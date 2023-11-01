@@ -18,9 +18,20 @@
             <input asp-for="Nome" class="form-control" />
             <span asp-validation-for="Nome" class="text-danger"></span>
         </div>
+        <div class="form-group">
+            <label asp-for="Filtrar" class="control-label"></label>
+            <input asp-for="Filtrar" type="checkbox" />
+            <span asp-validation-for="Filtrar" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Banner" class="control-label"></label>
+            <input asp-for="Banner" type="checkbox" />
+            <span asp-validation-for="Filtrar" class="text-danger"></span>
+        </div>
         <div class="form-group mt-4">
             <button type="submit" class="btn btn-success me-3"><i class="bi bi-save2-fill"></i> Salvar</button>
-            <a asp-action="Index" class="btn btn-primary"><i class="bi bi-arrow-left-circle-fill"></i> Voltar a Listagem</a>
+            <a asp-action="Index" class="btn btn-primary"><i class="bi bi-arrow-left-circle-fill"></i> Voltar a
+                Listagem</a>
         </div>
     </form>
 </div>

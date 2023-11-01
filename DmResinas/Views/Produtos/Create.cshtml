@@ -1,36 +1,53 @@
 @model DmResinas.Models.Produto
 @{
-    ViewData["Title"] = "Produtos";
+    ViewData["Title"] = "Products";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
 <h1 class="display-4">Produtos</h1>
-<h4 class="display-6">Alterar</h4>
+<h4 class="display-6">Adicionar</h4>
 <hr />
-<form asp-action="Edit" class="row" enctype="multipart/form-data">
-    <input type="hidden" asp-for="Id" />
-    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<form asp-action="Create" class="row" enctype="multipart/form-data">
     <div class="col-md-6 col-sm-12 col-xxl-7">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <div class="col-12 mb-2">
             <label asp-for="Nome" class="form-label"></label>
             <input asp-for="Nome" class="form-control" />
             <span asp-validation-for="Nome" class="text-danger"></span>
         </div>
         <div class="col-12 mb-2">
+            <label asp-for="Preco" class="form-label"></label>
+            <input asp-for="Preco" class="form-control" />
+            <span asp-validation-for="Preco" class="text-danger"></span>
+        </div>
+        <div class="col-12 mb-2">
             <label asp-for="Descricao" class="form-label"></label>
             <textarea asp-for="Descricao" class="form-control" rows="3"></textarea>
             <span asp-validation-for="Descricao" class="text-danger"></span>
         </div>
-            <div class="col-md-4">
-                <label asp-for="Preco" class="form-label"></label>
-                <input asp-for="Preco" class="form-control" />
-                <span asp-validation-for="Preco" class="text-danger"></span>
-            </div>
+        <div class="col-12 mb-2">
+            <label asp-for="Descricaoresumida" class="form-label"></label>
+            <textarea asp-for="Descricaoresumida" class="form-control" rows="3"></textarea>
+            <span asp-validation-for="Descricaoresumida" class="text-danger"></span>
+        </div>
+        <div class="col-12 mb-2">
+            <label asp-for="Material" class="form-label"></label>
+            <input asp-for="Material" class="form-control" />
+            <span asp-validation-for="Material" class="text-danger"></span>
         </div>
     </div>
+    <div class="row mb-2">
+    </div>
+
     <div class="col-md-2 col-sm-12 col-xxl-2">
         <label class="form-label">Categorias</label>
-        <select class="form-select" multiple asp-items="ViewBag.Genres" name="Genres" size="15">
+        <select class="form-select" multiple asp-items="ViewBag.Categorias" name="Categorias" size="15">
+        </select>
+    </div>
+    </div>
+    <div class="col-md-2 col-sm-12 col-xxl-2">
+        <label class="form-label">Cores Disponiveis</label>
+        <select class="form-select" multiple asp-items="ViewBag.Cores" name="Cores" size="15">
         </select>
     </div>
     <div class="col-12 mt-4">
@@ -45,22 +62,17 @@
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
     <script>
-        
-        function changeImage(){
+        function changeImage() {
             document.querySelector('input[type="file"]').click();
         }
 
         window.addEventListener('load', function () {
             document.querySelector('input[type="file"]').addEventListener('change', function () {
                 if (this.files && this.files[0]) {
-                    var img = document.getElementByProdId('PreviewImage');
+                    var img = document.getElementById('PreviewImage');
                     img.src = URL.createObjectURL(this.files[0]);
                 }
             });
         });
-
-
     </script>
 }
-
-
