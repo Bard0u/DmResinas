@@ -124,7 +124,6 @@ namespace DmResinas.Migrations
                     SKU = table.Column<string>(type: "varchar(10)", maxLength: 10, nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Preco = table.Column<decimal>(type: "decimal(8,2)", nullable: false),
-                    PrecoDesconto = table.Column<decimal>(type: "decimal(8,2)", nullable: false),
                     Destaque = table.Column<bool>(type: "tinyint(1)", nullable: false),
                     Peso = table.Column<decimal>(type: "decimal(6,3)", nullable: false),
                     Material = table.Column<string>(type: "varchar(30)", maxLength: 30, nullable: true)
@@ -388,25 +387,30 @@ namespace DmResinas.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "014b90d0-8f96-44a8-b837-19ba28dc7e61", "f35f30be-0f4f-4619-86e1-4b1a8ffd49fd", "Usuário", "USUÁRIO" },
-                    { "65bb422f-a047-412c-b0f4-b034b951f2fb", "c49b1ab6-71b1-4ad7-abda-7b35d2c1b2bc", "Moderador", "MODERADOR" },
-                    { "dd3d1a64-c2de-4c78-bc4f-d8296f49e756", "6c622c6c-dfee-4e43-8071-fec941277ace", "Administrador", "ADMINISTRADOR" }
+                    { "2a63a616-6133-4070-82df-dab5eda4b70b", "7deb27dd-2eae-4f2f-b1fa-738a69c747c8", "Administrador", "ADMINISTRADOR" },
+                    { "45882959-0bd5-4528-9571-e1cdd6cef15d", "4fa0ea05-02a5-4de1-a569-75a79def54aa", "Cliente", "CLIENTE" },
+                    { "9bb2a0ea-8256-479a-8a19-16179de453ee", "7e65c93e-48d1-44fd-a8d4-beaea63360a4", "Funcionário", "FUNCIONARIO" }
                 });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "2dbd45c4-b25a-466b-992c-4d982993205e", 0, "eeaffe1e-5069-4853-97c2-651aec605bff", "admin@cozastore.com", true, false, null, "ADMIN@COZASTORE.COM", "ADMIN", "AQAAAAEAACcQAAAAEMorb+1bFWLa/oVJYttNbVFcCQs5fXr+ja1Ing+MTpgJHwNOpOJX6Jeg4QtzENRAhw==", null, false, "56ed29df-1c55-4ba3-96e4-a4409ab3ff78", false, "Admin" });
+                values: new object[] { "06008c82-8825-4356-b8f2-3fc74043d193", 0, "21cfc406-4a3b-46de-af8c-ac9ec099a1f8", "admin@dmresinas.com", true, false, null, "ADMIN@DMRESINAS.COM", "ADMIN", "AQAAAAEAACcQAAAAEBNYPihpECJgmwT0NDugMIx7Yhf+IUW+QW+xO6LGNEoqAptKZErtZI0wOATxuYB/jw==", null, false, "2003a96c-b802-4bd1-83e3-b82afa236634", false, "Admin" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUserRoles",
                 columns: new[] { "RoleId", "UserId" },
-                values: new object[] { "dd3d1a64-c2de-4c78-bc4f-d8296f49e756", "2dbd45c4-b25a-466b-992c-4d982993205e" });
+                values: new object[,]
+                {
+                    { "2a63a616-6133-4070-82df-dab5eda4b70b", "06008c82-8825-4356-b8f2-3fc74043d193" },
+                    { "45882959-0bd5-4528-9571-e1cdd6cef15d", "06008c82-8825-4356-b8f2-3fc74043d193" },
+                    { "9bb2a0ea-8256-479a-8a19-16179de453ee", "06008c82-8825-4356-b8f2-3fc74043d193" }
+                });
 
             migrationBuilder.InsertData(
                 table: "Usuario",
                 columns: new[] { "UsuarioId", "DataNascimento", "Foto", "Nome" },
-                values: new object[] { "2dbd45c4-b25a-466b-992c-4d982993205e", new DateTime(1981, 8, 5, 0, 0, 0, 0, DateTimeKind.Unspecified), "/images/usuarios/avatar.png", "José Antonio Gallo Junior" });
+                values: new object[] { "06008c82-8825-4356-b8f2-3fc74043d193", new DateTime(2006, 3, 22, 0, 0, 0, 0, DateTimeKind.Unspecified), "/img/users/avatar.png", "Bard0u" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",

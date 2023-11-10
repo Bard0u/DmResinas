@@ -60,8 +60,7 @@ public class AccountController : Controller
         return View(login);
     }
 
-
-    [HttpPost]
+[HttpPost]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Login(LoginDto login)
     {
@@ -95,7 +94,7 @@ public class AccountController : Controller
 
 
     [HttpPost]
-    [Authorize]
+    [ValidateAntiForgeryToken]
     public async Task<IActionResult> Logout()
     {
         _logger.LogInformation($"Usuário {ClaimTypes.Email} fez logoff");
@@ -113,33 +112,32 @@ public class AccountController : Controller
 
 
     [HttpPost]
+    [ValidateAntiForgeryToken]
     public async Task<IActionResult> Register(RegisterDto register, IFormFile Foto)
     {
         if (ModelState.IsValid)
         {
-            var users = Activator.CreateInstance<IdentityUser>();
+            var user = Activator.CreateInstance<IdentityUser>();
 
-            await _userStore.SetUserNameAsync(users, register.Email, CancellationToken.None);
-            await _emailStore.SetEmailAsync(users, register.Email, CancellationToken.None);
-            var result = await _userManager.CreateAsync(users, register.Password);
+            await _userStore.SetUserNameAsync(user, register.Email, CancellationToken.None);
+            await _emailStore.SetEmailAsync(user, register.Email, CancellationToken.None);
+            var result = await _userManager.CreateAsync(user, register.Password);
 
             if (result.Succeeded)
             {
-                _logger.LogInformation($"Novo usuário registrado com o email {users.UserName}.");
+                _logger.LogInformation($"Novo usuário registrado com o email {user.Email}.");
 
-                var userId = await _userManager.GetUserIdAsync(users);
-                var code = await _userManager.GenerateEmailConfirmationTokenAsync(users);
+                var userId = await _userManager.GetUserIdAsync(user);
+                /*  var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
                 code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
                 var callbackUrl = Url.Action(
                     "ConfirmEmail", "Account",
                     new { userId, code },
-                    protocol: Request.Scheme);
+                    protocol: Request.Scheme); */
 
-                await _userManager.AddToRoleAsync(users, "usuarios");
+                await _userManager.AddToRoleAsync(user, "Cliente");
 
-                await _emailSender.SendEmailAsync(register.Email, "DmResinas - Criação de Conta",
-                    $"Por favor, confirme a criação de sua conta <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicando aqui</a>.");
-
+                // Cria a conta pessoal do usuário
                 Usuario usuario = new()
                 {
                     UsuarioId = userId,
@@ -170,13 +168,10 @@ public class AccountController : Controller
     }
 
 
-    [HttpGet]
-    public IActionResult RegisterConfirmation()
-    {
-        return View();
-    }
 
-    [HttpGet]
+
+
+    /*[HttpGet]
     public async Task<IActionResult> ConfirmEmail(string userId, string code)
     {
         if (userId == null || code == null)
@@ -194,7 +189,7 @@ public class AccountController : Controller
         var result = await _userManager.ConfirmEmailAsync(user, code);
         return View(result.Succeeded);
     }
-
+*/
 
 
 
@@ -233,19 +228,6 @@ public class AccountController : Controller
         return View(forget);
     }
 
-
-    [HttpGet]
-    public IActionResult AccessDenied()
-    {
-        return View();
-    }
-
-
-    [HttpGet]
-    public IActionResult ForgotPasswordConfirmation()
-    {
-        return View();
-    }
 
 
       [HttpPost]

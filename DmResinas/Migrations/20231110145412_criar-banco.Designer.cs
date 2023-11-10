@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DmResinas.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20231021144100_criar-banco")]
+    [Migration("20231110145412_criar-banco")]
     partial class criarbanco
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -107,9 +107,6 @@ namespace DmResinas.Migrations
                         .HasColumnType("decimal(6,3)");
 
                     b.Property<decimal>("Preco")
-                        .HasColumnType("decimal(8,2)");
-
-                    b.Property<decimal>("PrecoDesconto")
                         .HasColumnType("decimal(8,2)");
 
                     b.Property<string>("SKU")
@@ -236,10 +233,10 @@ namespace DmResinas.Migrations
                     b.HasData(
                         new
                         {
-                            UsuarioId = "2dbd45c4-b25a-466b-992c-4d982993205e",
-                            DataNascimento = new DateTime(1981, 8, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Foto = "/images/usuarios/avatar.png",
-                            Nome = "José Antonio Gallo Junior"
+                            UsuarioId = "06008c82-8825-4356-b8f2-3fc74043d193",
+                            DataNascimento = new DateTime(2006, 3, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Foto = "/img/users/avatar.png",
+                            Nome = "Bard0u"
                         });
                 });
 
@@ -271,24 +268,24 @@ namespace DmResinas.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "dd3d1a64-c2de-4c78-bc4f-d8296f49e756",
-                            ConcurrencyStamp = "6c622c6c-dfee-4e43-8071-fec941277ace",
+                            Id = "2a63a616-6133-4070-82df-dab5eda4b70b",
+                            ConcurrencyStamp = "7deb27dd-2eae-4f2f-b1fa-738a69c747c8",
                             Name = "Administrador",
                             NormalizedName = "ADMINISTRADOR"
                         },
                         new
                         {
-                            Id = "65bb422f-a047-412c-b0f4-b034b951f2fb",
-                            ConcurrencyStamp = "c49b1ab6-71b1-4ad7-abda-7b35d2c1b2bc",
-                            Name = "Moderador",
-                            NormalizedName = "MODERADOR"
+                            Id = "9bb2a0ea-8256-479a-8a19-16179de453ee",
+                            ConcurrencyStamp = "7e65c93e-48d1-44fd-a8d4-beaea63360a4",
+                            Name = "Funcionário",
+                            NormalizedName = "FUNCIONARIO"
                         },
                         new
                         {
-                            Id = "014b90d0-8f96-44a8-b837-19ba28dc7e61",
-                            ConcurrencyStamp = "f35f30be-0f4f-4619-86e1-4b1a8ffd49fd",
-                            Name = "Usuário",
-                            NormalizedName = "USUÁRIO"
+                            Id = "45882959-0bd5-4528-9571-e1cdd6cef15d",
+                            ConcurrencyStamp = "4fa0ea05-02a5-4de1-a569-75a79def54aa",
+                            Name = "Cliente",
+                            NormalizedName = "CLIENTE"
                         });
                 });
 
@@ -381,17 +378,17 @@ namespace DmResinas.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "2dbd45c4-b25a-466b-992c-4d982993205e",
+                            Id = "06008c82-8825-4356-b8f2-3fc74043d193",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "eeaffe1e-5069-4853-97c2-651aec605bff",
-                            Email = "admin@cozastore.com",
+                            ConcurrencyStamp = "21cfc406-4a3b-46de-af8c-ac9ec099a1f8",
+                            Email = "admin@dmresinas.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
-                            NormalizedEmail = "ADMIN@COZASTORE.COM",
+                            NormalizedEmail = "ADMIN@DMRESINAS.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAEAACcQAAAAEMorb+1bFWLa/oVJYttNbVFcCQs5fXr+ja1Ing+MTpgJHwNOpOJX6Jeg4QtzENRAhw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEBNYPihpECJgmwT0NDugMIx7Yhf+IUW+QW+xO6LGNEoqAptKZErtZI0wOATxuYB/jw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "56ed29df-1c55-4ba3-96e4-a4409ab3ff78",
+                            SecurityStamp = "2003a96c-b802-4bd1-83e3-b82afa236634",
                             TwoFactorEnabled = false,
                             UserName = "Admin"
                         });
@@ -459,8 +456,18 @@ namespace DmResinas.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "2dbd45c4-b25a-466b-992c-4d982993205e",
-                            RoleId = "dd3d1a64-c2de-4c78-bc4f-d8296f49e756"
+                            UserId = "06008c82-8825-4356-b8f2-3fc74043d193",
+                            RoleId = "2a63a616-6133-4070-82df-dab5eda4b70b"
+                        },
+                        new
+                        {
+                            UserId = "06008c82-8825-4356-b8f2-3fc74043d193",
+                            RoleId = "9bb2a0ea-8256-479a-8a19-16179de453ee"
+                        },
+                        new
+                        {
+                            UserId = "06008c82-8825-4356-b8f2-3fc74043d193",
+                            RoleId = "45882959-0bd5-4528-9571-e1cdd6cef15d"
                         });
                 });
 

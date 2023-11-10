@@ -5,85 +5,85 @@ using DmResinas.Models;
 
 namespace DmResinas.Controllers
 {
-    public class CategoriesController : Controller
+    public class CoresController : Controller
     {
         private readonly AppDbContext _context;
 
-        public CategoriesController(AppDbContext context)
+        public CoresController(AppDbContext context)
         {
             _context = context;
         }
 
-        // GET: Categories
+        // GET: Cores
         public async Task<IActionResult> Index()
         {
-              return View(await _context.Categorias.ToListAsync());
+              return View(await _context.Cores.ToListAsync());
         }
 
-        // GET: Categories/Details/5
+        // GET: Cores/Details/5
         public async Task<IActionResult> Details(byte? id)
         {
-            if (id == null || _context.Categorias == null)
+            if (id == null || _context.Cores == null)
             {
                 return NotFound();
             }
 
-            var Categorias = await _context.Categorias
+            var Cores = await _context.Cores
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (Categorias == null)
+            if (Cores == null)
             {
                 return NotFound();
             }
 
-            return View(Categorias);
+            return View(Cores);
         }
 
-        // GET: Categories/Create
+        // GET: Cores/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Categories/Create
+        // POST: Cores/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Nome,Filtrar,Banner")] Categoria Categorias)
+        public async Task<IActionResult> Create([Bind("Id,Nome,CodigoHexa")] Cor Cores)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(Categorias);
+                _context.Add(Cores);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(Categorias);
+            return View(Cores);
         }
 
-        // GET: Categories/Edit/5
+        // GET: Cores/Edit/5
         public async Task<IActionResult> Edit(byte? id)
         {
-            if (id == null || _context.Categorias == null)
+            if (id == null || _context.Cores == null)
             {
                 return NotFound();
             }
 
-            var Categoria = await _context.Categorias.FindAsync(id);
-            if (Categoria == null)
+            var Cor = await _context.Cores.FindAsync(id);
+            if (Cor == null)
             {
                 return NotFound();
             }
-            return View(Categoria);
+            return View(Cor);
         }
 
-        // POST: Categories/Edit/5
+        // POST: Cores/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(byte id, [Bind("Id,Nome,Filtrar,Banner")] Categoria Categorias)
+        public async Task<IActionResult> Edit(byte id, [Bind("Id,Nome,CodigoHexa")] Cor Cores)
         {
-            if (id != Categorias.Id)
+            if (id != Cores.Id)
             {
                 return NotFound();
             }
@@ -92,12 +92,12 @@ namespace DmResinas.Controllers
             {
                 try
                 {
-                    _context.Update(Categorias);
+                    _context.Update(Cores);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!CategoriesExists(Categorias.Id))
+                    if (!CoresExists(Cores.Id))
                     {
                         return NotFound();
                     }
@@ -108,49 +108,49 @@ namespace DmResinas.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(Categorias);
+            return View(Cores);
         }
 
-        // GET: Categories/Delete/5
+        // GET: Cores/Delete/5
         public async Task<IActionResult> Delete(byte? id)
         {
-            if (id == null || _context.Categorias == null)
+            if (id == null || _context.Cores == null)
             {
                 return NotFound();
             }
 
-            var categorias = await _context.Categorias
+            var Cores = await _context.Cores
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (categorias == null)
+            if (Cores == null)
             {
                 return NotFound();
             }
 
-            return View(categorias);
+            return View(Cores);
         }
 
-        // POST: Categories/Delete/5
+        // POST: Cores/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(byte id)
         {
-            if (_context.Categorias == null)
+            if (_context.Cores == null)
             {
                 return Problem("Entity set 'AppDbContext.Categorie'  is null.");
             }
-            var categorias = await _context.Categorias.FindAsync(id);
-            if (categorias != null)
+            var Cores = await _context.Cores.FindAsync(id);
+            if (Cores != null)
             {
-                _context.Categorias.Remove(categorias);
+                _context.Cores.Remove(Cores);
             }
             
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool CategoriesExists(byte id)
+        private bool CoresExists(byte id)
         {
-          return _context.Categorias.Any(e => e.Id == id);
+          return _context.Cores.Any(e => e.Id == id);
         }
     }
 }

@@ -19,7 +19,8 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 );
 
 // Serviço de Gestão de Usuário - Identity
-builder.Services.AddIdentity<IdentityUser, IdentityRole>()
+builder.Services.AddIdentity<IdentityUser, IdentityRole>(options =>
+    options.SignIn.RequireConfirmedEmail = false)
     .AddEntityFrameworkStores<AppDbContext>()
     .AddDefaultTokenProviders();
 

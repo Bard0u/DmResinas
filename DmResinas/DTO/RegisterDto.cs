@@ -37,5 +37,4 @@ public class RegisterDto
     public bool Termos { get; set; } = false;
 
     public bool Sended { get; set; } = false;
-
 }

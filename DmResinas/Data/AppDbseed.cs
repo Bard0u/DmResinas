@@ -56,7 +56,7 @@ public class AppDbSeed
                 Nome = "Bard0u",
                 DataNascimento = DateTime.Parse("22/03/2006"),
                 Foto = "/img/users/avatar.png"
-            }
+            }   
         };
         builder.Entity<Usuario>().HasData(usuarios);
         #endregion

@@ -1,12 +1,12 @@
-@model DmResinas.Models.Categoria
+@model DmResinas.Models.Cor
 @{
-    ViewData["Title"] = "Categorias";
+    ViewData["Title"] = "Cores";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
 <div class="col-md-4 m-auto">
 
-    <h1 class="display-4">Categoria</h1>
+    <h1 class="display-4">Cor</h1>
     <h4 class="display-6">Alterar</h4>
     <hr />
 
@@ -18,16 +18,12 @@
             <input asp-for="Nome" class="form-control" />
             <span asp-validation-for="Nome" class="text-danger"></span>
         </div>
-        <div class="form-group">
-            <label asp-for="Filtrar" class="control-label"></label>
-            <input asp-for="Filtrar" type="checkbox" />
-            <span asp-validation-for="Filtrar" class="text-danger"></span>
+        <div class="col-12 mb-2">
+            <label asp-for="CodigoHexa" class="form-label"></label>
+            <input asp-for="CodigoHexa" class="form-control" />
+            <span asp-validation-for="CodigoHexa" class="text-danger"></span>
         </div>
-        <div class="form-group">
-            <label asp-for="Banner" class="control-label"></label>
-            <input asp-for="Banner" type="checkbox" />
-            <span asp-validation-for="Filtrar" class="text-danger"></span>
-        </div>
+
         <div class="form-group mt-4">
             <button type="submit" class="btn btn-success me-3"><i class="bi bi-save2-fill"></i> Salvar</button>
             <a asp-action="Index" class="btn btn-primary"><i class="bi bi-arrow-left-circle-fill"></i> Voltar a
