@@ -144,3 +144,6 @@ swipe.on("swiperight", (ev) => {
       })
   }
 })()
+
+
+console.log('oi');
