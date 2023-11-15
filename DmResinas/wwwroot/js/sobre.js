@@ -1,7 +1,7 @@
 /* PAGINA SOBRE */
 
 const boxes = document.querySelectorAll('.datesSobre, .infoSobre');
-connsole.log(oi)
+console.log("oi");
 window.addEventListener('scroll', checkBoxes);
 console.log('ae');
 checkBoxes();
