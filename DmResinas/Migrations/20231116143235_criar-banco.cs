@@ -387,30 +387,63 @@ namespace DmResinas.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "2a63a616-6133-4070-82df-dab5eda4b70b", "7deb27dd-2eae-4f2f-b1fa-738a69c747c8", "Administrador", "ADMINISTRADOR" },
-                    { "45882959-0bd5-4528-9571-e1cdd6cef15d", "4fa0ea05-02a5-4de1-a569-75a79def54aa", "Cliente", "CLIENTE" },
-                    { "9bb2a0ea-8256-479a-8a19-16179de453ee", "7e65c93e-48d1-44fd-a8d4-beaea63360a4", "Funcionário", "FUNCIONARIO" }
+                    { "1c033911-ec92-4275-99ad-d1beb622d9b1", "b04264be-55e9-4a83-8e05-f4f653dc2f45", "Administrador", "ADMINISTRADOR" },
+                    { "2629d035-212e-47f8-b263-625d6f8d27ff", "95520b91-d449-4a44-8661-b101228c72d3", "Cliente", "CLIENTE" },
+                    { "caf21585-a0aa-4504-8cd0-85447362c157", "f42f4906-c5d6-4a9f-9dec-35038da255ac", "Funcionário", "FUNCIONARIO" }
                 });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "06008c82-8825-4356-b8f2-3fc74043d193", 0, "21cfc406-4a3b-46de-af8c-ac9ec099a1f8", "admin@dmresinas.com", true, false, null, "ADMIN@DMRESINAS.COM", "ADMIN", "AQAAAAEAACcQAAAAEBNYPihpECJgmwT0NDugMIx7Yhf+IUW+QW+xO6LGNEoqAptKZErtZI0wOATxuYB/jw==", null, false, "2003a96c-b802-4bd1-83e3-b82afa236634", false, "Admin" });
+                values: new object[] { "114fbbf8-b1cb-4aaf-9dca-e2a5a7d46f41", 0, "7122f347-9264-4efe-a73e-63c1b008d183", "admin@dmresinas.com", true, false, null, "ADMIN@DMRESINAS.COM", "ADMIN", "AQAAAAEAACcQAAAAEH67pGVah2qzFnSxKJFRRp7+pcIfNIDXN7GAh7d6/ayqhFMmUABHt1r+gdOyCNwLMw==", null, false, "8319e04f-2069-4619-a537-f1fc2794ce31", false, "Admin" });
+
+            migrationBuilder.InsertData(
+                table: "Categoria",
+                columns: new[] { "Id", "Banner", "CategoriaPaiId", "Filtrar", "Foto", "Nome" },
+                values: new object[,]
+                {
+                    { (byte)1, true, null, true, "images/categorias/1.jpg", "Feminina" },
+                    { (byte)2, true, null, true, "images/categorias/2.jpg", "Masculina" },
+                    { (byte)3, true, null, false, "images/categorias/3.jpg", "Acessórios" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Cor",
+                columns: new[] { "Id", "CodigoHexa", "Nome" },
+                values: new object[,]
+                {
+                    { (byte)1, "#222", "Preto" },
+                    { (byte)2, "#4272d7", "Azul" },
+                    { (byte)3, "#b3b3b3", "Cinza" },
+                    { (byte)4, "#00ad5f", "Verde" },
+                    { (byte)5, "#fa4251", "Vermelho" },
+                    { (byte)6, "#aaa", "Branco" }
+                });
 
             migrationBuilder.InsertData(
                 table: "AspNetUserRoles",
                 columns: new[] { "RoleId", "UserId" },
                 values: new object[,]
                 {
-                    { "2a63a616-6133-4070-82df-dab5eda4b70b", "06008c82-8825-4356-b8f2-3fc74043d193" },
-                    { "45882959-0bd5-4528-9571-e1cdd6cef15d", "06008c82-8825-4356-b8f2-3fc74043d193" },
-                    { "9bb2a0ea-8256-479a-8a19-16179de453ee", "06008c82-8825-4356-b8f2-3fc74043d193" }
+                    { "1c033911-ec92-4275-99ad-d1beb622d9b1", "114fbbf8-b1cb-4aaf-9dca-e2a5a7d46f41" },
+                    { "2629d035-212e-47f8-b263-625d6f8d27ff", "114fbbf8-b1cb-4aaf-9dca-e2a5a7d46f41" },
+                    { "caf21585-a0aa-4504-8cd0-85447362c157", "114fbbf8-b1cb-4aaf-9dca-e2a5a7d46f41" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Categoria",
+                columns: new[] { "Id", "Banner", "CategoriaPaiId", "Filtrar", "Foto", "Nome" },
+                values: new object[,]
+                {
+                    { (byte)4, false, (byte)3, true, "", "Bolsas" },
+                    { (byte)5, false, (byte)3, true, "", "Calçados" },
+                    { (byte)6, false, (byte)3, true, "", "Relógios" }
                 });
 
             migrationBuilder.InsertData(
                 table: "Usuario",
                 columns: new[] { "UsuarioId", "DataNascimento", "Foto", "Nome" },
-                values: new object[] { "06008c82-8825-4356-b8f2-3fc74043d193", new DateTime(2006, 3, 22, 0, 0, 0, 0, DateTimeKind.Unspecified), "/img/users/avatar.png", "Bard0u" });
+                values: new object[] { "114fbbf8-b1cb-4aaf-9dca-e2a5a7d46f41", new DateTime(2006, 3, 22, 0, 0, 0, 0, DateTimeKind.Unspecified), "/img/users/avatar.png", "Bard0u" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",

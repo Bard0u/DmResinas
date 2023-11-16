@@ -16,6 +16,8 @@ public class AppDbContext : IdentityDbContext
     public DbSet<Usuario> Usuarios { get; set; }
     public DbSet<ProdutoAvaliacao> ProdutoAvaliacaos { get; set; }
     public DbSet<ProdutoCategoria> ProdutoCategorias { get; set; }
+
+    public DbSet<ProdutoCor> ProdutoCores { get; set; }
     public DbSet<ProdutoFoto> ProdutoFotos { get; set; }
 
     protected override void OnModelCreating(ModelBuilder builder)
@@ -61,6 +63,7 @@ public class AppDbContext : IdentityDbContext
             .WithMany(c => c.Produtos)
             .HasForeignKey(pc => pc.CategoriaId);
         #endregion
+
 
     }
 }
