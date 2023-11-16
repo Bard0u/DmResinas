@@ -33,6 +33,7 @@ namespace DmResinas.Controllers
             var Produto = await _context.Produtos
                 .Where(p => p.Id == id)
                 .Include(p => p.Categorias).ThenInclude(c => c.Categoria)
+                .Include(p => p.Cores).ThenInclude(c => c.Cor)
                 .SingleOrDefaultAsync();
             if (Produto == null)
             {
@@ -45,6 +46,7 @@ namespace DmResinas.Controllers
         public IActionResult Create()
         {
             ViewData["Categorias"] = new MultiSelectList(_context.Categorias.OrderBy(t => t.Nome), "Id", "Nome");
+            ViewData["Cores"] = new MultiSelectList(_context.Cores.OrderBy(t => t.Nome), "Id", "Nome", "CodigoHexa");
             return View();
         }
 
@@ -53,7 +55,7 @@ namespace DmResinas.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Nome,Descricao,Descricaoresumida,Foto,Cor,Material,Dimensao,Preco,Categoria")] Produto Produtos, IFormFile formFile, List<string> Categorias)
+        public async Task<IActionResult> Create([Bind("Id,Nome,Descricao,Descricaoresumida,Foto,Cor,Material,Dimensao,Preco,Categoria")] Produto Produtos, IFormFile formFile, List<string> Categorias,List<string> Cores)
         {
             if (ModelState.IsValid)
             {
@@ -74,11 +76,21 @@ namespace DmResinas.Controllers
                         ProdutoId = Produtos.Id
                     });
                 }
-                if (Categorias.Count > 0) await _context.SaveChangesAsync();
+
+                Produtos.Cores = new List<ProdutoCor>();
+                foreach (var Cor in Cores)
+                {
+                    Produtos.Cores.Add(new ProdutoCor()
+                    {
+                        CorId = byte.Parse(Cor),
+                        ProdutoId = Produtos.Id
+                    });
+                }
+                if (Cores.Count > 0) await _context.SaveChangesAsync();
 
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["Categoria"] = new MultiSelectList(_context.Categorias.OrderBy(t => t.Nome), "Id", "Nome");
+            ViewData["Cores"] = new MultiSelectList(_context.Cores.OrderBy(t => t.Nome), "Id", "Nome", "CodigoHexa");
             return View(Produtos);
         }
 

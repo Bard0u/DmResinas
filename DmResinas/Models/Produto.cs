@@ -48,5 +48,5 @@ public class Produto
 
     public ICollection<ProdutoAvaliacao> Avaliacoes { get; set; }
     public ICollection<ProdutoCategoria> Categorias { get; set; }
-    public ICollection<ProdutoCategoria> Cores { get; set; }
+    public ICollection<ProdutoCor> Cores { get; set; }
 }

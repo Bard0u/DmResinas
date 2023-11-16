@@ -331,6 +331,31 @@ namespace DmResinas.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
+                name: "ProdutoCor",
+                columns: table => new
+                {
+                    ProdutoId = table.Column<int>(type: "int", nullable: false),
+                    CorId = table.Column<byte>(type: "tinyint unsigned", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ProdutoCor", x => new { x.ProdutoId, x.CorId });
+                    table.ForeignKey(
+                        name: "FK_ProdutoCor_Cor_CorId",
+                        column: x => x.CorId,
+                        principalTable: "Cor",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_ProdutoCor_Produto_ProdutoId",
+                        column: x => x.ProdutoId,
+                        principalTable: "Produto",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
                 name: "ProdutoFotos",
                 columns: table => new
                 {
@@ -387,15 +412,15 @@ namespace DmResinas.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "1c033911-ec92-4275-99ad-d1beb622d9b1", "b04264be-55e9-4a83-8e05-f4f653dc2f45", "Administrador", "ADMINISTRADOR" },
-                    { "2629d035-212e-47f8-b263-625d6f8d27ff", "95520b91-d449-4a44-8661-b101228c72d3", "Cliente", "CLIENTE" },
-                    { "caf21585-a0aa-4504-8cd0-85447362c157", "f42f4906-c5d6-4a9f-9dec-35038da255ac", "Funcionário", "FUNCIONARIO" }
+                    { "5724538a-4f82-4c4d-8c3c-486770eeae88", "a4599f57-eed5-4a53-8795-794fe8e4d101", "Cliente", "CLIENTE" },
+                    { "7c09394f-0d23-417d-a6f8-710553b7ee1c", "fa145e98-9080-424e-b7ba-3df8b45268a5", "Funcionário", "FUNCIONARIO" },
+                    { "7f58c363-2c89-4536-aa9a-1ed9dfb019bd", "1cf2e6d3-e2a2-488b-89c3-17b165f8324e", "Administrador", "ADMINISTRADOR" }
                 });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "114fbbf8-b1cb-4aaf-9dca-e2a5a7d46f41", 0, "7122f347-9264-4efe-a73e-63c1b008d183", "admin@dmresinas.com", true, false, null, "ADMIN@DMRESINAS.COM", "ADMIN", "AQAAAAEAACcQAAAAEH67pGVah2qzFnSxKJFRRp7+pcIfNIDXN7GAh7d6/ayqhFMmUABHt1r+gdOyCNwLMw==", null, false, "8319e04f-2069-4619-a537-f1fc2794ce31", false, "Admin" });
+                values: new object[] { "2c8753ab-6959-4cab-aec8-96dc522d8079", 0, "ebd94efa-db6a-41a5-aad6-02112355a9da", "admin@dmresinas.com", true, false, null, "ADMIN@DMRESINAS.COM", "ADMIN", "AQAAAAEAACcQAAAAEEE8C8hTYAQCM2xZEbbY91DfTXaVooJdb7kTYQmmjWcDKi0h88UEBhiqMdYo3VevsQ==", null, false, "ba2eaeaa-b3b7-4a55-9950-35f12280b799", false, "Admin" });
 
             migrationBuilder.InsertData(
                 table: "Categoria",
@@ -425,9 +450,9 @@ namespace DmResinas.Migrations
                 columns: new[] { "RoleId", "UserId" },
                 values: new object[,]
                 {
-                    { "1c033911-ec92-4275-99ad-d1beb622d9b1", "114fbbf8-b1cb-4aaf-9dca-e2a5a7d46f41" },
-                    { "2629d035-212e-47f8-b263-625d6f8d27ff", "114fbbf8-b1cb-4aaf-9dca-e2a5a7d46f41" },
-                    { "caf21585-a0aa-4504-8cd0-85447362c157", "114fbbf8-b1cb-4aaf-9dca-e2a5a7d46f41" }
+                    { "5724538a-4f82-4c4d-8c3c-486770eeae88", "2c8753ab-6959-4cab-aec8-96dc522d8079" },
+                    { "7c09394f-0d23-417d-a6f8-710553b7ee1c", "2c8753ab-6959-4cab-aec8-96dc522d8079" },
+                    { "7f58c363-2c89-4536-aa9a-1ed9dfb019bd", "2c8753ab-6959-4cab-aec8-96dc522d8079" }
                 });
 
             migrationBuilder.InsertData(
@@ -443,7 +468,7 @@ namespace DmResinas.Migrations
             migrationBuilder.InsertData(
                 table: "Usuario",
                 columns: new[] { "UsuarioId", "DataNascimento", "Foto", "Nome" },
-                values: new object[] { "114fbbf8-b1cb-4aaf-9dca-e2a5a7d46f41", new DateTime(2006, 3, 22, 0, 0, 0, 0, DateTimeKind.Unspecified), "/img/users/avatar.png", "Bard0u" });
+                values: new object[] { "2c8753ab-6959-4cab-aec8-96dc522d8079", new DateTime(2006, 3, 22, 0, 0, 0, 0, DateTimeKind.Unspecified), "/img/users/avatar.png", "Bard0u" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
@@ -498,6 +523,11 @@ namespace DmResinas.Migrations
                 column: "UsuarioId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_ProdutoCor_CorId",
+                table: "ProdutoCor",
+                column: "CorId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_ProdutoFotos_ProdutoId",
                 table: "ProdutoFotos",
                 column: "ProdutoId");
@@ -521,13 +551,13 @@ namespace DmResinas.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "Cor");
-
-            migrationBuilder.DropTable(
                 name: "ProdtoCategoria");
 
             migrationBuilder.DropTable(
                 name: "ProdutoAvaliacao");
+
+            migrationBuilder.DropTable(
+                name: "ProdutoCor");
 
             migrationBuilder.DropTable(
                 name: "ProdutoFotos");
@@ -543,6 +573,9 @@ namespace DmResinas.Migrations
 
             migrationBuilder.DropTable(
                 name: "Usuario");
+
+            migrationBuilder.DropTable(
+                name: "Cor");
 
             migrationBuilder.DropTable(
                 name: "Produto");

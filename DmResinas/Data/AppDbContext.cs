@@ -64,6 +64,23 @@ public class AppDbContext : IdentityDbContext
             .HasForeignKey(pc => pc.CategoriaId);
         #endregion
 
+        #region Relacionamento Muitos para Muitos - ProdutoCor
+
+        builder.Entity<ProdutoCor>().HasKey(
+            po => new { po.ProdutoId, po.CorId }
+        );
+
+        builder.Entity<ProdutoCor>()
+            .HasOne(po => po.Produto)
+            .WithMany(P => P.Cores)
+            .HasForeignKey(po => po.ProdutoId);
+
+        builder.Entity<ProdutoCor>()
+            .HasOne(po => po.Cor)
+            .WithMany(c => c.Produtos)
+            .HasForeignKey(po => po.CorId);
+        #endregion
+
 
     }
 }
