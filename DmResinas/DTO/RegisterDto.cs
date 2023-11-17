@@ -8,6 +8,7 @@ public class RegisterDto
     [Required(ErrorMessage = "Por favor, informe seu nome")]
     [StringLength(60, ErrorMessage = "O nome deve possuir no maximo 60 caracteres")]
     public string Name { get; set; }
+    
 
     [Display(Name = "Data de Nascimento")]
     [Required(ErrorMessage = "Por favor, informe sua data de nascimento")]

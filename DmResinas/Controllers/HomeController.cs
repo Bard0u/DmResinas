@@ -19,23 +19,27 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-     var products = _context.ProdutoCategorias.Include(pc => pc.Produto).ThenInclude(c =>c.Categorias).ToList();
-                    _context.ProdutoCores.Include(po => po.Produto).ThenInclude(c =>c.Cores).ToList();
+        var products = _context.ProdutoCategorias.Include(pc => pc.Produto).ThenInclude(c => c.Categorias).ToList();
+        _context.ProdutoCores.Include(po => po.Produto).ThenInclude(c => c.Cores).ToList();
         return View(products);
     }
-      public IActionResult Catalogo()
+    public IActionResult Catalogo()
     {
         return View();
     }
-        public IActionResult Contato()
+    public IActionResult Contato()
     {
         return View();
     }
-        public IActionResult Dicas()
+    public IActionResult Dicas()
     {
         return View();
     }
-        public IActionResult Sobre()
+    public IActionResult Sobre()
+    {
+        return View();
+    }
+    public IActionResult Perfil()
     {
         return View();
     }

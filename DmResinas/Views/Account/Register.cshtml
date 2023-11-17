@@ -1,73 +1,87 @@
 @model DmResinas.DTO.RegisterDto
 @{
-    ViewData["Title"] = "Criar Conta";
+    ViewData["Title"] = "Registro";
     Layout = "~/Views/Shared/_LayoutAccount.cshtml";
 }
 
+<div class="position-relative">
+    <div class="authentication-wrapper authentication-basic container-p-y">
+        <div class="authentication-inner" style="max-width: 600px;">
+            <!-- Register Card -->
+            <div class="card p-2">
+                <!-- Logo -->
+                <div class="app-brand justify-content-center mt-5">
+                    <a asp-action="Index" asp-controller="Home" class="app-brand-link gap-2">
+                        <img src="~/img/logo.png" width="200">
+                    </a>
+                </div>
+                <!-- /Logo -->
 
-@section Styles{
-    <link rel="stylesheet" href="~/css/style.css">
-}
 
+                <div class="card-body">
+                    <h4 class="mb-2 text-center">O Melhor Lugar para suas Compras</h4>
+                    <p class="mb-4 text-center">Crie sua conta agora e aproveite nossas ofertas!</p>
 
-<form class="form-register" method="post">
-    <div class="text-center mb-4">
-        <img src="~/img/logo.png" alt="Logo" width="250">
-        <h1 class="mt-2">Criar Conta de Acesso</h1>
-    </div>
+                    <form id="formAuthentication" class="mb-3" method="POST" enctype="multipart/form-data">
+                        <div asp-validation-summary="ModelOnly" hidden></div>
+                        <div class="form-floating form-floating-outline mb-3">
+                            <input class="form-control" asp-for="Name" autofocus />
+                            <label asp-for="Name"></label>
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>''
+                        <div class="form-floating form-floating-outline mb-3">
+                            <input class="form-control" asp-for="Email" />
+                            <label asp-for="Email"></label>
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-8">
+                                <div class="form-floating form-floating-outline mb-3">
+                                    <input class="form-control" asp-for="Age" />
+                                    <label asp-for="Age"></label>
+                                    <span asp-validation-for="Age" class="text-danger"></span>
+                                </div>
+                                <div class="mb-3 form-password-toggle">
+                                    <div class="input-group input-group-merge">
+                                        <div class="form-floating form-floating-outline">
+                                            <input class="form-control" asp-for="Password" />
+                                            <label asp-for="Password"></label>
+                                        </div>
+                                    </div>
+                                    <span asp-validation-for="Password" class="text-danger"></span>
+                                </div>
+                                <div class="mb-3 form-password-toggle">
+                                    <div class="input-group input-group-merge">
+                                        <div class="form-floating form-floating-outline">
+                                            <input class="form-control" asp-for="ConfirmPassword" />
+                                            <label asp-for="ConfirmPassword"></label>
+                                        </div>
+                                    </div>
+                                    <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-sm-4" style="min-height: 100%; vertical-align:middle">
+                                <img src="~/images/usuarios/no-photo.jpg" alt="Foto" id="PreviewImage"
+                                    class="img-fluid w-100 py-2 cursor-pointer" onclick="changeImage()" />
+                                <div hidden>
+                                    <input type="file" asp-for="Foto" accept=".jpg,.jpeg,.png,.gif,.jfif" />
+                                </div>
+                            </div>
+                        </div>
+                        <button id="submit" class="btn btn-primary d-grid w-100">Criar Conta</button>
+                    </form>
 
-    <div asp-validation-summary="All" class="text-danger" hidden></div>
-
-    <div class="row">
-        <div class="col-lg-8 mb-3">
-            <label asp-for="Name" class="form-label"></label>
-            <input asp-for="Name" class="form-control">
-            <span asp-validation-for="Name" class="text-danger"></span>
+                    <p class="text-center">
+                        <span>Já possuir uma Conta?</span>
+                        <a asp-action="Login" asp-controller="Account">
+                            <span>Faça Login</span>
+                        </a>
+                    </p>
+                </div>
+            </div>
         </div>
-        <div class="col-lg-4 mb-3">
-            <label asp-for="Age" class="form-label"></label>
-            <input asp-for="Age" class="form-control">
-            <span asp-validation-for="Age" class="text-danger"></span>
-        </div>
     </div>
-
-    <div class="mb-3">
-        <label asp-for="Email" class="form-label"></label>
-        <input asp-for="Email" class="form-control">
-        <span asp-validation-for="Email" class="text-danger"></span>
-    </div>
-
-    <div class="row">
-        <div class="col-lg-6 mb-3">
-            <label asp-for="Password" class="form-label"></label>
-            <input asp-for="Password" class="form-control">
-            <span asp-validation-for="Password" class="text-danger"></span>
-        </div>
-
-        <div class="col-lg-6 mb-3">
-            <label asp-for="ConfirmPassword" class="form-label"></label>
-            <input asp-for="ConfirmPassword" class="form-control">
-            <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
-        </div>
-    </div>
-    <div class="col-sm-4" style="min-height: 100%; vertical-align:middle">
-        <img src="~/images/usuarios/no-photo.jpg" alt="Foto" id="PreviewImage"
-            class="img-fluid w-100 py-2 cursor-pointer" onclick="changeImage()" />
-        <div hidden>
-            <input type="file" asp-for="Foto" accept=".jpg,.jpeg,.png,.gif,.jfif" />
-        </div>
-    </div>
-
-    <button type="submit" class="w-100 btn btn-primary mt-1">Criar Conta</button>
-
-    <div class="separator">
-        <div class="line"></div>
-        <h6>Já possui uma Conta?</h6>
-        <div class="line"></div>
-    </div>
-
-    <a asp-action="Login" class="w-100 btn btn-success mt-1">Entrar</a>
-</form>
+</div>
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial"></partial>
@@ -91,26 +105,6 @@
             document.querySelector('input[type="file"]').click();
         }
 
-        window.addEventListener('load', function () {
-            document.querySelector('input[type="file"]').addEventListener('change', function () {
-                if (this.files && this.files[0]) {
-                    var img = document.getElementById('PreviewImage');
-                    img.src = URL.createObjectURL(this.files[0]);
-                }
-            });
-        });
-
-        function verificarTermos() {
-            let t = document.getElementById("Termos");
-            let s = document.getElementById("submit");
-            t.value = t.checked;
-            if (t.checked) {
-                s.removeAttribute("disabled");
-            } else {
-                s.setAttribute("disabled", true);
-            }
-            console.log(s);
-        }
 
     </script>
 }

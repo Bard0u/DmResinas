@@ -157,13 +157,14 @@ public class AccountController : Controller
                 }
                 _contexto.Add(usuario);
                 await _contexto.SaveChangesAsync();
+                await _signInManager.PasswordSignInAsync(user.UserName, register.Password, false, false);
+                return RedirectToAction("Index", "Home");
             }
             foreach (var error in result.Errors)
             {
                 ModelState.AddModelError(string.Empty, TranslateIdentityErrors.TranslateErrorMessage(error.Code));
             }
         }
-        register.Sended = ModelState.IsValid;
         return View(register);
     }
 
