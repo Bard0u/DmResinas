@@ -119,7 +119,7 @@ public class AccountController : Controller
         {
             var user = Activator.CreateInstance<IdentityUser>();
 
-            await _userStore.SetUserNameAsync(user, register.Email, CancellationToken.None);
+            await _userStore.SetUserNameAsync(user, register.UserName, CancellationToken.None);
             await _emailStore.SetEmailAsync(user, register.Email, CancellationToken.None);
             var result = await _userManager.CreateAsync(user, register.Password);
 

@@ -8,7 +8,7 @@ public class RegisterDto
     [Required(ErrorMessage = "Por favor, informe seu nome")]
     [StringLength(60, ErrorMessage = "O nome deve possuir no maximo 60 caracteres")]
     public string Name { get; set; }
-    
+
 
     [Display(Name = "Data de Nascimento")]
     [Required(ErrorMessage = "Por favor, informe sua data de nascimento")]
@@ -20,21 +20,25 @@ public class RegisterDto
     [EmailAddress(ErrorMessage = "Por favor informe um email valido")]
     public string Email { get; set; }
 
+    [Required(ErrorMessage = "Por favor, informe seu Nome de usuario")]
+    [StringLength(100, ErrorMessage = "O Nome deve possuir no maximo 100 caracteres")]
+    public string UserName { get; set; }
+
     [Display(Name = "Senha de Acesso")]
     [Required(ErrorMessage = "Por favor, informe sua senha")]
     [DataType(DataType.Password)]
-    [StringLength(20, MinimumLength =6 , ErrorMessage = "A senha deve possuir no minimo 6 e no maximo 20 caracteres")]
+    [StringLength(20, MinimumLength = 6, ErrorMessage = "A senha deve possuir no minimo 6 e no maximo 20 caracteres")]
     public string Password { get; set; }
 
     [Display(Name = "Confirmar Senha de Acesso")]
     [Required(ErrorMessage = "Por favor, informe sua senha")]
     [DataType(DataType.Password)]
-    [Compare("Password", ErrorMessage ="As Senhas não Conferem")]
-   
+    [Compare("Password", ErrorMessage = "As Senhas não Conferem")]
+
     public string ConfirmPassword { get; set; }
-    
+
     public string Foto { get; set; }
-    
+
     public bool Termos { get; set; } = false;
 
     public bool Sended { get; set; } = false;

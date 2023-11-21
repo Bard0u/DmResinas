@@ -11,6 +11,7 @@ public class LoginDto
     [Required(ErrorMessage = "Por Favor, informe a senha")]
     [DataType(DataType.Password)]
     public string Password { get; set; }
+    
     [Display(Name = "Manter Conectado?")]
     public bool RememberMe { get; set; }
     

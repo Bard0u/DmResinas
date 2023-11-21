@@ -29,6 +29,12 @@
                 <h2><span class="badge bg-secondary me-2">@ProdutoCategorias.Categoria.Nome</span></h2>
             }
         </div>
+        <div class="btn-group my-2">
+            @foreach (ProdutoCor ProdutoCores in Model.Cores)
+            {
+                <h2><span class="badge bg-secondary me-2">@ProdutoCores.Cor.Nome</span></h2>
+            }
+        </div>
     </div>
     <div class="col-12 mt-4">
         <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-success me-3"><i class="bi bi-pencil-fill"></i> Editar</a>

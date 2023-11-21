@@ -28,10 +28,15 @@
                             <input class="form-control" asp-for="Name" autofocus />
                             <label asp-for="Name"></label>
                             <span asp-validation-for="Name" class="text-danger"></span>
-                        </div>''
+                        </div>
+                        <div class="form-floating form-floating-outline mb-3">
+                            <input class="form-control" asp-for="UserName" />
+                            <label asp-for="UserName">UserName</label>
+                            <span asp-validation-for="UserName" class="text-danger"></span>
+                        </div>
                         <div class="form-floating form-floating-outline mb-3">
                             <input class="form-control" asp-for="Email" />
-                            <label asp-for="Email"></label>
+                            <label asp-for="Email">Email</label>
                             <span asp-validation-for="Email" class="text-danger"></span>
                         </div>
                         <div class="row">
