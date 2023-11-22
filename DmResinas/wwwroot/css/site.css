@@ -4,6 +4,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Hind:300,400&display=swap');
 
 
 html {
@@ -24,21 +26,17 @@ html {
 /* Página Sobre */
 
 .introductionSobre {
-  margin-top: 50px;
+  margin-top: 70px;
 }
 
 .introductionSobre h1 {
   font-size: 80px;
 }
 
-
 .italiana {
   font-family: 'Italiana', serif;
 }
 
-p.textoSobre {
-  text-align: left;
-} 
 
 
 article.mainSobre {
@@ -51,12 +49,14 @@ article.mainSobre {
 
 .datesSobre {
   transform: translateX(-400%);
+  transition: transform 0.9s ease;
 }
 
 .datesSobre.mostrar {
   transform: translateX(0);
 }
 
+.datesSobre h2,
 .datesSobre.mostrar h2 {
   letter-spacing: -1px;
   font-family: "Inter", sans-serif;
@@ -89,6 +89,12 @@ article.mainSobre {
   background-image: linear-gradient(#E6BC74, #D7911A, #D14242);
 }
 
+.lineSobre4 {
+  width: 10px;
+  height: 350px;
+  background-image: linear-gradient(#E6BC74, white);
+}
+
 .dotSobre {
   text-align: center;
   margin: 10px 0px;
@@ -103,11 +109,12 @@ article.mainSobre {
   text-align: center;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 .infoSobre {
   transform: translateX(400%);
-  transition: transform 0.4s ease;
+  transition: transform 0.9s ease;
 }
 
 .infoSobre.mostrar {
@@ -118,8 +125,274 @@ article.mainSobre {
   max-width: 300px;
 }
 
+p.textoSobre {
+  color: #8A8A8A;
+  text-align: justify;
+} 
+
+.figuraSobre img {
+  border-radius: 30px;
+}
+
+.fraseFinal h2 {
+  font-size: 60px;
+}
+
+.fraseFinal {
+  margin-top: 103px;
+  margin-bottom: 200px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Página Dicas */
+
+header.introductionDicas {
+  margin-top: 70px;
+}
+
+body.bodyDicas {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+body.bodyDicas p {
+  color: #000;
+  text-align: center;
+  font-family: "Abel", sans-serif;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+main.mainDicas {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.introductionDicas {
+  margin-top: 68px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.introductionDicas h2 {
+  color: #C58A3E;
+  text-align: center;
+  font-family: "Italiana", sans-serif;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 20.16px;
+  text-transform: uppercase;
+}
+
+.duvidasDicas h2 {
+  color: #C58A3E;
+  text-align: center;
+  font-family: "Italiana", sans-serif;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 20.16px;
+  text-transform: uppercase;
+}
+
+.tituloDicas {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+#textoTituloDicas {
+  font-size: 2rem;
+  border-bottom: 2px solid #C58A3E;
+  font-size: 1.8rem;
+}
+
+.descricaoDicas {
+  margin-top: 40px;
+  margin-bottom: 55px;
+}
+
+h1#tresDicas {
+  margin-bottom: 28px;
+}
+
+.divisaoDicas {
+  width: 870px;
+  height: 2px;
+  background: #C58A3E;
+}
+
+.divisaoDicas.cima {
+  margin-top: 70px;
+  margin-bottom: 80px;
+}
+
+.divisaoDicas.baixo {
+  margin: 100px 0;
+}
+
+.containerDestaqueDicas {
+  display: flex;
+  width: 1146px;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+}
+
+.containerDestaqueDicas p {
+  margin-bottom: 0;
+}
+
+.containerDestaqueDicas img {
+  width: auto;
+  height: 120px;
+}
+
+.dicasDicas {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 800px;
+}
+
+.dicasDicas h1 {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  height: 1em;
+  margin-bottom: 0;
+  color: #C58A3E;
+  text-align: center;
+  font-family: "Italiana";
+  font-size: 18rem;
+  font-weight: 400;
+  text-transform: uppercase;
+}
 
 
+/* PÁGINA DICAS SEÇÃO DÚVIDAS */
+
+.duvidasDicas {
+  text-align: center;
+}
+
+.duvidasDicas h2 {
+  color: #C58A3E;
+  text-align: left;
+  font-family: "Italiana", sans-serif;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 20.16px;
+  text-transform: uppercase;
+}
+
+ .accordion .accordion-item {
+	 border-bottom: 1px solid #e5e5e5;
+}
+ .accordion .accordion-item button[aria-expanded='true'] {
+	 border-bottom: 1px solid #03b5d2;
+}
+ .accordion button {
+	 position: relative;
+	 display: block;
+	 text-align: left;
+	 width: 100%;
+	 padding: 1em 0;
+	 color: #7288a2;
+	 font-size: 1.15rem;
+	 font-weight: 400;
+	 border: none;
+	 background: none;
+	 outline: none;
+}
+ .accordion button:hover, .accordion button:focus {
+	 cursor: pointer;
+	 color: #03b5d2;
+}
+ .accordion button:hover::after, .accordion button:focus::after {
+	 cursor: pointer;
+	 color: #03b5d2;
+	 border: 1px solid #03b5d2;
+}
+ .accordion button .accordion-title {
+	 padding: 1em 1.5em 1em 0;
+}
+ .accordion button .icon {
+	 display: inline-block;
+	 position: absolute;
+	 top: 18px;
+	 right: 0;
+	 width: 22px;
+	 height: 22px;
+	 border: 1px solid;
+	 border-radius: 22px;
+}
+ .accordion button .icon::before {
+	 display: block;
+	 position: absolute;
+	 content: '';
+	 top: 9px;
+	 left: 5px;
+	 width: 10px;
+	 height: 2px;
+	 background: currentColor;
+}
+ .accordion button .icon::after {
+	 display: block;
+	 position: absolute;
+	 content: '';
+	 top: 5px;
+	 left: 9px;
+	 width: 2px;
+	 height: 10px;
+	 background: currentColor;
+}
+ .accordion button[aria-expanded='true'] {
+	 color: #03b5d2;
+}
+ .accordion button[aria-expanded='true'] .icon::after {
+	 width: 0;
+}
+ .accordion button[aria-expanded='true'] + .accordion-content {
+	 opacity: 1;
+	 max-height: 9em;
+	 transition: all 200ms linear;
+	 will-change: opacity, max-height;
+}
+ .accordion .accordion-content {
+	 opacity: 0;
+	 max-height: 0;
+	 overflow: hidden;
+	 transition: opacity 200ms linear, max-height 200ms linear;
+	 will-change: opacity, max-height;
+}
+ .accordion .accordion-content p {
+	 font-size: 1rem;
+	 font-weight: 300;
+	 margin: 2em 0;
+}
+ 
+
+/* PÁGINA HOME */
 
 
 .doseujeito {
@@ -151,6 +424,39 @@ article.mainSobre {
   box-sizing: border-box;
   color: #FF8CC1;
 }
+
+.botaoProdutos {
+  margin-top: 25px;
+  background: white;
+  border-radius: 5px;
+  color: #E6BC74;
+  padding: 10px 30px;
+  font-size: 14px;
+  border: 1px solid #E6BC74;
+  font-family: Montserrat;
+  transition: ease 0.9s;
+}
+
+.botaoProdutos a {
+  width: 100%;
+  height: 100%;
+  color: #E6BC74;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  transition: ease 0.9s;
+}
+
+.botaoProdutos:hover {
+  background: #E6BC74;
+  transition: ease 0.4s;
+}
+
+.botaoProdutos:hover a {
+  transition: ease 0.4s;
+  color: white;
+}
+
 
 html {
   position: relative;
