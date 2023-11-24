@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DmResinas.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20231116151939_criar-banco")]
+    [Migration("20231124134525_criar-banco")]
     partial class criarbanco
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -58,7 +58,7 @@ namespace DmResinas.Migrations
                             Banner = true,
                             Filtrar = true,
                             Foto = "images/categorias/1.jpg",
-                            Nome = "Feminina"
+                            Nome = "Folha de Ouro"
                         },
                         new
                         {
@@ -66,7 +66,7 @@ namespace DmResinas.Migrations
                             Banner = true,
                             Filtrar = true,
                             Foto = "images/categorias/2.jpg",
-                            Nome = "Masculina"
+                            Nome = "Flores"
                         },
                         new
                         {
@@ -74,7 +74,7 @@ namespace DmResinas.Migrations
                             Banner = true,
                             Filtrar = false,
                             Foto = "images/categorias/3.jpg",
-                            Nome = "Acessórios"
+                            Nome = "Decoração"
                         },
                         new
                         {
@@ -83,7 +83,7 @@ namespace DmResinas.Migrations
                             CategoriaPaiId = (byte)3,
                             Filtrar = true,
                             Foto = "",
-                            Nome = "Bolsas"
+                            Nome = "Chaveiros"
                         },
                         new
                         {
@@ -92,7 +92,7 @@ namespace DmResinas.Migrations
                             CategoriaPaiId = (byte)3,
                             Filtrar = true,
                             Foto = "",
-                            Nome = "Calçados"
+                            Nome = "Marca Páginas"
                         },
                         new
                         {
@@ -101,7 +101,16 @@ namespace DmResinas.Migrations
                             CategoriaPaiId = (byte)3,
                             Filtrar = true,
                             Foto = "",
-                            Nome = "Relógios"
+                            Nome = "Com Nome"
+                        },
+                        new
+                        {
+                            Id = (byte)7,
+                            Banner = false,
+                            CategoriaPaiId = (byte)3,
+                            Filtrar = true,
+                            Foto = "",
+                            Nome = "Placa"
                         });
                 });
 
@@ -129,38 +138,236 @@ namespace DmResinas.Migrations
                         new
                         {
                             Id = (byte)1,
-                            CodigoHexa = "#222",
+                            CodigoHexa = "#000000",
                             Nome = "Preto"
                         },
                         new
                         {
                             Id = (byte)2,
-                            CodigoHexa = "#4272d7",
-                            Nome = "Azul"
+                            CodigoHexa = "#efca3e",
+                            Nome = "Amarelo"
                         },
                         new
                         {
                             Id = (byte)3,
-                            CodigoHexa = "#b3b3b3",
+                            CodigoHexa = "#9399a7",
                             Nome = "Cinza"
                         },
                         new
                         {
                             Id = (byte)4,
-                            CodigoHexa = "#00ad5f",
-                            Nome = "Verde"
+                            CodigoHexa = "#85dedc",
+                            Nome = "Verde Água"
                         },
                         new
                         {
                             Id = (byte)5,
-                            CodigoHexa = "#fa4251",
+                            CodigoHexa = "#bd1600",
                             Nome = "Vermelho"
                         },
                         new
                         {
                             Id = (byte)6,
-                            CodigoHexa = "#aaa",
+                            CodigoHexa = "#ffffff",
                             Nome = "Branco"
+                        },
+                        new
+                        {
+                            Id = (byte)7,
+                            CodigoHexa = "#1b4a82",
+                            Nome = "Azul Turquesa"
+                        },
+                        new
+                        {
+                            Id = (byte)8,
+                            CodigoHexa = "#7ab5f9",
+                            Nome = "Azul Candy"
+                        },
+                        new
+                        {
+                            Id = (byte)9,
+                            CodigoHexa = "#7ab5f9",
+                            Nome = "Bege"
+                        },
+                        new
+                        {
+                            Id = (byte)10,
+                            CodigoHexa = "#efe48a",
+                            Nome = "Amarelo Vintage"
+                        },
+                        new
+                        {
+                            Id = (byte)11,
+                            CodigoHexa = "#978ec5",
+                            Nome = "Lilás"
+                        },
+                        new
+                        {
+                            Id = (byte)12,
+                            CodigoHexa = "#df98b9",
+                            Nome = "Rosa Flamingo"
+                        },
+                        new
+                        {
+                            Id = (byte)13,
+                            CodigoHexa = "#ffffff",
+                            Nome = "Branco Perolado"
+                        },
+                        new
+                        {
+                            Id = (byte)14,
+                            CodigoHexa = "#524f40",
+                            Nome = "Cinza Perolado"
+                        },
+                        new
+                        {
+                            Id = (byte)15,
+                            CodigoHexa = "#20362d",
+                            Nome = "Verde Escuro Perolado"
+                        },
+                        new
+                        {
+                            Id = (byte)16,
+                            CodigoHexa = "#001386",
+                            Nome = "Azul Escuro Perolado"
+                        },
+                        new
+                        {
+                            Id = (byte)17,
+                            CodigoHexa = "#034edb",
+                            Nome = "Azul Perolado"
+                        },
+                        new
+                        {
+                            Id = (byte)18,
+                            CodigoHexa = "#2890e5",
+                            Nome = "Azul Claro Perolado"
+                        },
+                        new
+                        {
+                            Id = (byte)19,
+                            CodigoHexa = "#835426",
+                            Nome = "Marrom Escuro Perolado"
+                        },
+                        new
+                        {
+                            Id = (byte)20,
+                            CodigoHexa = "#5e4624",
+                            Nome = "Marrom Perolado"
+                        },
+                        new
+                        {
+                            Id = (byte)21,
+                            CodigoHexa = "#835426",
+                            Nome = "Bronze Perolado"
+                        },
+                        new
+                        {
+                            Id = (byte)22,
+                            CodigoHexa = "#ac7032",
+                            Nome = "Marrom Claro Perolado"
+                        },
+                        new
+                        {
+                            Id = (byte)23,
+                            CodigoHexa = "#f03b04",
+                            Nome = "Laranja Perolado"
+                        },
+                        new
+                        {
+                            Id = (byte)24,
+                            CodigoHexa = "#e8ce33",
+                            Nome = "Amarelo Perolado"
+                        },
+                        new
+                        {
+                            Id = (byte)25,
+                            CodigoHexa = "#e0a621",
+                            Nome = "Dourado Claro Perolado"
+                        },
+                        new
+                        {
+                            Id = (byte)26,
+                            CodigoHexa = "#cc9900",
+                            Nome = "Dourado Perolado"
+                        },
+                        new
+                        {
+                            Id = (byte)27,
+                            CodigoHexa = "#581598",
+                            Nome = "Roxo Perolado"
+                        },
+                        new
+                        {
+                            Id = (byte)28,
+                            CodigoHexa = "#ffb2d1",
+                            Nome = "Rosa Claro Perolado"
+                        },
+                        new
+                        {
+                            Id = (byte)29,
+                            CodigoHexa = "#e17282",
+                            Nome = "Rosa Chiclete Perolado"
+                        },
+                        new
+                        {
+                            Id = (byte)30,
+                            CodigoHexa = "#cb3038",
+                            Nome = "Pink Perolado"
+                        },
+                        new
+                        {
+                            Id = (byte)31,
+                            CodigoHexa = "#cc2862",
+                            Nome = "Rosa Perolado"
+                        },
+                        new
+                        {
+                            Id = (byte)32,
+                            CodigoHexa = "#f3134f",
+                            Nome = "Rosa Choque Perolado"
+                        },
+                        new
+                        {
+                            Id = (byte)33,
+                            CodigoHexa = "#a31208",
+                            Nome = "Cobre Perolado"
+                        },
+                        new
+                        {
+                            Id = (byte)34,
+                            CodigoHexa = "#4fdb22",
+                            Nome = "Verde Fluorescente Perolado"
+                        },
+                        new
+                        {
+                            Id = (byte)35,
+                            CodigoHexa = "#06785f",
+                            Nome = "Verde Esmeralda Perolado"
+                        },
+                        new
+                        {
+                            Id = (byte)36,
+                            CodigoHexa = "#38ab72",
+                            Nome = "Verde Água Perolado"
+                        },
+                        new
+                        {
+                            Id = (byte)37,
+                            CodigoHexa = "#1d5236",
+                            Nome = "Verde Bandeira Perolado"
+                        },
+                        new
+                        {
+                            Id = (byte)38,
+                            CodigoHexa = "#9dbd69",
+                            Nome = "Verde Claro Perolado"
+                        },
+                        new
+                        {
+                            Id = (byte)39,
+                            CodigoHexa = "#d4124e",
+                            Nome = "Magenta Perolado"
                         });
                 });
 
@@ -341,7 +548,7 @@ namespace DmResinas.Migrations
                     b.HasData(
                         new
                         {
-                            UsuarioId = "2c8753ab-6959-4cab-aec8-96dc522d8079",
+                            UsuarioId = "8742e16d-f897-4958-8e81-aa705e222dce",
                             DataNascimento = new DateTime(2006, 3, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Foto = "/img/users/avatar.png",
                             Nome = "Bard0u"
@@ -376,22 +583,22 @@ namespace DmResinas.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "7f58c363-2c89-4536-aa9a-1ed9dfb019bd",
-                            ConcurrencyStamp = "1cf2e6d3-e2a2-488b-89c3-17b165f8324e",
+                            Id = "18ac52cf-36ff-4986-871b-70835b4e3596",
+                            ConcurrencyStamp = "4f4146cf-f8a8-4e4e-8373-cec1becb37c4",
                             Name = "Administrador",
                             NormalizedName = "ADMINISTRADOR"
                         },
                         new
                         {
-                            Id = "7c09394f-0d23-417d-a6f8-710553b7ee1c",
-                            ConcurrencyStamp = "fa145e98-9080-424e-b7ba-3df8b45268a5",
+                            Id = "8f4f4a8c-f913-48b3-b8b4-ad385feeb160",
+                            ConcurrencyStamp = "ebade79e-994b-4fa4-b7aa-6a75981b8ea8",
                             Name = "Funcionário",
                             NormalizedName = "FUNCIONARIO"
                         },
                         new
                         {
-                            Id = "5724538a-4f82-4c4d-8c3c-486770eeae88",
-                            ConcurrencyStamp = "a4599f57-eed5-4a53-8795-794fe8e4d101",
+                            Id = "819f5c9e-42b3-48a7-8a52-032bd9bb9588",
+                            ConcurrencyStamp = "e7d99ea3-6cf5-4604-8a67-f65ba9c0eac1",
                             Name = "Cliente",
                             NormalizedName = "CLIENTE"
                         });
@@ -486,17 +693,17 @@ namespace DmResinas.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "2c8753ab-6959-4cab-aec8-96dc522d8079",
+                            Id = "8742e16d-f897-4958-8e81-aa705e222dce",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "ebd94efa-db6a-41a5-aad6-02112355a9da",
+                            ConcurrencyStamp = "498b3b3c-44d2-4cf8-9b64-f560fd591953",
                             Email = "admin@dmresinas.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@DMRESINAS.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAEAACcQAAAAEEE8C8hTYAQCM2xZEbbY91DfTXaVooJdb7kTYQmmjWcDKi0h88UEBhiqMdYo3VevsQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEIxMcPbZhjaRkdydGDwva6Fa9mzhgSoXiI88PJORdKZX8tpzevctwjWgrZogXHQWNg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "ba2eaeaa-b3b7-4a55-9950-35f12280b799",
+                            SecurityStamp = "a20d8e4f-ba45-4a5c-93a6-359392f44c3b",
                             TwoFactorEnabled = false,
                             UserName = "Admin"
                         });
@@ -564,18 +771,18 @@ namespace DmResinas.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "2c8753ab-6959-4cab-aec8-96dc522d8079",
-                            RoleId = "7f58c363-2c89-4536-aa9a-1ed9dfb019bd"
+                            UserId = "8742e16d-f897-4958-8e81-aa705e222dce",
+                            RoleId = "18ac52cf-36ff-4986-871b-70835b4e3596"
                         },
                         new
                         {
-                            UserId = "2c8753ab-6959-4cab-aec8-96dc522d8079",
-                            RoleId = "7c09394f-0d23-417d-a6f8-710553b7ee1c"
+                            UserId = "8742e16d-f897-4958-8e81-aa705e222dce",
+                            RoleId = "8f4f4a8c-f913-48b3-b8b4-ad385feeb160"
                         },
                         new
                         {
-                            UserId = "2c8753ab-6959-4cab-aec8-96dc522d8079",
-                            RoleId = "5724538a-4f82-4c4d-8c3c-486770eeae88"
+                            UserId = "8742e16d-f897-4958-8e81-aa705e222dce",
+                            RoleId = "819f5c9e-42b3-48a7-8a52-032bd9bb9588"
                         });
                 });
 

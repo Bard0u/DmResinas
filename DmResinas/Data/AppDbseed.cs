@@ -246,16 +246,16 @@ public class AppDbSeed
                 Banner = false,
                 CategoriaPaiId = 3
             },
-            new Categoria() {
+            /*new Categoria() {
                 Id = 6,
                 Nome = "Com Nome",
                 Foto = "",
                 Filtrar = true,
                 Banner = false,
                 CategoriaPaiId = 3
-            },
+            },*/ // O Gallo falou para rever a relação das categorias, segunda ve isso com ele certinho
             new Categoria() {
-                Id = 6,
+                Id = 7,
                 Nome = "Placa",
                 Foto = "",
                 Filtrar = true,

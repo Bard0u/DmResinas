@@ -55,35 +55,58 @@ namespace DmResinas.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Nome,Descricao,Descricaoresumida,Foto,Cor,Material,Dimensao,Preco,Categoria")] Produto Produtos, IFormFile formFile, List<string> Categorias,List<string> Cores)
+        public async Task<IActionResult> Create([Bind("Id,Nome,Descricao,Descricaoresumida,Foto,Cor,Material,Dimensao,Preco,Categoria")] Produto produto, List<IFormFile> formFile, List<string> Categorias,List<string> Cores)
         {
             if (ModelState.IsValid)
             {
                 // Salva o Filme
-                _context.Add(Produtos);
+                _context.Add(produto);
                 await _context.SaveChangesAsync();
 
                 // Se tiver arquivo de imagem, salva a imagem no servidor com o ID do filme e adiciona o nome e caminho da imagem no banco
-             
-
-                // Salva, se tiver, os Gêneros selecionados
-                Produtos.Categorias = new List<ProdutoCategoria>();
-                foreach (var Categoria in Categorias)
+                produto.Fotos = new List<ProdutoFoto>();
+                int id = 1;
+                foreach (var file in formFile)
                 {
-                    Produtos.Categorias.Add(new ProdutoCategoria()
+                    string wwwRootPath = _hostEnvironment.WebRootPath;
+                    string path = wwwRootPath + @"\images\produtos\" + produto.Id.ToString();
+                    if (!Directory.Exists(path))
+                        Directory.CreateDirectory(path);
+                    string fileName = Guid.NewGuid().ToString() + Path.GetExtension(file.FileName);
+                    string newFile = Path.Combine(path, fileName);
+                    using (var stream = new FileStream(newFile, FileMode.Create))
                     {
-                        CategoriaId = byte.Parse(Categoria),
-                        ProdutoId = Produtos.Id
-                    });
+                        file.CopyTo(stream);
+                    }
+                    produto.Fotos.Add(new ProdutoFoto()
+                    {
+                        Id = id,
+                        ProdutoId = produto.Id,
+                        ArquivoFoto = "/images/produtos/"+ produto.Id + "/" + fileName,
+                        Destaque = formFile[0] == file
+                    });        
+                    id += 1;
                 }
 
-                Produtos.Cores = new List<ProdutoCor>();
+                // Salva, se tiver, os Gêneros selecionados
+                produto.Categorias = new List<ProdutoCategoria>();
+                foreach (var Categoria in Categorias)
+                {
+                    produto.Categorias.Add(new ProdutoCategoria()
+                    {
+                        CategoriaId = byte.Parse(Categoria),
+                        ProdutoId = produto.Id
+                    });
+                }
+                if (Categorias.Count > 0) await _context.SaveChangesAsync();
+
+                produto.Cores = new List<ProdutoCor>();
                 foreach (var Cor in Cores)
                 {
-                    Produtos.Cores.Add(new ProdutoCor()
+                    produto.Cores.Add(new ProdutoCor()
                     {
                         CorId = byte.Parse(Cor),
-                        ProdutoId = Produtos.Id
+                        ProdutoId = produto.Id
                     });
                 }
                 if (Cores.Count > 0) await _context.SaveChangesAsync();
@@ -91,7 +114,7 @@ namespace DmResinas.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["Cores"] = new MultiSelectList(_context.Cores.OrderBy(t => t.Nome), "Id", "Nome", "CodigoHexa");
-            return View(Produtos);
+            return View(produto);
         }
 
         // GET: Products/Edit/5

@@ -412,24 +412,24 @@ namespace DmResinas.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "5724538a-4f82-4c4d-8c3c-486770eeae88", "a4599f57-eed5-4a53-8795-794fe8e4d101", "Cliente", "CLIENTE" },
-                    { "7c09394f-0d23-417d-a6f8-710553b7ee1c", "fa145e98-9080-424e-b7ba-3df8b45268a5", "Funcionário", "FUNCIONARIO" },
-                    { "7f58c363-2c89-4536-aa9a-1ed9dfb019bd", "1cf2e6d3-e2a2-488b-89c3-17b165f8324e", "Administrador", "ADMINISTRADOR" }
+                    { "18ac52cf-36ff-4986-871b-70835b4e3596", "4f4146cf-f8a8-4e4e-8373-cec1becb37c4", "Administrador", "ADMINISTRADOR" },
+                    { "819f5c9e-42b3-48a7-8a52-032bd9bb9588", "e7d99ea3-6cf5-4604-8a67-f65ba9c0eac1", "Cliente", "CLIENTE" },
+                    { "8f4f4a8c-f913-48b3-b8b4-ad385feeb160", "ebade79e-994b-4fa4-b7aa-6a75981b8ea8", "Funcionário", "FUNCIONARIO" }
                 });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "2c8753ab-6959-4cab-aec8-96dc522d8079", 0, "ebd94efa-db6a-41a5-aad6-02112355a9da", "admin@dmresinas.com", true, false, null, "ADMIN@DMRESINAS.COM", "ADMIN", "AQAAAAEAACcQAAAAEEE8C8hTYAQCM2xZEbbY91DfTXaVooJdb7kTYQmmjWcDKi0h88UEBhiqMdYo3VevsQ==", null, false, "ba2eaeaa-b3b7-4a55-9950-35f12280b799", false, "Admin" });
+                values: new object[] { "8742e16d-f897-4958-8e81-aa705e222dce", 0, "498b3b3c-44d2-4cf8-9b64-f560fd591953", "admin@dmresinas.com", true, false, null, "ADMIN@DMRESINAS.COM", "ADMIN", "AQAAAAEAACcQAAAAEIxMcPbZhjaRkdydGDwva6Fa9mzhgSoXiI88PJORdKZX8tpzevctwjWgrZogXHQWNg==", null, false, "a20d8e4f-ba45-4a5c-93a6-359392f44c3b", false, "Admin" });
 
             migrationBuilder.InsertData(
                 table: "Categoria",
                 columns: new[] { "Id", "Banner", "CategoriaPaiId", "Filtrar", "Foto", "Nome" },
                 values: new object[,]
                 {
-                    { (byte)1, true, null, true, "images/categorias/1.jpg", "Feminina" },
-                    { (byte)2, true, null, true, "images/categorias/2.jpg", "Masculina" },
-                    { (byte)3, true, null, false, "images/categorias/3.jpg", "Acessórios" }
+                    { (byte)1, true, null, true, "images/categorias/1.jpg", "Folha de Ouro" },
+                    { (byte)2, true, null, true, "images/categorias/2.jpg", "Flores" },
+                    { (byte)3, true, null, false, "images/categorias/3.jpg", "Decoração" }
                 });
 
             migrationBuilder.InsertData(
@@ -437,12 +437,45 @@ namespace DmResinas.Migrations
                 columns: new[] { "Id", "CodigoHexa", "Nome" },
                 values: new object[,]
                 {
-                    { (byte)1, "#222", "Preto" },
-                    { (byte)2, "#4272d7", "Azul" },
-                    { (byte)3, "#b3b3b3", "Cinza" },
-                    { (byte)4, "#00ad5f", "Verde" },
-                    { (byte)5, "#fa4251", "Vermelho" },
-                    { (byte)6, "#aaa", "Branco" }
+                    { (byte)1, "#000000", "Preto" },
+                    { (byte)2, "#efca3e", "Amarelo" },
+                    { (byte)3, "#9399a7", "Cinza" },
+                    { (byte)4, "#85dedc", "Verde Água" },
+                    { (byte)5, "#bd1600", "Vermelho" },
+                    { (byte)6, "#ffffff", "Branco" },
+                    { (byte)7, "#1b4a82", "Azul Turquesa" },
+                    { (byte)8, "#7ab5f9", "Azul Candy" },
+                    { (byte)9, "#7ab5f9", "Bege" },
+                    { (byte)10, "#efe48a", "Amarelo Vintage" },
+                    { (byte)11, "#978ec5", "Lilás" },
+                    { (byte)12, "#df98b9", "Rosa Flamingo" },
+                    { (byte)13, "#ffffff", "Branco Perolado" },
+                    { (byte)14, "#524f40", "Cinza Perolado" },
+                    { (byte)15, "#20362d", "Verde Escuro Perolado" },
+                    { (byte)16, "#001386", "Azul Escuro Perolado" },
+                    { (byte)17, "#034edb", "Azul Perolado" },
+                    { (byte)18, "#2890e5", "Azul Claro Perolado" },
+                    { (byte)19, "#835426", "Marrom Escuro Perolado" },
+                    { (byte)20, "#5e4624", "Marrom Perolado" },
+                    { (byte)21, "#835426", "Bronze Perolado" },
+                    { (byte)22, "#ac7032", "Marrom Claro Perolado" },
+                    { (byte)23, "#f03b04", "Laranja Perolado" },
+                    { (byte)24, "#e8ce33", "Amarelo Perolado" },
+                    { (byte)25, "#e0a621", "Dourado Claro Perolado" },
+                    { (byte)26, "#cc9900", "Dourado Perolado" },
+                    { (byte)27, "#581598", "Roxo Perolado" },
+                    { (byte)28, "#ffb2d1", "Rosa Claro Perolado" },
+                    { (byte)29, "#e17282", "Rosa Chiclete Perolado" },
+                    { (byte)30, "#cb3038", "Pink Perolado" },
+                    { (byte)31, "#cc2862", "Rosa Perolado" },
+                    { (byte)32, "#f3134f", "Rosa Choque Perolado" },
+                    { (byte)33, "#a31208", "Cobre Perolado" },
+                    { (byte)34, "#4fdb22", "Verde Fluorescente Perolado" },
+                    { (byte)35, "#06785f", "Verde Esmeralda Perolado" },
+                    { (byte)36, "#38ab72", "Verde Água Perolado" },
+                    { (byte)37, "#1d5236", "Verde Bandeira Perolado" },
+                    { (byte)38, "#9dbd69", "Verde Claro Perolado" },
+                    { (byte)39, "#d4124e", "Magenta Perolado" }
                 });
 
             migrationBuilder.InsertData(
@@ -450,9 +483,9 @@ namespace DmResinas.Migrations
                 columns: new[] { "RoleId", "UserId" },
                 values: new object[,]
                 {
-                    { "5724538a-4f82-4c4d-8c3c-486770eeae88", "2c8753ab-6959-4cab-aec8-96dc522d8079" },
-                    { "7c09394f-0d23-417d-a6f8-710553b7ee1c", "2c8753ab-6959-4cab-aec8-96dc522d8079" },
-                    { "7f58c363-2c89-4536-aa9a-1ed9dfb019bd", "2c8753ab-6959-4cab-aec8-96dc522d8079" }
+                    { "18ac52cf-36ff-4986-871b-70835b4e3596", "8742e16d-f897-4958-8e81-aa705e222dce" },
+                    { "819f5c9e-42b3-48a7-8a52-032bd9bb9588", "8742e16d-f897-4958-8e81-aa705e222dce" },
+                    { "8f4f4a8c-f913-48b3-b8b4-ad385feeb160", "8742e16d-f897-4958-8e81-aa705e222dce" }
                 });
 
             migrationBuilder.InsertData(
@@ -460,15 +493,16 @@ namespace DmResinas.Migrations
                 columns: new[] { "Id", "Banner", "CategoriaPaiId", "Filtrar", "Foto", "Nome" },
                 values: new object[,]
                 {
-                    { (byte)4, false, (byte)3, true, "", "Bolsas" },
-                    { (byte)5, false, (byte)3, true, "", "Calçados" },
-                    { (byte)6, false, (byte)3, true, "", "Relógios" }
+                    { (byte)4, false, (byte)3, true, "", "Chaveiros" },
+                    { (byte)5, false, (byte)3, true, "", "Marca Páginas" },
+                    { (byte)6, false, (byte)3, true, "", "Com Nome" },
+                    { (byte)7, false, (byte)3, true, "", "Placa" }
                 });
 
             migrationBuilder.InsertData(
                 table: "Usuario",
                 columns: new[] { "UsuarioId", "DataNascimento", "Foto", "Nome" },
-                values: new object[] { "2c8753ab-6959-4cab-aec8-96dc522d8079", new DateTime(2006, 3, 22, 0, 0, 0, 0, DateTimeKind.Unspecified), "/img/users/avatar.png", "Bard0u" });
+                values: new object[] { "8742e16d-f897-4958-8e81-aa705e222dce", new DateTime(2006, 3, 22, 0, 0, 0, 0, DateTimeKind.Unspecified), "/img/users/avatar.png", "Bard0u" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
