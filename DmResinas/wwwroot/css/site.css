@@ -149,6 +149,12 @@ p.textoSobre {
 
 /* Página Dicas */
 
+.containerTudoDicas {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 header.introductionDicas {
   margin-top: 70px;
 }
@@ -157,7 +163,6 @@ body.bodyDicas {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
 }
 
 body.bodyDicas p {
@@ -171,13 +176,15 @@ body.bodyDicas p {
 }
 
 main.mainDicas {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  width: 100%;
 }
 
-.introductionDicas {
+.secaoDicas,
+.divisaoContainerDicas {
   margin-top: 68px;
   display: flex;
   flex-direction: column;
@@ -185,7 +192,15 @@ main.mainDicas {
   align-items: center;
 }
 
-.introductionDicas h2 {
+.secaoDicas.baixo {
+  margin-top: 0px;
+}
+
+.divisaoContainerDicas {
+  margin-top: 0;
+}
+
+.secaoDicas h2 {
   color: #C58A3E;
   text-align: center;
   font-family: "Italiana", sans-serif;
@@ -214,7 +229,6 @@ main.mainDicas {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 50px;
 }
 
 #textoTituloDicas {
@@ -223,8 +237,11 @@ main.mainDicas {
   font-size: 1.8rem;
 }
 
-.descricaoDicas {
-  margin-top: 40px;
+#descricaoDicas {
+  max-width: 300px;
+  font-size: 1.3rem;
+  text-align: center;
+  margin-top: 30px;
   margin-bottom: 55px;
 }
 
@@ -233,7 +250,7 @@ h1#tresDicas {
 }
 
 .divisaoDicas {
-  width: 870px;
+  width: 80%;
   height: 2px;
   background: #C58A3E;
 }
@@ -269,7 +286,8 @@ h1#tresDicas {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  max-width: 800px;
+  max-width: 400px;
+  margin: 0 20px;
 }
 
 .dicasDicas h1 {
@@ -289,7 +307,15 @@ h1#tresDicas {
 
 /* PÁGINA DICAS SEÇÃO DÚVIDAS */
 
+.duvidasContainerDicas {
+  margin: 100px 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 .duvidasDicas {
+  width: 70%;
   text-align: center;
 }
 
@@ -305,6 +331,10 @@ h1#tresDicas {
   text-transform: uppercase;
 }
 
+ .accordion-item {
+  border: none;
+ }
+
  .accordion .accordion-item {
 	 border-bottom: 1px solid #e5e5e5;
 }
@@ -312,6 +342,7 @@ h1#tresDicas {
 	 border-bottom: 1px solid #03b5d2;
 }
  .accordion button {
+  font-family: "Abel", sans-serif;
 	 position: relative;
 	 display: block;
 	 text-align: left;
@@ -386,6 +417,7 @@ h1#tresDicas {
 	 will-change: opacity, max-height;
 }
  .accordion .accordion-content p {
+  font-family: "Abel", sans-serif;
 	 font-size: 1rem;
 	 font-weight: 300;
 	 margin: 2em 0;

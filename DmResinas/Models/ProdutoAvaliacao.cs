@@ -16,7 +16,7 @@ public class ProdutoAvaliacao
     [ForeignKey("UsuarioId")]
     public Usuario Usuario { get; set; }
 
-    [Required(ErrorMessage ="informe o texto da avaliação")]
+    [Required(ErrorMessage ="Informe o texto da avaliação")]
     [StringLength(300, ErrorMessage ="o texto deve possuir no maximo 300 caracteres")]
     public string AvaliacaoTexto { get; set; }
 
