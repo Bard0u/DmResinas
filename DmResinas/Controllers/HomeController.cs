@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using DmResinas.Models;
 using DmResinas.Data;
 using Microsoft.EntityFrameworkCore;
+using DmResinas.DTO;
 
 namespace DmResinas.Controllers;
 
@@ -35,9 +36,11 @@ public class HomeController : Controller
     }
     public IActionResult Catalogo(int? id)
     {
-        var produtos = _context.Produtos.Include(pc => pc.Categorias).ThenInclude(c => c.Categoria).ToList();
-        _context.Produtos.Include(po => po.Cores).ThenInclude(c => c.Cor).ToList();
-        return View(produtos);
+        CatalogoDto catalogo = new() {
+            Categorias = _context.Categorias.ToList(),
+            Produtos = _context.Produtos.Include(t => t.Categorias).ToList()
+        };
+        return View(catalogo);
     }
     public IActionResult Dicas()
     {
