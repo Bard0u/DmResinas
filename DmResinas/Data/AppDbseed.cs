@@ -207,7 +207,7 @@ public class AppDbSeed
         };
         builder.Entity<Cor>().HasData(cores);
         #endregion
-         #region Populate Categoria
+        #region Populate Categoria
         List<Categoria> categorias = new() {
             new Categoria() {
                 Id = 1,
@@ -258,7 +258,7 @@ public class AppDbSeed
         builder.Entity<Categoria>().HasData(categorias);
         #endregion
 
-                List<Produto> produtos = new() {
+        List<Produto> produtos = new() {
             new Produto() {
                 Id = 1,
                 Nome = "Letra L",
@@ -448,7 +448,7 @@ public class AppDbSeed
                 Nome = "Bard0u",
                 DataNascimento = DateTime.Parse("22/03/2006"),
                 Foto = "/img/users/avatar.png"
-            }   
+            }
         };
         builder.Entity<Usuario>().HasData(usuarios);
         #endregion
