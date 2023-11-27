@@ -1,5 +1,7 @@
 ﻿/* CARROSSEL */
 
+console.log('ae');
+
 const $ = selector => {
   return document.querySelector(selector);
 };
@@ -146,4 +148,3 @@ swipe.on("swiperight", (ev) => {
 })()
 
 
-console.log('oi');

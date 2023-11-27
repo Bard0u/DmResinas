@@ -1,5 +1,7 @@
 /* PAGINA SOBRE */
 
+console.log('oi');
+
 const boxes = document.querySelectorAll('.datesSobre, .infoSobre');
 window.addEventListener('scroll', checkBoxes);
 checkBoxes();

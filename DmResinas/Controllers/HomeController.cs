@@ -27,10 +27,6 @@ public class HomeController : Controller
     {
         return View();
     }
-    public IActionResult Contato()
-    {
-        return View();
-    }
     public IActionResult Dicas()
     {
         return View();

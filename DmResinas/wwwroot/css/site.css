@@ -126,6 +126,7 @@ article.mainSobre {
 }
 
 p.textoSobre {
+  font-family: "Abel", sans-serif;
   color: #8A8A8A;
   text-align: justify;
 } 
@@ -339,7 +340,7 @@ h1#tresDicas {
 	 border-bottom: 1px solid #e5e5e5;
 }
  .accordion .accordion-item button[aria-expanded='true'] {
-	 border-bottom: 1px solid #03b5d2;
+	 border-bottom: 1px solid #FF8CC1;
 }
  .accordion button {
   font-family: "Abel", sans-serif;
@@ -357,12 +358,12 @@ h1#tresDicas {
 }
  .accordion button:hover, .accordion button:focus {
 	 cursor: pointer;
-	 color: #03b5d2;
+	 color: #FF8CC1;
 }
  .accordion button:hover::after, .accordion button:focus::after {
 	 cursor: pointer;
-	 color: #03b5d2;
-	 border: 1px solid #03b5d2;
+	 color: #FF8CC1;
+	 border: 1px solid #FF8CC1;
 }
  .accordion button .accordion-title {
 	 padding: 1em 1.5em 1em 0;
@@ -374,7 +375,6 @@ h1#tresDicas {
 	 right: 0;
 	 width: 22px;
 	 height: 22px;
-	 border: 1px solid;
 	 border-radius: 22px;
 }
  .accordion button .icon::before {
@@ -398,7 +398,7 @@ h1#tresDicas {
 	 background: currentColor;
 }
  .accordion button[aria-expanded='true'] {
-	 color: #03b5d2;
+	 color: #FF8CC1;
 }
  .accordion button[aria-expanded='true'] .icon::after {
 	 width: 0;
@@ -425,37 +425,6 @@ h1#tresDicas {
  
 
 /* PÁGINA HOME */
-
-
-.doseujeito {
-  display: flex; 
-  align-items: center;
-  column-gap: 10px;
-  gap: 100px;
-}
-
-.fraseDestaque {
-  display: flex;
-  flex-direction: column;
-  gap: 0px;
-}
-
-.fraseDestaque p {
-  font-family: 'Inter';
-  font-weight: 900;
-  font-size: 80px;
-  width: 100%;
-  margin: 0px;
-  line-height: 70px;
-  color: black;
-}
-
-.rosa {
-  font-family: 'Italiana';
-  width: 100%;
-  box-sizing: border-box;
-  color: #FF8CC1;
-}
 
 .botaoProdutos {
   margin-top: 25px;
@@ -501,10 +470,11 @@ body {
 }
 
 .hero-image {
-  background-image: url("https://cdn.discordapp.com/attachments/838572990102372402/1131324611389309039/image.png");
+  background-image: url("https://cdn.discordapp.com/attachments/826872414147313764/1178551401471815760/image_2023-11-26_232206083.png?ex=65768e86&is=65641986&hm=d5b459861cb93655413d79f8c5801b9906d2c000912d9779073f4d62f51888cc&");
   height: 500px;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-size: cover;
+  background-position: center;
   position: relative;
   margin-bottom: 50px;
 }
@@ -632,11 +602,43 @@ body {
   height: 7px;
 }
 
+.rosa {
+  font-family: 'Italiana';
+  width: 100%;
+  box-sizing: border-box;
+  color: #FF8CC1;
+}
+
+.fraseDestaque {
+  margin-left: 70px;
+  display: flex;
+  flex-direction: column;
+}
+
+.fraseDestaque p {
+  font-family: 'Inter';
+  font-weight: 900;
+  font-size: 80px;
+  width: 100%;
+  margin: 0px;
+  line-height: 70px;
+  color: black;
+}
+
+.containerDoSeuJeito {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
 .imgdoseujeito {
+  background-image: url(https://cdn.discordapp.com/attachments/826872414147313764/1178530667861131396/29663f23-78a7-4c1e-9c3f-50de8aa27b50.png?ex=65767b37&is=65640637&hm=3999e61…&);
+  background-size: 100%;
   border-top-right-radius: 200px;
   border-bottom-right-radius: 200px;
   width: 900px;
   height: 400px;
+  background-position-y: center;
 }
 
 .palavrado {
