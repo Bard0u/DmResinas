@@ -48,7 +48,7 @@
 				</button>
 				@foreach (var categoria in Model.Categorias)
 				{
-					<button id="btn-@categoria.Id" conclick="filter('@categoria.Nome')">
+					<button id="btn-@categoria.Id" conclick="filter('@categoria.Id')">
 						@categoria.Nome
 					</button>
 				}
