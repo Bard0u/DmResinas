@@ -17,15 +17,27 @@ public class HomeController : Controller
         _context = context;
     }
 
-    public IActionResult Index()
+    public IActionResult Index(int? id)
     {
-        var products = _context.ProdutoCategorias.Include(pc => pc.Produto).ThenInclude(c => c.Categorias).ToList();
-        _context.ProdutoCores.Include(po => po.Produto).ThenInclude(c => c.Cores).ToList();
-        return View(products);
+        var produtos = _context.Produtos.Include(pc => pc.Categorias).ThenInclude(c => c.Categoria).ToList();
+        _context.Produtos.Include(po => po.Cores).ThenInclude(c => c.Cor).ToList();
+        return View(produtos);
     }
-    public IActionResult Catalogo()
+    public IActionResult Produto(int? id)
     {
-        return View();
+        var produto = _context.Produtos
+                   .Where(p => p.Id == id)
+                   .Include(p => p.Categorias)
+                   .ThenInclude(c => c.Categoria)
+                   .Include(p => p.Cores)
+                   .SingleOrDefault();
+        return View(produto);
+    }
+    public IActionResult Catalogo(int? id)
+    {
+        var produtos = _context.Produtos.Include(pc => pc.Categorias).ThenInclude(c => c.Categoria).ToList();
+        _context.Produtos.Include(po => po.Cores).ThenInclude(c => c.Cor).ToList();
+        return View(produtos);
     }
     public IActionResult Dicas()
     {

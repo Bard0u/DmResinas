@@ -246,16 +246,8 @@ public class AppDbSeed
                 Banner = false,
                 CategoriaPaiId = 3
             },
-            /*new Categoria() {
-                Id = 6,
-                Nome = "Com Nome",
-                Foto = "",
-                Filtrar = true,
-                Banner = false,
-                CategoriaPaiId = 3
-            },*/ // O Gallo falou para rever a relação das categorias, segunda ve isso com ele certinho
             new Categoria() {
-                Id = 7,
+                Id = 6,
                 Nome = "Placa",
                 Foto = "",
                 Filtrar = true,
@@ -265,6 +257,147 @@ public class AppDbSeed
         };
         builder.Entity<Categoria>().HasData(categorias);
         #endregion
+
+                List<Produto> produtos = new() {
+            new Produto() {
+                Id = 1,
+                Nome = "Letra L",
+                Descricaoresumida = "Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat",
+                Descricao = "Aenean sit amet gravida nisi. Nam fermentum est felis, quis feugiat nunc fringilla sit amet. Ut in blandit ipsum. Quisque luctus dui at ante aliquet, in hendrerit lectus interdum. Morbi elementum sapien rhoncus pretium maximus. Nulla lectus enim, cursus et elementum sed, sodales vitae eros. Ut ex quam, porta consequat interdum in, faucibus eu velit. Quisque rhoncus ex ac libero varius molestie. Aenean tempor sit amet orci nec iaculis. Cras sit amet nulla libero. Curabitur dignissim, nunc nec laoreet consequat, purus nunc porta lacus, vel efficitur tellus augue in ipsum. Cras in arcu sed metus rutrum iaculis. Nulla non tempor erat. Duis in egestas nunc.",
+                Preco = 20.64m,
+                Destaque = true
+            },
+            new Produto() {
+                Id = 2,
+                Nome = "Letra J",
+                Descricaoresumida = "Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat",
+                Descricao = "Aenean sit amet gravida nisi. Nam fermentum est felis, quis feugiat nunc fringilla sit amet. Ut in blandit ipsum. Quisque luctus dui at ante aliquet, in hendrerit lectus interdum. Morbi elementum sapien rhoncus pretium maximus. Nulla lectus enim, cursus et elementum sed, sodales vitae eros. Ut ex quam, porta consequat interdum in, faucibus eu velit. Quisque rhoncus ex ac libero varius molestie. Aenean tempor sit amet orci nec iaculis. Cras sit amet nulla libero. Curabitur dignissim, nunc nec laoreet consequat, purus nunc porta lacus, vel efficitur tellus augue in ipsum. Cras in arcu sed metus rutrum iaculis. Nulla non tempor erat. Duis in egestas nunc.",
+                Preco = 35.31M,
+                Destaque = true
+            },
+            new Produto() {
+                Id = 3,
+                Nome = "Letra K",
+                Descricaoresumida = "Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat",
+                Descricao = "Aenean sit amet gravida nisi. Nam fermentum est felis, quis feugiat nunc fringilla sit amet. Ut in blandit ipsum. Quisque luctus dui at ante aliquet, in hendrerit lectus interdum. Morbi elementum sapien rhoncus pretium maximus. Nulla lectus enim, cursus et elementum sed, sodales vitae eros. Ut ex quam, porta consequat interdum in, faucibus eu velit. Quisque rhoncus ex ac libero varius molestie. Aenean tempor sit amet orci nec iaculis. Cras sit amet nulla libero. Curabitur dignissim, nunc nec laoreet consequat, purus nunc porta lacus, vel efficitur tellus augue in ipsum. Cras in arcu sed metus rutrum iaculis. Nulla non tempor erat. Duis in egestas nunc.",
+                Preco = 25.50M,
+                Destaque = true
+            },
+            new Produto() {
+                Id = 4,
+                Nome = "Marca Página",
+                Descricaoresumida = "Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat",
+                Descricao = "Aenean sit amet gravida nisi. Nam fermentum est felis, quis feugiat nunc fringilla sit amet. Ut in blandit ipsum. Quisque luctus dui at ante aliquet, in hendrerit lectus interdum. Morbi elementum sapien rhoncus pretium maximus. Nulla lectus enim, cursus et elementum sed, sodales vitae eros. Ut ex quam, porta consequat interdum in, faucibus eu velit. Quisque rhoncus ex ac libero varius molestie. Aenean tempor sit amet orci nec iaculis. Cras sit amet nulla libero. Curabitur dignissim, nunc nec laoreet consequat, purus nunc porta lacus, vel efficitur tellus augue in ipsum. Cras in arcu sed metus rutrum iaculis. Nulla non tempor erat. Duis in egestas nunc.",
+                Preco = 75.25M,
+                Destaque = true
+            },
+            new Produto() {
+                Id = 5,
+                Nome = "Marca Página",
+                Descricaoresumida = "Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat",
+                Descricao = "Aenean sit amet gravida nisi. Nam fermentum est felis, quis feugiat nunc fringilla sit amet. Ut in blandit ipsum. Quisque luctus dui at ante aliquet, in hendrerit lectus interdum. Morbi elementum sapien rhoncus pretium maximus. Nulla lectus enim, cursus et elementum sed, sodales vitae eros. Ut ex quam, porta consequat interdum in, faucibus eu velit. Quisque rhoncus ex ac libero varius molestie. Aenean tempor sit amet orci nec iaculis. Cras sit amet nulla libero. Curabitur dignissim, nunc nec laoreet consequat, purus nunc porta lacus, vel efficitur tellus augue in ipsum. Cras in arcu sed metus rutrum iaculis. Nulla non tempor erat. Duis in egestas nunc.",
+                Preco = 53.0M,
+                Destaque = true
+            },
+            new Produto() {
+                Id = 6,
+                Nome = "Marca Página",
+                Descricaoresumida = "Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat",
+                Descricao = "Aenean sit amet gravida nisi. Nam fermentum est felis, quis feugiat nunc fringilla sit amet. Ut in blandit ipsum. Quisque luctus dui at ante aliquet, in hendrerit lectus interdum. Morbi elementum sapien rhoncus pretium maximus. Nulla lectus enim, cursus et elementum sed, sodales vitae eros. Ut ex quam, porta consequat interdum in, faucibus eu velit. Quisque rhoncus ex ac libero varius molestie. Aenean tempor sit amet orci nec iaculis. Cras sit amet nulla libero. Curabitur dignissim, nunc nec laoreet consequat, purus nunc porta lacus, vel efficitur tellus augue in ipsum. Cras in arcu sed metus rutrum iaculis. Nulla non tempor erat. Duis in egestas nunc.",
+                Preco = 25.85M,
+                Destaque = true
+            },
+            new Produto() {
+                Id = 7,
+                Nome = "Letra A",
+                Descricaoresumida = "Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat",
+                Descricao = "Aenean sit amet gravida nisi. Nam fermentum est felis, quis feugiat nunc fringilla sit amet. Ut in blandit ipsum. Quisque luctus dui at ante aliquet, in hendrerit lectus interdum. Morbi elementum sapien rhoncus pretium maximus. Nulla lectus enim, cursus et elementum sed, sodales vitae eros. Ut ex quam, porta consequat interdum in, faucibus eu velit. Quisque rhoncus ex ac libero varius molestie. Aenean tempor sit amet orci nec iaculis. Cras sit amet nulla libero. Curabitur dignissim, nunc nec laoreet consequat, purus nunc porta lacus, vel efficitur tellus augue in ipsum. Cras in arcu sed metus rutrum iaculis. Nulla non tempor erat. Duis in egestas nunc.",
+                Preco = 63.16M,
+                Destaque = true
+            },
+            new Produto() {
+                Id = 8,
+                Nome = "Letra B",
+                Descricaoresumida = "Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat",
+                Descricao = "Aenean sit amet gravida nisi. Nam fermentum est felis, quis feugiat nunc fringilla sit amet. Ut in blandit ipsum. Quisque luctus dui at ante aliquet, in hendrerit lectus interdum. Morbi elementum sapien rhoncus pretium maximus. Nulla lectus enim, cursus et elementum sed, sodales vitae eros. Ut ex quam, porta consequat interdum in, faucibus eu velit. Quisque rhoncus ex ac libero varius molestie. Aenean tempor sit amet orci nec iaculis. Cras sit amet nulla libero. Curabitur dignissim, nunc nec laoreet consequat, purus nunc porta lacus, vel efficitur tellus augue in ipsum. Cras in arcu sed metus rutrum iaculis. Nulla non tempor erat. Duis in egestas nunc.",
+                Preco = 18.49M,
+                Destaque = true
+            },
+            new Produto() {
+                Id = 9,
+                Nome = "Letra D",
+                Descricaoresumida = "Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat",
+                Descricao = "Aenean sit amet gravida nisi. Nam fermentum est felis, quis feugiat nunc fringilla sit amet. Ut in blandit ipsum. Quisque luctus dui at ante aliquet, in hendrerit lectus interdum. Morbi elementum sapien rhoncus pretium maximus. Nulla lectus enim, cursus et elementum sed, sodales vitae eros. Ut ex quam, porta consequat interdum in, faucibus eu velit. Quisque rhoncus ex ac libero varius molestie. Aenean tempor sit amet orci nec iaculis. Cras sit amet nulla libero. Curabitur dignissim, nunc nec laoreet consequat, purus nunc porta lacus, vel efficitur tellus augue in ipsum. Cras in arcu sed metus rutrum iaculis. Nulla non tempor erat. Duis in egestas nunc.",
+                Preco = 93.20M,
+                Destaque = true
+            },
+            new Produto() {
+                Id = 10,
+                Nome = "Placa Manicure",
+                Descricaoresumida = "Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat",
+                Descricao = "Aenean sit amet gravida nisi. Nam fermentum est felis, quis feugiat nunc fringilla sit amet. Ut in blandit ipsum. Quisque luctus dui at ante aliquet, in hendrerit lectus interdum. Morbi elementum sapien rhoncus pretium maximus. Nulla lectus enim, cursus et elementum sed, sodales vitae eros. Ut ex quam, porta consequat interdum in, faucibus eu velit. Quisque rhoncus ex ac libero varius molestie. Aenean tempor sit amet orci nec iaculis. Cras sit amet nulla libero. Curabitur dignissim, nunc nec laoreet consequat, purus nunc porta lacus, vel efficitur tellus augue in ipsum. Cras in arcu sed metus rutrum iaculis. Nulla non tempor erat. Duis in egestas nunc.",
+                Preco = 75.0M,
+                Destaque = true
+            },
+            new Produto() {
+                Id = 11,
+                Nome = "Placa Manicure",
+                Descricaoresumida = "Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat",
+                Descricao = "Aenean sit amet gravida nisi. Nam fermentum est felis, quis feugiat nunc fringilla sit amet. Ut in blandit ipsum. Quisque luctus dui at ante aliquet, in hendrerit lectus interdum. Morbi elementum sapien rhoncus pretium maximus. Nulla lectus enim, cursus et elementum sed, sodales vitae eros. Ut ex quam, porta consequat interdum in, faucibus eu velit. Quisque rhoncus ex ac libero varius molestie. Aenean tempor sit amet orci nec iaculis. Cras sit amet nulla libero. Curabitur dignissim, nunc nec laoreet consequat, purus nunc porta lacus, vel efficitur tellus augue in ipsum. Cras in arcu sed metus rutrum iaculis. Nulla non tempor erat. Duis in egestas nunc.",
+                Preco = 63.15M,
+                Destaque = true
+            }
+        };
+        builder.Entity<Produto>().HasData(produtos);
+
+        List<ProdutoCategoria> produtoCategorias = new() {
+            new ProdutoCategoria() {
+                ProdutoId = 1,
+                CategoriaId = 1
+            },
+            new ProdutoCategoria() {
+                ProdutoId = 2,
+                CategoriaId = 1
+            },
+            new ProdutoCategoria() {
+                ProdutoId = 3,
+                CategoriaId = 2
+            },
+            new ProdutoCategoria() {
+                ProdutoId = 4,
+                CategoriaId = 1
+            },
+            new ProdutoCategoria() {
+                ProdutoId = 5,
+                CategoriaId = 2
+            },
+            new ProdutoCategoria() {
+                ProdutoId = 6,
+                CategoriaId = 1
+            },
+            new ProdutoCategoria() {
+                ProdutoId = 7,
+                CategoriaId = 2
+            },
+            new ProdutoCategoria() {
+                ProdutoId = 8,
+                CategoriaId = 1
+            },
+            new ProdutoCategoria() {
+                ProdutoId = 9,
+                CategoriaId = 6
+            },
+            new ProdutoCategoria() {
+                ProdutoId = 10,
+                CategoriaId = 5
+            },
+            new ProdutoCategoria() {
+                ProdutoId = 11,
+                CategoriaId = 3
+            }
+        };
+        builder.Entity<ProdutoCategoria>().HasData(produtoCategorias);
+
 
         #region Populate Roles - Perfis de Usuário
         List<IdentityRole> roles = new()

@@ -99,15 +99,6 @@ namespace DmResinas.Migrations
                             CategoriaPaiId = (byte)3,
                             Filtrar = true,
                             Foto = "",
-                            Nome = "Com Nome"
-                        },
-                        new
-                        {
-                            Id = (byte)7,
-                            Banner = false,
-                            CategoriaPaiId = (byte)3,
-                            Filtrar = true,
-                            Foto = "",
                             Nome = "Placa"
                         });
                 });
@@ -412,6 +403,118 @@ namespace DmResinas.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Produto");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Descricao = "Aenean sit amet gravida nisi. Nam fermentum est felis, quis feugiat nunc fringilla sit amet. Ut in blandit ipsum. Quisque luctus dui at ante aliquet, in hendrerit lectus interdum. Morbi elementum sapien rhoncus pretium maximus. Nulla lectus enim, cursus et elementum sed, sodales vitae eros. Ut ex quam, porta consequat interdum in, faucibus eu velit. Quisque rhoncus ex ac libero varius molestie. Aenean tempor sit amet orci nec iaculis. Cras sit amet nulla libero. Curabitur dignissim, nunc nec laoreet consequat, purus nunc porta lacus, vel efficitur tellus augue in ipsum. Cras in arcu sed metus rutrum iaculis. Nulla non tempor erat. Duis in egestas nunc.",
+                            Descricaoresumida = "Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat",
+                            Destaque = true,
+                            Nome = "Letra L",
+                            Peso = 0m,
+                            Preco = 20.64m
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Descricao = "Aenean sit amet gravida nisi. Nam fermentum est felis, quis feugiat nunc fringilla sit amet. Ut in blandit ipsum. Quisque luctus dui at ante aliquet, in hendrerit lectus interdum. Morbi elementum sapien rhoncus pretium maximus. Nulla lectus enim, cursus et elementum sed, sodales vitae eros. Ut ex quam, porta consequat interdum in, faucibus eu velit. Quisque rhoncus ex ac libero varius molestie. Aenean tempor sit amet orci nec iaculis. Cras sit amet nulla libero. Curabitur dignissim, nunc nec laoreet consequat, purus nunc porta lacus, vel efficitur tellus augue in ipsum. Cras in arcu sed metus rutrum iaculis. Nulla non tempor erat. Duis in egestas nunc.",
+                            Descricaoresumida = "Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat",
+                            Destaque = true,
+                            Nome = "Letra J",
+                            Peso = 0m,
+                            Preco = 35.31m
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Descricao = "Aenean sit amet gravida nisi. Nam fermentum est felis, quis feugiat nunc fringilla sit amet. Ut in blandit ipsum. Quisque luctus dui at ante aliquet, in hendrerit lectus interdum. Morbi elementum sapien rhoncus pretium maximus. Nulla lectus enim, cursus et elementum sed, sodales vitae eros. Ut ex quam, porta consequat interdum in, faucibus eu velit. Quisque rhoncus ex ac libero varius molestie. Aenean tempor sit amet orci nec iaculis. Cras sit amet nulla libero. Curabitur dignissim, nunc nec laoreet consequat, purus nunc porta lacus, vel efficitur tellus augue in ipsum. Cras in arcu sed metus rutrum iaculis. Nulla non tempor erat. Duis in egestas nunc.",
+                            Descricaoresumida = "Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat",
+                            Destaque = true,
+                            Nome = "Letra K",
+                            Peso = 0m,
+                            Preco = 25.50m
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Descricao = "Aenean sit amet gravida nisi. Nam fermentum est felis, quis feugiat nunc fringilla sit amet. Ut in blandit ipsum. Quisque luctus dui at ante aliquet, in hendrerit lectus interdum. Morbi elementum sapien rhoncus pretium maximus. Nulla lectus enim, cursus et elementum sed, sodales vitae eros. Ut ex quam, porta consequat interdum in, faucibus eu velit. Quisque rhoncus ex ac libero varius molestie. Aenean tempor sit amet orci nec iaculis. Cras sit amet nulla libero. Curabitur dignissim, nunc nec laoreet consequat, purus nunc porta lacus, vel efficitur tellus augue in ipsum. Cras in arcu sed metus rutrum iaculis. Nulla non tempor erat. Duis in egestas nunc.",
+                            Descricaoresumida = "Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat",
+                            Destaque = true,
+                            Nome = "Marca Página",
+                            Peso = 0m,
+                            Preco = 75.25m
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Descricao = "Aenean sit amet gravida nisi. Nam fermentum est felis, quis feugiat nunc fringilla sit amet. Ut in blandit ipsum. Quisque luctus dui at ante aliquet, in hendrerit lectus interdum. Morbi elementum sapien rhoncus pretium maximus. Nulla lectus enim, cursus et elementum sed, sodales vitae eros. Ut ex quam, porta consequat interdum in, faucibus eu velit. Quisque rhoncus ex ac libero varius molestie. Aenean tempor sit amet orci nec iaculis. Cras sit amet nulla libero. Curabitur dignissim, nunc nec laoreet consequat, purus nunc porta lacus, vel efficitur tellus augue in ipsum. Cras in arcu sed metus rutrum iaculis. Nulla non tempor erat. Duis in egestas nunc.",
+                            Descricaoresumida = "Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat",
+                            Destaque = true,
+                            Nome = "Marca Página",
+                            Peso = 0m,
+                            Preco = 53.0m
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Descricao = "Aenean sit amet gravida nisi. Nam fermentum est felis, quis feugiat nunc fringilla sit amet. Ut in blandit ipsum. Quisque luctus dui at ante aliquet, in hendrerit lectus interdum. Morbi elementum sapien rhoncus pretium maximus. Nulla lectus enim, cursus et elementum sed, sodales vitae eros. Ut ex quam, porta consequat interdum in, faucibus eu velit. Quisque rhoncus ex ac libero varius molestie. Aenean tempor sit amet orci nec iaculis. Cras sit amet nulla libero. Curabitur dignissim, nunc nec laoreet consequat, purus nunc porta lacus, vel efficitur tellus augue in ipsum. Cras in arcu sed metus rutrum iaculis. Nulla non tempor erat. Duis in egestas nunc.",
+                            Descricaoresumida = "Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat",
+                            Destaque = true,
+                            Nome = "Marca Página",
+                            Peso = 0m,
+                            Preco = 25.85m
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Descricao = "Aenean sit amet gravida nisi. Nam fermentum est felis, quis feugiat nunc fringilla sit amet. Ut in blandit ipsum. Quisque luctus dui at ante aliquet, in hendrerit lectus interdum. Morbi elementum sapien rhoncus pretium maximus. Nulla lectus enim, cursus et elementum sed, sodales vitae eros. Ut ex quam, porta consequat interdum in, faucibus eu velit. Quisque rhoncus ex ac libero varius molestie. Aenean tempor sit amet orci nec iaculis. Cras sit amet nulla libero. Curabitur dignissim, nunc nec laoreet consequat, purus nunc porta lacus, vel efficitur tellus augue in ipsum. Cras in arcu sed metus rutrum iaculis. Nulla non tempor erat. Duis in egestas nunc.",
+                            Descricaoresumida = "Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat",
+                            Destaque = true,
+                            Nome = "Letra A",
+                            Peso = 0m,
+                            Preco = 63.16m
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Descricao = "Aenean sit amet gravida nisi. Nam fermentum est felis, quis feugiat nunc fringilla sit amet. Ut in blandit ipsum. Quisque luctus dui at ante aliquet, in hendrerit lectus interdum. Morbi elementum sapien rhoncus pretium maximus. Nulla lectus enim, cursus et elementum sed, sodales vitae eros. Ut ex quam, porta consequat interdum in, faucibus eu velit. Quisque rhoncus ex ac libero varius molestie. Aenean tempor sit amet orci nec iaculis. Cras sit amet nulla libero. Curabitur dignissim, nunc nec laoreet consequat, purus nunc porta lacus, vel efficitur tellus augue in ipsum. Cras in arcu sed metus rutrum iaculis. Nulla non tempor erat. Duis in egestas nunc.",
+                            Descricaoresumida = "Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat",
+                            Destaque = true,
+                            Nome = "Letra B",
+                            Peso = 0m,
+                            Preco = 18.49m
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Descricao = "Aenean sit amet gravida nisi. Nam fermentum est felis, quis feugiat nunc fringilla sit amet. Ut in blandit ipsum. Quisque luctus dui at ante aliquet, in hendrerit lectus interdum. Morbi elementum sapien rhoncus pretium maximus. Nulla lectus enim, cursus et elementum sed, sodales vitae eros. Ut ex quam, porta consequat interdum in, faucibus eu velit. Quisque rhoncus ex ac libero varius molestie. Aenean tempor sit amet orci nec iaculis. Cras sit amet nulla libero. Curabitur dignissim, nunc nec laoreet consequat, purus nunc porta lacus, vel efficitur tellus augue in ipsum. Cras in arcu sed metus rutrum iaculis. Nulla non tempor erat. Duis in egestas nunc.",
+                            Descricaoresumida = "Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat",
+                            Destaque = true,
+                            Nome = "Letra D",
+                            Peso = 0m,
+                            Preco = 93.20m
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Descricao = "Aenean sit amet gravida nisi. Nam fermentum est felis, quis feugiat nunc fringilla sit amet. Ut in blandit ipsum. Quisque luctus dui at ante aliquet, in hendrerit lectus interdum. Morbi elementum sapien rhoncus pretium maximus. Nulla lectus enim, cursus et elementum sed, sodales vitae eros. Ut ex quam, porta consequat interdum in, faucibus eu velit. Quisque rhoncus ex ac libero varius molestie. Aenean tempor sit amet orci nec iaculis. Cras sit amet nulla libero. Curabitur dignissim, nunc nec laoreet consequat, purus nunc porta lacus, vel efficitur tellus augue in ipsum. Cras in arcu sed metus rutrum iaculis. Nulla non tempor erat. Duis in egestas nunc.",
+                            Descricaoresumida = "Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat",
+                            Destaque = true,
+                            Nome = "Placa Manicure",
+                            Peso = 0m,
+                            Preco = 75.0m
+                        },
+                        new
+                        {
+                            Id = 11,
+                            Descricao = "Aenean sit amet gravida nisi. Nam fermentum est felis, quis feugiat nunc fringilla sit amet. Ut in blandit ipsum. Quisque luctus dui at ante aliquet, in hendrerit lectus interdum. Morbi elementum sapien rhoncus pretium maximus. Nulla lectus enim, cursus et elementum sed, sodales vitae eros. Ut ex quam, porta consequat interdum in, faucibus eu velit. Quisque rhoncus ex ac libero varius molestie. Aenean tempor sit amet orci nec iaculis. Cras sit amet nulla libero. Curabitur dignissim, nunc nec laoreet consequat, purus nunc porta lacus, vel efficitur tellus augue in ipsum. Cras in arcu sed metus rutrum iaculis. Nulla non tempor erat. Duis in egestas nunc.",
+                            Descricaoresumida = "Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat",
+                            Destaque = true,
+                            Nome = "Placa Manicure",
+                            Peso = 0m,
+                            Preco = 63.15m
+                        });
                 });
 
             modelBuilder.Entity("DmResinas.Models.ProdutoAvaliacao", b =>
@@ -457,6 +560,63 @@ namespace DmResinas.Migrations
                     b.HasIndex("CategoriaId");
 
                     b.ToTable("ProdtoCategoria");
+
+                    b.HasData(
+                        new
+                        {
+                            ProdutoId = 1,
+                            CategoriaId = (byte)1
+                        },
+                        new
+                        {
+                            ProdutoId = 2,
+                            CategoriaId = (byte)1
+                        },
+                        new
+                        {
+                            ProdutoId = 3,
+                            CategoriaId = (byte)2
+                        },
+                        new
+                        {
+                            ProdutoId = 4,
+                            CategoriaId = (byte)1
+                        },
+                        new
+                        {
+                            ProdutoId = 5,
+                            CategoriaId = (byte)2
+                        },
+                        new
+                        {
+                            ProdutoId = 6,
+                            CategoriaId = (byte)1
+                        },
+                        new
+                        {
+                            ProdutoId = 7,
+                            CategoriaId = (byte)2
+                        },
+                        new
+                        {
+                            ProdutoId = 8,
+                            CategoriaId = (byte)1
+                        },
+                        new
+                        {
+                            ProdutoId = 9,
+                            CategoriaId = (byte)6
+                        },
+                        new
+                        {
+                            ProdutoId = 10,
+                            CategoriaId = (byte)5
+                        },
+                        new
+                        {
+                            ProdutoId = 11,
+                            CategoriaId = (byte)3
+                        });
                 });
 
             modelBuilder.Entity("DmResinas.Models.ProdutoCor", b =>
@@ -546,7 +706,7 @@ namespace DmResinas.Migrations
                     b.HasData(
                         new
                         {
-                            UsuarioId = "8742e16d-f897-4958-8e81-aa705e222dce",
+                            UsuarioId = "86dbd1e2-28ee-400f-8915-bbeb5a58e321",
                             DataNascimento = new DateTime(2006, 3, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Foto = "/img/users/avatar.png",
                             Nome = "Bard0u"
@@ -581,22 +741,22 @@ namespace DmResinas.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "18ac52cf-36ff-4986-871b-70835b4e3596",
-                            ConcurrencyStamp = "4f4146cf-f8a8-4e4e-8373-cec1becb37c4",
+                            Id = "be4fed93-b887-49c5-a786-8bfdf8fa1c54",
+                            ConcurrencyStamp = "aec03673-6e4e-476a-aedc-14b5448eeee7",
                             Name = "Administrador",
                             NormalizedName = "ADMINISTRADOR"
                         },
                         new
                         {
-                            Id = "8f4f4a8c-f913-48b3-b8b4-ad385feeb160",
-                            ConcurrencyStamp = "ebade79e-994b-4fa4-b7aa-6a75981b8ea8",
+                            Id = "9649b275-801e-468d-ab3b-a5a5668102ea",
+                            ConcurrencyStamp = "2156eb15-2102-4542-8d04-cda7c8d9e664",
                             Name = "Funcionário",
                             NormalizedName = "FUNCIONARIO"
                         },
                         new
                         {
-                            Id = "819f5c9e-42b3-48a7-8a52-032bd9bb9588",
-                            ConcurrencyStamp = "e7d99ea3-6cf5-4604-8a67-f65ba9c0eac1",
+                            Id = "4931f139-d83c-47d9-a66a-afa60fc40bf5",
+                            ConcurrencyStamp = "75fce8f9-9b6a-4f41-8b96-aaed609bd66c",
                             Name = "Cliente",
                             NormalizedName = "CLIENTE"
                         });
@@ -691,17 +851,17 @@ namespace DmResinas.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "8742e16d-f897-4958-8e81-aa705e222dce",
+                            Id = "86dbd1e2-28ee-400f-8915-bbeb5a58e321",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "498b3b3c-44d2-4cf8-9b64-f560fd591953",
+                            ConcurrencyStamp = "d1ddeafa-3bcb-4ea6-977a-ee41be6e5f0d",
                             Email = "admin@dmresinas.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@DMRESINAS.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAEAACcQAAAAEIxMcPbZhjaRkdydGDwva6Fa9mzhgSoXiI88PJORdKZX8tpzevctwjWgrZogXHQWNg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEJ0RJ42iepS/C1JNg5zCd07IIxuzJhZtlJjVredic4Y/9EZ5W1VnFi+7PSBJqzumeQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "a20d8e4f-ba45-4a5c-93a6-359392f44c3b",
+                            SecurityStamp = "732b3a56-69c2-4fa1-8533-e9dce2565867",
                             TwoFactorEnabled = false,
                             UserName = "Admin"
                         });
@@ -769,18 +929,18 @@ namespace DmResinas.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "8742e16d-f897-4958-8e81-aa705e222dce",
-                            RoleId = "18ac52cf-36ff-4986-871b-70835b4e3596"
+                            UserId = "86dbd1e2-28ee-400f-8915-bbeb5a58e321",
+                            RoleId = "be4fed93-b887-49c5-a786-8bfdf8fa1c54"
                         },
                         new
                         {
-                            UserId = "8742e16d-f897-4958-8e81-aa705e222dce",
-                            RoleId = "8f4f4a8c-f913-48b3-b8b4-ad385feeb160"
+                            UserId = "86dbd1e2-28ee-400f-8915-bbeb5a58e321",
+                            RoleId = "9649b275-801e-468d-ab3b-a5a5668102ea"
                         },
                         new
                         {
-                            UserId = "8742e16d-f897-4958-8e81-aa705e222dce",
-                            RoleId = "819f5c9e-42b3-48a7-8a52-032bd9bb9588"
+                            UserId = "86dbd1e2-28ee-400f-8915-bbeb5a58e321",
+                            RoleId = "4931f139-d83c-47d9-a66a-afa60fc40bf5"
                         });
                 });
 
@@ -872,7 +1032,7 @@ namespace DmResinas.Migrations
             modelBuilder.Entity("DmResinas.Models.ProdutoFoto", b =>
                 {
                     b.HasOne("DmResinas.Models.Produto", "Produto")
-                        .WithMany()
+                        .WithMany("Fotos")
                         .HasForeignKey("ProdutoId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -959,6 +1119,8 @@ namespace DmResinas.Migrations
                     b.Navigation("Categorias");
 
                     b.Navigation("Cores");
+
+                    b.Navigation("Fotos");
                 });
 
             modelBuilder.Entity("DmResinas.Models.Usuario", b =>
