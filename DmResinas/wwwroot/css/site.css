@@ -23,6 +23,33 @@ html {
   margin: 0;
 }
 
+/* Login */
+
+.containerLogin {
+  margin-top: 55px;
+  display: flex;
+  height: fit-content;
+  width: 600px;
+  border: #C58A3E solid 1px;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainLogin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.botaoLogin {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  margin-bottom: 100px;
+}
+
 /* Página Sobre */
 
 .introductionSobre {
@@ -129,7 +156,7 @@ p.textoSobre {
   font-family: "Abel", sans-serif;
   color: #8A8A8A;
   text-align: justify;
-} 
+}
 
 .figuraSobre img {
   border-radius: 30px;
@@ -332,97 +359,112 @@ h1#tresDicas {
   text-transform: uppercase;
 }
 
- .accordion-item {
+.accordion-item {
   border: none;
- }
+}
 
- .accordion .accordion-item {
-	 border-bottom: 1px solid #e5e5e5;
+.accordion .accordion-item {
+  border-bottom: 1px solid #e5e5e5;
 }
- .accordion .accordion-item button[aria-expanded='true'] {
-	 border-bottom: 1px solid #FF8CC1;
+
+.accordion .accordion-item button[aria-expanded='true'] {
+  border-bottom: 1px solid #FF8CC1;
 }
- .accordion button {
+
+.accordion button {
   font-family: "Abel", sans-serif;
-	 position: relative;
-	 display: block;
-	 text-align: left;
-	 width: 100%;
-	 padding: 1em 0;
-	 color: #7288a2;
-	 font-size: 1.15rem;
-	 font-weight: 400;
-	 border: none;
-	 background: none;
-	 outline: none;
+  position: relative;
+  display: block;
+  text-align: left;
+  width: 100%;
+  padding: 1em 0;
+  color: #7288a2;
+  font-size: 1.15rem;
+  font-weight: 400;
+  border: none;
+  background: none;
+  outline: none;
 }
- .accordion button:hover, .accordion button:focus {
-	 cursor: pointer;
-	 color: #FF8CC1;
+
+.accordion button:hover,
+.accordion button:focus {
+  cursor: pointer;
+  color: #FF8CC1;
 }
- .accordion button:hover::after, .accordion button:focus::after {
-	 cursor: pointer;
-	 color: #FF8CC1;
-	 border: 1px solid #FF8CC1;
+
+.accordion button:hover::after,
+.accordion button:focus::after {
+  cursor: pointer;
+  color: #FF8CC1;
+  border: 1px solid #FF8CC1;
 }
- .accordion button .accordion-title {
-	 padding: 1em 1.5em 1em 0;
+
+.accordion button .accordion-title {
+  padding: 1em 1.5em 1em 0;
 }
- .accordion button .icon {
-	 display: inline-block;
-	 position: absolute;
-	 top: 18px;
-	 right: 0;
-	 width: 22px;
-	 height: 22px;
-	 border-radius: 22px;
+
+.accordion button .icon {
+  display: inline-block;
+  position: absolute;
+  top: 18px;
+  right: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 22px;
 }
- .accordion button .icon::before {
-	 display: block;
-	 position: absolute;
-	 content: '';
-	 top: 9px;
-	 left: 5px;
-	 width: 10px;
-	 height: 2px;
-	 background: currentColor;
+
+.accordion button .icon::before {
+  display: block;
+  position: absolute;
+  content: '';
+  top: 9px;
+  left: 5px;
+  width: 10px;
+  height: 2px;
+  background: currentColor;
 }
- .accordion button .icon::after {
-	 display: block;
-	 position: absolute;
-	 content: '';
-	 top: 5px;
-	 left: 9px;
-	 width: 2px;
-	 height: 10px;
-	 background: currentColor;
+
+.accordion button .icon::after {
+  display: block;
+  position: absolute;
+  content: '';
+  top: 5px;
+  left: 9px;
+  width: 2px;
+  height: 10px;
+  background: currentColor;
 }
- .accordion button[aria-expanded='true'] {
-	 color: #FF8CC1;
+
+.accordion button[aria-expanded='true'] {
+  color: #FF8CC1;
 }
- .accordion button[aria-expanded='true'] .icon::after {
-	 width: 0;
+
+.accordion button[aria-expanded='true'] .icon::after {
+  width: 0;
 }
- .accordion button[aria-expanded='true'] + .accordion-content {
-	 opacity: 1;
-	 max-height: 9em;
-	 transition: all 200ms linear;
-	 will-change: opacity, max-height;
+
+.accordion button[aria-expanded='true']+.accordion-content {
+  opacity: 1;
+  max-height: 9em;
+  transition: all 200ms linear;
+  will-change: opacity, max-height;
 }
- .accordion .accordion-content {
-	 opacity: 0;
-	 max-height: 0;
-	 overflow: hidden;
-	 transition: opacity 200ms linear, max-height 200ms linear;
-	 will-change: opacity, max-height;
+
+.accordion .accordion-content {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 200ms linear, max-height 200ms linear;
+  will-change: opacity, max-height;
 }
- .accordion .accordion-content p {
+
+.accordion .accordion-content p {
   font-family: "Abel", sans-serif;
-	 font-size: 1rem;
-	 font-weight: 300;
-	 margin: 2em 0;
+  font-size: 1rem;
+  font-weight: 300;
+  margin: 2em 0;
 }
- 
+
 
 /* PÁGINA HOME */
 
@@ -470,13 +512,95 @@ body {
 }
 
 .hero-image {
-  background-image: url("https://cdn.discordapp.com/attachments/826872414147313764/1178551401471815760/image_2023-11-26_232206083.png?ex=65768e86&is=65641986&hm=d5b459861cb93655413d79f8c5801b9906d2c000912d9779073f4d62f51888cc&");
+  line-height: 100px;
+  margin: 0;
+  font-family: 'Italiana';
+  color: white;
+  font-size: 550px;
+  background-image: url("../img/bannerindex.jpg");
+  width: 100%;
   height: 500px;
-  background-repeat: repeat;
+  min-height: 350px;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   position: relative;
   margin-bottom: 50px;
+}
+
+.dbanner {
+  padding-top: 150px;
+}
+
+.mbanner {
+  padding-left: 100px;
+}
+
+.containerArvore {
+  margin: 100px 0;
+  width: 100%;
+  height: fit-content;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.containerArvore p {
+  text-align: justify;
+  margin: 0;
+  font-family: 'Abel', sans-serif;
+  max-width: 650px;
+  height: auto;
+}
+
+.containerWhats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 150px;
+  margin-bottom: 150px;
+  background-color: #FFC7DD;
+  height: 600px;
+}
+
+.botaodozap {
+  font-size: 15px;
+  text-decoration: none;
+  padding: 10px 20px;
+  color: white;
+  border-radius: 30px;
+  background-color: #128C7E;
+}
+
+.zapzap {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.zapzap div {
+  width: 350px;
+  height: 500px;
+  color: black;
+  background-color: white;
+  border-radius: 8px;
+}
+
+.containerWhats .passos h1 {
+  font-family: "Inter", sans-serif;
+}
+
+.containerWhats .passos p {
+  padding-top: 20px;
+  max-width: 550px;
+  font-family: "Roboto", sans-serif;
 }
 
 
@@ -489,66 +613,107 @@ body {
 }
 
 .list li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   list-style-type: none;
-  
-  width: 200px;
-  height: 200px;
-  opacity: .25;
+  background-size: cover;
+  width: 230px;
+  height: 230px;
+  opacity: 1;
   position: absolute;
   left: 50%;
   margin-left: -100px;
-  border-radius: 2px;
-  background: #9C89B8;
-  transition: transform 1s, opacity 1s;
+  transition: transform 1s, opacity 1s ease;
+  flex-direction: column;
+}
+
+
+
+.list img {
+  max-width: 100%;
+  max-height: auto;
+}
+
+.list .act h3 {
+  text-transform: capitalize;
+  display: block;
+  color: #000;
+  text-align: center;
+  font-family: 'Italiana';
+  font-size: 27px;
+  font-style: normal;
+  font-weight: 400;
+  font-weight: 900;
+}
+
+.list h3 {
+  display: none;
 }
 
 .list .act {
+  transition: transform 0.9s ease;
   opacity: 1;
+  height: fit-content;
 }
 
 .list .prev,
 .list .next {
+  transition: transform 0.9s ease;
+  border: 0px solid #D7911A;
   cursor: pointer;
 }
 
-.list .prev {
-  transform: translateX(-220px) scale(.85);
+.list .prev,
+.preenchimento {
+  transition: transform 0.9s ease;
+  transform: translateX(-220px) scale(.79);
 }
 
-.list .prev1 {
-  transform: translateX(-420px) scale(.79);
+.list .prev1,
+.preenchimento {
+  transform: translateX(-420px) scale(.73);
 }
 
-.list .prev2 {
-  transform: translateX(-620px) scale(.79);
+.list .prev2,
+.preenchimento {
+  transform: translateX(-620px) scale(.73);
 }
 
-.list .prev3 {
-  transform: translateX(-820px) scale(.79);
+.list .prev3,
+.preenchimento {
+  transform: translateX(-820px) scale(.73);
 }
 
-.list .next {
-  transform: translateX(220px) scale(.85);
+.list .next,
+.preenchimento {
+  transition: transform 0.9s ease;
+  transform: translateX(220px) scale(.79);
 }
 
-.list .next1 {
-  transform: translateX(420px) scale(.79);
+.list .next1,
+.preenchimento {
+  transform: translateX(420px) scale(.73);
 }
 
-.list .next2 {
-  transform: translateX(620px) scale(.79);
+.list .next2,
+.preenchimento {
+  transform: translateX(620px) scale(.73);
 }
 
-.list .next3 {
-  transform: translateX(820px) scale(.79);
+.list .next3,
+.preenchimento {
+  transform: translateX(820px) scale(.73);
 }
 
 
-.list .hide {
+.list .hide,
+.preenchimento {
   transform: translateX(-1020px) scale(.85);
 }
 
-.list .new-next {
+.list .new-next,
+.preenchimento {
   transform: translateX(1020px) scale(.85);
 }
 
@@ -558,49 +723,21 @@ body {
   transition: opacity .5s, transform .5s;
 }
 
-.swipe {
-  width: 270px;
-  height: 200px;
-  position: absolute;
-  background-color: green;
-  border-radius: 2px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  opacity: 0;
+.act .conteudoItem {
+  border: 4px solid #D7911A;
 }
+
+.conteudoItem .preenchimento {
+  width: 230px;
+  height: 230px;
+}
+
+.conteudoItem {
+  width: 222px;
+  height: 222px;
+}
+
 /* FIM DO CARROSSEL */
-
-
-#retangulo1 {
-  background: #FFD9AC;
-  width: 270px;
-  height: 7px;
-}
-
-#retangulo2 {
-  background: #C58A3E;
-  width: 270px;
-  height: 7px;
-}
-
-#retangulo3 {
-  background: #FAEBB2;
-  width: 270px;
-  height: 7px;
-}
-
-#retangulo4 {
-  background: #F1A961;
-  width: 270px;
-  height: 7px;
-}
-
-#retangulo5 {
-  background: #E6BC74;
-  width: 270px;
-  height: 7px;
-}
 
 .rosa {
   font-family: 'Italiana';
@@ -642,7 +779,7 @@ body {
 }
 
 .palavrado {
-text-align: right;
+  text-align: right;
 }
 
 footer {

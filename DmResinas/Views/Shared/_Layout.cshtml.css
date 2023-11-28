@@ -26,6 +26,33 @@ li {
   display:inline-block;
 }
 
+.coloridinho {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 7px;
+}
+
+#retangulo1 {
+  background: #FFD9AC;
+}
+
+#retangulo2 {
+  background: #C58A3E;
+}
+
+#retangulo3 {
+  background: #FAEBB2;
+}
+
+#retangulo4 {
+  background: #F1A961;
+}
+
+#retangulo5 {
+  background: #E6BC74;
+}
+
+
 
 .navbar{
   padding-right: 66px;

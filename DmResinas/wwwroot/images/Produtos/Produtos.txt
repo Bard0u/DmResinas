@@ -1,0 +1,76 @@
+Letra A com Nome
+-Descrição Resumida: Chaveiro em formato de Letra A
+-Descriçao: Chaveiro em formato de Letra A, com nome, folha de ouro e cordinha.
+-Preço: 20
+-Cor: Azul
+-Categorias: Folha de ouro, Chaveiro
+
+Letra B com Nome
+-Descrição Resumida: Chaveiro em formato de Letra B
+-Descriçao: Chaveiro em formato de Letra B, com pingente borboleta, flores, brilho, nome e cordinha.
+-Preço: 20
+-Cor: Roxa e Transparente
+-Categorias: Glitter, Chaveiro, Flores
+
+Letra D
+-Descrição Resumida: Chaveiro em formato de Letra D
+-Descriçao: Chaveiro em formato de Letra D, com efeito de fumaça, borboletas e cordinha.
+-Preço: 20
+-Cor: Rosa e Transparente
+-Categorias: Chaveiro
+
+Letra K
+-Descrição Resumida: Chaveiro em formato de Letra K
+-Descriçao: Chaveiro em formato de Letra K, com flores e brilho na argola prata.
+-Preço: 20
+-Cor: Verde e Transparente
+-Categorias: Flores, Chaveiro, Glitter
+
+Letra L
+-Descrição Resumida: Chaveiro em formato de Letra L
+-Descriçao: Chaveiro em formato de Letra L, com flores na resina totalmente transparente e folha de ouro.
+-Preço: 20
+-Cor: Amarela e Transparente
+-Categorias: Folha de ouro, Chaveiro, Flores
+ 
+Letra N
+-Descrição Resumida: Chaveiro em formato de Letra N
+-Descriçao: Chaveiro em formato de Letra N, com flores e brilho na argola dourada.
+-Preço: 20
+-Cor: Azul
+-Categorias: Chaveiro, Flores, Glitter
+
+Placa de Manicure com Logo 1
+-Descrição Resumida: Placa para Manicures tirarem fotos das unhas
+-Descriçao: Placa para Manicures tiratem fotos de suas clientes após fazerem a unha para promover a divulgação da profissional.
+-Preço: 40
+-Cor: Rosa Pink e Branca
+-Categorias: Placa, Glitter
+
+Placa de Manicure com Logo 2
+-Descrição Resumida: Placa para Manicures tirarem fotos das unhas
+-Descriçao: Placa para Manicures tiratem fotos de suas clientes após fazerem a unha para promover a divulgação da profissional.
+-Preço: 40
+-Cor: Rosa Clara e Branca
+-Categorias: Placa, Glitter
+
+Marca Página 1
+-Descrição Resumida: Marca Página Elegante
+-Descriçao: Marca Páginas inspirado na banda RHCP com as cores principais e cordinha.
+-Preço: 30
+-Cor: Preto e Vermelho
+-Categorias: Glitter, Marca Página
+
+Marca Página com Nome 2
+-Descrição Resumida: Marca Página Elegante com Nome
+-Descriçao: Marca Páginas elegante com nome, símbolo, brilho e cordinha.
+-Preço: 30
+-Cor: Roxo e Transparente
+-Categorias: Glitter, Marca Página
+
+Marca Página cauda 3
+-Descrição Resumida: Marca Página Elegante de cauda de sereia
+-Descriçao: Marca Página elegante com formato diferente lembrando a cauda de uma sereia e com brilho.
+-Preço: 30
+-Cor: Azul Claro
+-Categorias: Glitter, Marca Página
