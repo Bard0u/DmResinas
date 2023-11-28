@@ -212,21 +212,21 @@ public class AppDbSeed
             new Categoria() {
                 Id = 1,
                 Nome = "Folha de Ouro",
-                Foto = @"images/categorias/1.jpg",
+                Foto = @"images/categorias/1.png",
                 Filtrar = true,
                 Banner = true
             },
             new Categoria() {
                 Id = 2,
                 Nome = "Flores",
-                Foto = @"images/categorias/2.jpg",
+                Foto = @"images/categorias/2.png",
                 Filtrar = true,
                 Banner = true
             },
             new Categoria() {
                 Id = 3,
-                Nome = "Decoração",
-                Foto = @"images/categorias/3.jpg",
+                Nome = "Glitter",
+                Foto = @"images/categorias/3.png",
                 Filtrar = false,
                 Banner = true
             },
@@ -236,7 +236,6 @@ public class AppDbSeed
                 Foto = "",
                 Filtrar = true,
                 Banner = false,
-                CategoriaPaiId = 3
             },
             new Categoria() {
                 Id = 5,
@@ -244,7 +243,6 @@ public class AppDbSeed
                 Foto = "",
                 Filtrar = true,
                 Banner = false,
-                CategoriaPaiId = 3
             },
             new Categoria() {
                 Id = 6,
@@ -252,7 +250,6 @@ public class AppDbSeed
                 Foto = "",
                 Filtrar = true,
                 Banner = false,
-                CategoriaPaiId = 3
             }
         };
         builder.Entity<Categoria>().HasData(categorias);
@@ -261,90 +258,90 @@ public class AppDbSeed
         List<Produto> produtos = new() {
             new Produto() {
                 Id = 1,
-                Nome = "Letra L",
-                Descricaoresumida = "Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat",
-                Descricao = "Aenean sit amet gravida nisi. Nam fermentum est felis, quis feugiat nunc fringilla sit amet. Ut in blandit ipsum. Quisque luctus dui at ante aliquet, in hendrerit lectus interdum. Morbi elementum sapien rhoncus pretium maximus. Nulla lectus enim, cursus et elementum sed, sodales vitae eros. Ut ex quam, porta consequat interdum in, faucibus eu velit. Quisque rhoncus ex ac libero varius molestie. Aenean tempor sit amet orci nec iaculis. Cras sit amet nulla libero. Curabitur dignissim, nunc nec laoreet consequat, purus nunc porta lacus, vel efficitur tellus augue in ipsum. Cras in arcu sed metus rutrum iaculis. Nulla non tempor erat. Duis in egestas nunc.",
-                Preco = 20.64m,
+                Nome = "Letra A com Nome",
+                Descricaoresumida = "Chaveiro em formato de Letra A",
+                Descricao = "Chaveiro em formato de Letra A, com nome, folha de ouro e cordinha.",
+                Preco = 20M,
                 Destaque = true
             },
             new Produto() {
                 Id = 2,
-                Nome = "Letra J",
-                Descricaoresumida = "Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat",
-                Descricao = "Aenean sit amet gravida nisi. Nam fermentum est felis, quis feugiat nunc fringilla sit amet. Ut in blandit ipsum. Quisque luctus dui at ante aliquet, in hendrerit lectus interdum. Morbi elementum sapien rhoncus pretium maximus. Nulla lectus enim, cursus et elementum sed, sodales vitae eros. Ut ex quam, porta consequat interdum in, faucibus eu velit. Quisque rhoncus ex ac libero varius molestie. Aenean tempor sit amet orci nec iaculis. Cras sit amet nulla libero. Curabitur dignissim, nunc nec laoreet consequat, purus nunc porta lacus, vel efficitur tellus augue in ipsum. Cras in arcu sed metus rutrum iaculis. Nulla non tempor erat. Duis in egestas nunc.",
-                Preco = 35.31M,
+                Nome = "Letra B com Nome",
+                Descricaoresumida = "Chaveiro em formato de Letra B",
+                Descricao = "Chaveiro em formato de Letra B, com pingente borboleta, flores, brilho, nome e cordinha.",
+                Preco = 20M,
                 Destaque = true
             },
             new Produto() {
                 Id = 3,
-                Nome = "Letra K",
-                Descricaoresumida = "Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat",
-                Descricao = "Aenean sit amet gravida nisi. Nam fermentum est felis, quis feugiat nunc fringilla sit amet. Ut in blandit ipsum. Quisque luctus dui at ante aliquet, in hendrerit lectus interdum. Morbi elementum sapien rhoncus pretium maximus. Nulla lectus enim, cursus et elementum sed, sodales vitae eros. Ut ex quam, porta consequat interdum in, faucibus eu velit. Quisque rhoncus ex ac libero varius molestie. Aenean tempor sit amet orci nec iaculis. Cras sit amet nulla libero. Curabitur dignissim, nunc nec laoreet consequat, purus nunc porta lacus, vel efficitur tellus augue in ipsum. Cras in arcu sed metus rutrum iaculis. Nulla non tempor erat. Duis in egestas nunc.",
-                Preco = 25.50M,
+                Nome = "Letra D",
+                Descricaoresumida = "Chaveiro em formato de Letra D",
+                Descricao = "Chaveiro em formato de Letra D, com efeito de fumaça, borboletas e cordinha.",
+                Preco = 20M,
                 Destaque = true
             },
             new Produto() {
                 Id = 4,
-                Nome = "Marca Página",
-                Descricaoresumida = "Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat",
-                Descricao = "Aenean sit amet gravida nisi. Nam fermentum est felis, quis feugiat nunc fringilla sit amet. Ut in blandit ipsum. Quisque luctus dui at ante aliquet, in hendrerit lectus interdum. Morbi elementum sapien rhoncus pretium maximus. Nulla lectus enim, cursus et elementum sed, sodales vitae eros. Ut ex quam, porta consequat interdum in, faucibus eu velit. Quisque rhoncus ex ac libero varius molestie. Aenean tempor sit amet orci nec iaculis. Cras sit amet nulla libero. Curabitur dignissim, nunc nec laoreet consequat, purus nunc porta lacus, vel efficitur tellus augue in ipsum. Cras in arcu sed metus rutrum iaculis. Nulla non tempor erat. Duis in egestas nunc.",
-                Preco = 75.25M,
+                Nome = "Letra K",
+                Descricaoresumida = "Chaveiro em formato de Letra K",
+                Descricao = "Chaveiro em formato de Letra K, com flores e brilho na argola prata.",
+                Preco = 20M,
                 Destaque = true
             },
             new Produto() {
                 Id = 5,
-                Nome = "Marca Página",
-                Descricaoresumida = "Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat",
-                Descricao = "Aenean sit amet gravida nisi. Nam fermentum est felis, quis feugiat nunc fringilla sit amet. Ut in blandit ipsum. Quisque luctus dui at ante aliquet, in hendrerit lectus interdum. Morbi elementum sapien rhoncus pretium maximus. Nulla lectus enim, cursus et elementum sed, sodales vitae eros. Ut ex quam, porta consequat interdum in, faucibus eu velit. Quisque rhoncus ex ac libero varius molestie. Aenean tempor sit amet orci nec iaculis. Cras sit amet nulla libero. Curabitur dignissim, nunc nec laoreet consequat, purus nunc porta lacus, vel efficitur tellus augue in ipsum. Cras in arcu sed metus rutrum iaculis. Nulla non tempor erat. Duis in egestas nunc.",
-                Preco = 53.0M,
+                Nome = "Letra L",
+                Descricaoresumida = "Chaveiro em formato de Letra L",
+                Descricao = "Chaveiro em formato de Letra L, com flores na resina totalmente transparente e folha de ouro.",
+                Preco = 20M,
                 Destaque = true
             },
             new Produto() {
                 Id = 6,
-                Nome = "Marca Página",
-                Descricaoresumida = "Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat",
-                Descricao = "Aenean sit amet gravida nisi. Nam fermentum est felis, quis feugiat nunc fringilla sit amet. Ut in blandit ipsum. Quisque luctus dui at ante aliquet, in hendrerit lectus interdum. Morbi elementum sapien rhoncus pretium maximus. Nulla lectus enim, cursus et elementum sed, sodales vitae eros. Ut ex quam, porta consequat interdum in, faucibus eu velit. Quisque rhoncus ex ac libero varius molestie. Aenean tempor sit amet orci nec iaculis. Cras sit amet nulla libero. Curabitur dignissim, nunc nec laoreet consequat, purus nunc porta lacus, vel efficitur tellus augue in ipsum. Cras in arcu sed metus rutrum iaculis. Nulla non tempor erat. Duis in egestas nunc.",
-                Preco = 25.85M,
+                Nome = "Letra N",
+                Descricaoresumida = "Chaveiro em formato de Letra N",
+                Descricao = "Chaveiro em formato de Letra N, com flores e brilho na argola dourada.",
+                Preco = 20M,
                 Destaque = true
             },
             new Produto() {
                 Id = 7,
-                Nome = "Letra A",
-                Descricaoresumida = "Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat",
-                Descricao = "Aenean sit amet gravida nisi. Nam fermentum est felis, quis feugiat nunc fringilla sit amet. Ut in blandit ipsum. Quisque luctus dui at ante aliquet, in hendrerit lectus interdum. Morbi elementum sapien rhoncus pretium maximus. Nulla lectus enim, cursus et elementum sed, sodales vitae eros. Ut ex quam, porta consequat interdum in, faucibus eu velit. Quisque rhoncus ex ac libero varius molestie. Aenean tempor sit amet orci nec iaculis. Cras sit amet nulla libero. Curabitur dignissim, nunc nec laoreet consequat, purus nunc porta lacus, vel efficitur tellus augue in ipsum. Cras in arcu sed metus rutrum iaculis. Nulla non tempor erat. Duis in egestas nunc.",
-                Preco = 63.16M,
+                Nome = "Placa de Manicure com Logo 1",
+                Descricaoresumida = "Placa para Manicures tirarem fotos das unhas",
+                Descricao = "Placa para Manicures tiratem fotos de suas clientes após fazerem a unha para promover a divulgação da profissional.",
+                Preco = 40M,
                 Destaque = true
             },
             new Produto() {
                 Id = 8,
-                Nome = "Letra B",
-                Descricaoresumida = "Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat",
-                Descricao = "Aenean sit amet gravida nisi. Nam fermentum est felis, quis feugiat nunc fringilla sit amet. Ut in blandit ipsum. Quisque luctus dui at ante aliquet, in hendrerit lectus interdum. Morbi elementum sapien rhoncus pretium maximus. Nulla lectus enim, cursus et elementum sed, sodales vitae eros. Ut ex quam, porta consequat interdum in, faucibus eu velit. Quisque rhoncus ex ac libero varius molestie. Aenean tempor sit amet orci nec iaculis. Cras sit amet nulla libero. Curabitur dignissim, nunc nec laoreet consequat, purus nunc porta lacus, vel efficitur tellus augue in ipsum. Cras in arcu sed metus rutrum iaculis. Nulla non tempor erat. Duis in egestas nunc.",
-                Preco = 18.49M,
+                Nome = "Placa de Manicure com Logo 2",
+                Descricaoresumida = "Placa para Manicures tirarem fotos das unhas",
+                Descricao = "Placa para Manicures tiratem fotos de suas clientes após fazerem a unha para promover a divulgação da profissional.",
+                Preco = 40M,
                 Destaque = true
             },
             new Produto() {
                 Id = 9,
-                Nome = "Letra D",
-                Descricaoresumida = "Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat",
-                Descricao = "Aenean sit amet gravida nisi. Nam fermentum est felis, quis feugiat nunc fringilla sit amet. Ut in blandit ipsum. Quisque luctus dui at ante aliquet, in hendrerit lectus interdum. Morbi elementum sapien rhoncus pretium maximus. Nulla lectus enim, cursus et elementum sed, sodales vitae eros. Ut ex quam, porta consequat interdum in, faucibus eu velit. Quisque rhoncus ex ac libero varius molestie. Aenean tempor sit amet orci nec iaculis. Cras sit amet nulla libero. Curabitur dignissim, nunc nec laoreet consequat, purus nunc porta lacus, vel efficitur tellus augue in ipsum. Cras in arcu sed metus rutrum iaculis. Nulla non tempor erat. Duis in egestas nunc.",
-                Preco = 93.20M,
+                Nome = "Marca Página 1",
+                Descricaoresumida = "Marca Página Elegante",
+                Descricao = "Marca Páginas inspirado na banda RHCP com as cores principais e cordinha.",
+                Preco = 30M,
                 Destaque = true
             },
             new Produto() {
                 Id = 10,
-                Nome = "Placa Manicure",
-                Descricaoresumida = "Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat",
-                Descricao = "Aenean sit amet gravida nisi. Nam fermentum est felis, quis feugiat nunc fringilla sit amet. Ut in blandit ipsum. Quisque luctus dui at ante aliquet, in hendrerit lectus interdum. Morbi elementum sapien rhoncus pretium maximus. Nulla lectus enim, cursus et elementum sed, sodales vitae eros. Ut ex quam, porta consequat interdum in, faucibus eu velit. Quisque rhoncus ex ac libero varius molestie. Aenean tempor sit amet orci nec iaculis. Cras sit amet nulla libero. Curabitur dignissim, nunc nec laoreet consequat, purus nunc porta lacus, vel efficitur tellus augue in ipsum. Cras in arcu sed metus rutrum iaculis. Nulla non tempor erat. Duis in egestas nunc.",
-                Preco = 75.0M,
+                Nome = "Marca Página com Nome",
+                Descricaoresumida = "Marca Página Elegante com Nome",
+                Descricao = "Marca Páginas elegante com nome, símbolo, brilho e cordinha.",
+                Preco = 30M,
                 Destaque = true
             },
             new Produto() {
                 Id = 11,
-                Nome = "Placa Manicure",
-                Descricaoresumida = "Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat",
-                Descricao = "Aenean sit amet gravida nisi. Nam fermentum est felis, quis feugiat nunc fringilla sit amet. Ut in blandit ipsum. Quisque luctus dui at ante aliquet, in hendrerit lectus interdum. Morbi elementum sapien rhoncus pretium maximus. Nulla lectus enim, cursus et elementum sed, sodales vitae eros. Ut ex quam, porta consequat interdum in, faucibus eu velit. Quisque rhoncus ex ac libero varius molestie. Aenean tempor sit amet orci nec iaculis. Cras sit amet nulla libero. Curabitur dignissim, nunc nec laoreet consequat, purus nunc porta lacus, vel efficitur tellus augue in ipsum. Cras in arcu sed metus rutrum iaculis. Nulla non tempor erat. Duis in egestas nunc.",
-                Preco = 63.15M,
+                Nome = "Marca Página cauda",
+                Descricaoresumida = "Marca Página Elegante de cauda de sereia",
+                Descricao = "Marca Página elegante com formato diferente lembrando a cauda de uma sereia e com brilho.",
+                Preco = 30M,
                 Destaque = true
             }
         };
@@ -353,18 +350,46 @@ public class AppDbSeed
         List<ProdutoCategoria> produtoCategorias = new() {
             new ProdutoCategoria() {
                 ProdutoId = 1,
-                CategoriaId = 1
+                CategoriaId = 1 
+            },
+            new ProdutoCategoria() {
+                ProdutoId = 1,
+                CategoriaId = 4
+            },
+            ////////////////////////////////
+            new ProdutoCategoria() {
+                ProdutoId = 2,
+                CategoriaId = 3
             },
             new ProdutoCategoria() {
                 ProdutoId = 2,
-                CategoriaId = 1
+                CategoriaId = 4
             },
             new ProdutoCategoria() {
+                ProdutoId = 2,
+                CategoriaId = 2
+            },
+            /////////////////////////////////
+            new ProdutoCategoria() {
                 ProdutoId = 3,
+                CategoriaId = 4
+            },
+            /////////////////////////////////
+            new ProdutoCategoria() {
+                ProdutoId = 4,
                 CategoriaId = 2
             },
             new ProdutoCategoria() {
                 ProdutoId = 4,
+                CategoriaId = 3
+            },
+            new ProdutoCategoria() {
+                ProdutoId = 4,
+                CategoriaId = 4
+            },
+            ////////////////////////////////
+            new ProdutoCategoria() {
+                ProdutoId = 5,
                 CategoriaId = 1
             },
             new ProdutoCategoria() {
@@ -372,31 +397,150 @@ public class AppDbSeed
                 CategoriaId = 2
             },
             new ProdutoCategoria() {
-                ProdutoId = 6,
-                CategoriaId = 1
+                ProdutoId = 5,
+                CategoriaId = 4
             },
+            /////////////////////////////////
             new ProdutoCategoria() {
-                ProdutoId = 7,
+                ProdutoId = 6,
                 CategoriaId = 2
             },
             new ProdutoCategoria() {
-                ProdutoId = 8,
-                CategoriaId = 1
+                ProdutoId = 6,
+                CategoriaId = 3
             },
             new ProdutoCategoria() {
-                ProdutoId = 9,
+                ProdutoId = 6,
+                CategoriaId = 4
+            },
+            //////////////////////////////////
+            new ProdutoCategoria() {
+                ProdutoId = 7,
                 CategoriaId = 6
             },
             new ProdutoCategoria() {
+                ProdutoId = 7,
+                CategoriaId = 3
+            },
+            //////////////////////////////////
+            new ProdutoCategoria() {
+                ProdutoId = 8,
+                CategoriaId = 6
+            },
+            new ProdutoCategoria() {
+                ProdutoId = 8,
+                CategoriaId = 3
+            },
+            //////////////////////////////////
+            new ProdutoCategoria() {
+                ProdutoId = 9,
+                CategoriaId = 5
+            },
+            new ProdutoCategoria() {
+                ProdutoId = 9,
+                CategoriaId = 3
+            },
+            //////////////////////////////////
+            new ProdutoCategoria() {
                 ProdutoId = 10,
+                CategoriaId = 5
+            },
+            new ProdutoCategoria() {
+                ProdutoId = 10,
+                CategoriaId = 3
+            },
+            //////////////////////////////////
+            new ProdutoCategoria() {
+                ProdutoId = 11,
                 CategoriaId = 5
             },
             new ProdutoCategoria() {
                 ProdutoId = 11,
                 CategoriaId = 3
             }
+            //////////////////////////////////
         };
         builder.Entity<ProdutoCategoria>().HasData(produtoCategorias);
+
+        List<ProdutoFoto> produtoFotos = new();
+        produtoFotos.Add(new ProdutoFoto()
+        {
+            Id = 1,
+            ProdutoId = 1,
+            ArquivoFoto = @"/images/Produtos/1/1.png",
+            Destaque = true
+        });
+        produtoFotos.Add(new ProdutoFoto()
+        {
+            Id = 2,
+            ProdutoId = 2,
+            ArquivoFoto = @"/images/Produtos/2/1.png",
+            Destaque = true
+        });
+        produtoFotos.Add(new ProdutoFoto()
+        {
+            Id = 3,
+            ProdutoId = 3,
+            ArquivoFoto = @"/images/Produtos/3/1.png",
+            Destaque = true
+        });
+        produtoFotos.Add(new ProdutoFoto()
+        {
+            Id = 4,
+            ProdutoId = 4,
+            ArquivoFoto = @"/images/Produtos/4/1.png",
+            Destaque = true
+        });
+        produtoFotos.Add(new ProdutoFoto()
+        {
+            Id = 5,
+            ProdutoId = 5,
+            ArquivoFoto = @"/images/Produtos/5/1.png",
+            Destaque = true
+        });
+        produtoFotos.Add(new ProdutoFoto()
+        {
+            Id = 6,
+            ProdutoId = 6,
+            ArquivoFoto = @"/images/Produtos/6/1.png",
+            Destaque = true
+        });
+        produtoFotos.Add(new ProdutoFoto()
+        {
+            Id = 7,
+            ProdutoId = 7,
+            ArquivoFoto = @"/images/Produtos/7/1.png",
+            Destaque = true
+        });
+        produtoFotos.Add(new ProdutoFoto()
+        {
+            Id = 8,
+            ProdutoId = 8,
+            ArquivoFoto = @"/images/Produtos/8/1.png",
+            Destaque = true
+        });
+        produtoFotos.Add(new ProdutoFoto()
+        {
+            Id = 9,
+            ProdutoId = 9,
+            ArquivoFoto = @"/images/Produtos/9/1.png",
+            Destaque = true
+        });
+        produtoFotos.Add(new ProdutoFoto()
+        {
+            Id = 10,
+            ProdutoId = 10,
+            ArquivoFoto = @"/images/Produtos/10/1.png",
+            Destaque = true
+        });
+        produtoFotos.Add(new ProdutoFoto()
+        {
+            Id = 11,
+            ProdutoId = 11,
+            ArquivoFoto = @"/images/Produtos/11/1.png",
+            Destaque = true
+        });
+        builder.Entity<ProdutoFoto>().HasData(produtoFotos);
 
 
         #region Populate Roles - Perfis de Usuário

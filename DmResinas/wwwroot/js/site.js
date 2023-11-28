@@ -1,7 +1,4 @@
 ﻿/* CARROSSEL */
-
-console.log('ae');
-
 const $ = selector => {
   return document.querySelector(selector);
 };

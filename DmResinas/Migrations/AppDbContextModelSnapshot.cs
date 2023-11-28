@@ -55,7 +55,7 @@ namespace DmResinas.Migrations
                             Id = (byte)1,
                             Banner = true,
                             Filtrar = true,
-                            Foto = "images/categorias/1.jpg",
+                            Foto = "images/categorias/1.png",
                             Nome = "Folha de Ouro"
                         },
                         new
@@ -63,7 +63,7 @@ namespace DmResinas.Migrations
                             Id = (byte)2,
                             Banner = true,
                             Filtrar = true,
-                            Foto = "images/categorias/2.jpg",
+                            Foto = "images/categorias/2.png",
                             Nome = "Flores"
                         },
                         new
@@ -71,14 +71,13 @@ namespace DmResinas.Migrations
                             Id = (byte)3,
                             Banner = true,
                             Filtrar = false,
-                            Foto = "images/categorias/3.jpg",
-                            Nome = "Decoração"
+                            Foto = "images/categorias/3.png",
+                            Nome = "Glitter"
                         },
                         new
                         {
                             Id = (byte)4,
                             Banner = false,
-                            CategoriaPaiId = (byte)3,
                             Filtrar = true,
                             Foto = "",
                             Nome = "Chaveiros"
@@ -87,7 +86,6 @@ namespace DmResinas.Migrations
                         {
                             Id = (byte)5,
                             Banner = false,
-                            CategoriaPaiId = (byte)3,
                             Filtrar = true,
                             Foto = "",
                             Nome = "Marca Páginas"
@@ -96,7 +94,6 @@ namespace DmResinas.Migrations
                         {
                             Id = (byte)6,
                             Banner = false,
-                            CategoriaPaiId = (byte)3,
                             Filtrar = true,
                             Foto = "",
                             Nome = "Placa"
@@ -408,112 +405,112 @@ namespace DmResinas.Migrations
                         new
                         {
                             Id = 1,
-                            Descricao = "Aenean sit amet gravida nisi. Nam fermentum est felis, quis feugiat nunc fringilla sit amet. Ut in blandit ipsum. Quisque luctus dui at ante aliquet, in hendrerit lectus interdum. Morbi elementum sapien rhoncus pretium maximus. Nulla lectus enim, cursus et elementum sed, sodales vitae eros. Ut ex quam, porta consequat interdum in, faucibus eu velit. Quisque rhoncus ex ac libero varius molestie. Aenean tempor sit amet orci nec iaculis. Cras sit amet nulla libero. Curabitur dignissim, nunc nec laoreet consequat, purus nunc porta lacus, vel efficitur tellus augue in ipsum. Cras in arcu sed metus rutrum iaculis. Nulla non tempor erat. Duis in egestas nunc.",
-                            Descricaoresumida = "Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat",
+                            Descricao = "Chaveiro em formato de Letra A, com nome, folha de ouro e cordinha.",
+                            Descricaoresumida = "Chaveiro em formato de Letra A",
                             Destaque = true,
-                            Nome = "Letra L",
+                            Nome = "Letra A com Nome",
                             Peso = 0m,
-                            Preco = 20.64m
+                            Preco = 20m
                         },
                         new
                         {
                             Id = 2,
-                            Descricao = "Aenean sit amet gravida nisi. Nam fermentum est felis, quis feugiat nunc fringilla sit amet. Ut in blandit ipsum. Quisque luctus dui at ante aliquet, in hendrerit lectus interdum. Morbi elementum sapien rhoncus pretium maximus. Nulla lectus enim, cursus et elementum sed, sodales vitae eros. Ut ex quam, porta consequat interdum in, faucibus eu velit. Quisque rhoncus ex ac libero varius molestie. Aenean tempor sit amet orci nec iaculis. Cras sit amet nulla libero. Curabitur dignissim, nunc nec laoreet consequat, purus nunc porta lacus, vel efficitur tellus augue in ipsum. Cras in arcu sed metus rutrum iaculis. Nulla non tempor erat. Duis in egestas nunc.",
-                            Descricaoresumida = "Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat",
+                            Descricao = "Chaveiro em formato de Letra B, com pingente borboleta, flores, brilho, nome e cordinha.",
+                            Descricaoresumida = "Chaveiro em formato de Letra B",
                             Destaque = true,
-                            Nome = "Letra J",
+                            Nome = "Letra B com Nome",
                             Peso = 0m,
-                            Preco = 35.31m
+                            Preco = 20m
                         },
                         new
                         {
                             Id = 3,
-                            Descricao = "Aenean sit amet gravida nisi. Nam fermentum est felis, quis feugiat nunc fringilla sit amet. Ut in blandit ipsum. Quisque luctus dui at ante aliquet, in hendrerit lectus interdum. Morbi elementum sapien rhoncus pretium maximus. Nulla lectus enim, cursus et elementum sed, sodales vitae eros. Ut ex quam, porta consequat interdum in, faucibus eu velit. Quisque rhoncus ex ac libero varius molestie. Aenean tempor sit amet orci nec iaculis. Cras sit amet nulla libero. Curabitur dignissim, nunc nec laoreet consequat, purus nunc porta lacus, vel efficitur tellus augue in ipsum. Cras in arcu sed metus rutrum iaculis. Nulla non tempor erat. Duis in egestas nunc.",
-                            Descricaoresumida = "Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat",
+                            Descricao = "Chaveiro em formato de Letra D, com efeito de fumaça, borboletas e cordinha.",
+                            Descricaoresumida = "Chaveiro em formato de Letra D",
                             Destaque = true,
-                            Nome = "Letra K",
+                            Nome = "Letra D",
                             Peso = 0m,
-                            Preco = 25.50m
+                            Preco = 20m
                         },
                         new
                         {
                             Id = 4,
-                            Descricao = "Aenean sit amet gravida nisi. Nam fermentum est felis, quis feugiat nunc fringilla sit amet. Ut in blandit ipsum. Quisque luctus dui at ante aliquet, in hendrerit lectus interdum. Morbi elementum sapien rhoncus pretium maximus. Nulla lectus enim, cursus et elementum sed, sodales vitae eros. Ut ex quam, porta consequat interdum in, faucibus eu velit. Quisque rhoncus ex ac libero varius molestie. Aenean tempor sit amet orci nec iaculis. Cras sit amet nulla libero. Curabitur dignissim, nunc nec laoreet consequat, purus nunc porta lacus, vel efficitur tellus augue in ipsum. Cras in arcu sed metus rutrum iaculis. Nulla non tempor erat. Duis in egestas nunc.",
-                            Descricaoresumida = "Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat",
+                            Descricao = "Chaveiro em formato de Letra K, com flores e brilho na argola prata.",
+                            Descricaoresumida = "Chaveiro em formato de Letra K",
                             Destaque = true,
-                            Nome = "Marca Página",
+                            Nome = "Letra K",
                             Peso = 0m,
-                            Preco = 75.25m
+                            Preco = 20m
                         },
                         new
                         {
                             Id = 5,
-                            Descricao = "Aenean sit amet gravida nisi. Nam fermentum est felis, quis feugiat nunc fringilla sit amet. Ut in blandit ipsum. Quisque luctus dui at ante aliquet, in hendrerit lectus interdum. Morbi elementum sapien rhoncus pretium maximus. Nulla lectus enim, cursus et elementum sed, sodales vitae eros. Ut ex quam, porta consequat interdum in, faucibus eu velit. Quisque rhoncus ex ac libero varius molestie. Aenean tempor sit amet orci nec iaculis. Cras sit amet nulla libero. Curabitur dignissim, nunc nec laoreet consequat, purus nunc porta lacus, vel efficitur tellus augue in ipsum. Cras in arcu sed metus rutrum iaculis. Nulla non tempor erat. Duis in egestas nunc.",
-                            Descricaoresumida = "Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat",
+                            Descricao = "Chaveiro em formato de Letra L, com flores na resina totalmente transparente e folha de ouro.",
+                            Descricaoresumida = "Chaveiro em formato de Letra L",
                             Destaque = true,
-                            Nome = "Marca Página",
+                            Nome = "Letra L",
                             Peso = 0m,
-                            Preco = 53.0m
+                            Preco = 20m
                         },
                         new
                         {
                             Id = 6,
-                            Descricao = "Aenean sit amet gravida nisi. Nam fermentum est felis, quis feugiat nunc fringilla sit amet. Ut in blandit ipsum. Quisque luctus dui at ante aliquet, in hendrerit lectus interdum. Morbi elementum sapien rhoncus pretium maximus. Nulla lectus enim, cursus et elementum sed, sodales vitae eros. Ut ex quam, porta consequat interdum in, faucibus eu velit. Quisque rhoncus ex ac libero varius molestie. Aenean tempor sit amet orci nec iaculis. Cras sit amet nulla libero. Curabitur dignissim, nunc nec laoreet consequat, purus nunc porta lacus, vel efficitur tellus augue in ipsum. Cras in arcu sed metus rutrum iaculis. Nulla non tempor erat. Duis in egestas nunc.",
-                            Descricaoresumida = "Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat",
+                            Descricao = "Chaveiro em formato de Letra N, com flores e brilho na argola dourada.",
+                            Descricaoresumida = "Chaveiro em formato de Letra N",
                             Destaque = true,
-                            Nome = "Marca Página",
+                            Nome = "Letra N",
                             Peso = 0m,
-                            Preco = 25.85m
+                            Preco = 20m
                         },
                         new
                         {
                             Id = 7,
-                            Descricao = "Aenean sit amet gravida nisi. Nam fermentum est felis, quis feugiat nunc fringilla sit amet. Ut in blandit ipsum. Quisque luctus dui at ante aliquet, in hendrerit lectus interdum. Morbi elementum sapien rhoncus pretium maximus. Nulla lectus enim, cursus et elementum sed, sodales vitae eros. Ut ex quam, porta consequat interdum in, faucibus eu velit. Quisque rhoncus ex ac libero varius molestie. Aenean tempor sit amet orci nec iaculis. Cras sit amet nulla libero. Curabitur dignissim, nunc nec laoreet consequat, purus nunc porta lacus, vel efficitur tellus augue in ipsum. Cras in arcu sed metus rutrum iaculis. Nulla non tempor erat. Duis in egestas nunc.",
-                            Descricaoresumida = "Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat",
+                            Descricao = "Placa para Manicures tiratem fotos de suas clientes após fazerem a unha para promover a divulgação da profissional.",
+                            Descricaoresumida = "Placa para Manicures tirarem fotos das unhas",
                             Destaque = true,
-                            Nome = "Letra A",
+                            Nome = "Placa de Manicure com Logo 1",
                             Peso = 0m,
-                            Preco = 63.16m
+                            Preco = 40m
                         },
                         new
                         {
                             Id = 8,
-                            Descricao = "Aenean sit amet gravida nisi. Nam fermentum est felis, quis feugiat nunc fringilla sit amet. Ut in blandit ipsum. Quisque luctus dui at ante aliquet, in hendrerit lectus interdum. Morbi elementum sapien rhoncus pretium maximus. Nulla lectus enim, cursus et elementum sed, sodales vitae eros. Ut ex quam, porta consequat interdum in, faucibus eu velit. Quisque rhoncus ex ac libero varius molestie. Aenean tempor sit amet orci nec iaculis. Cras sit amet nulla libero. Curabitur dignissim, nunc nec laoreet consequat, purus nunc porta lacus, vel efficitur tellus augue in ipsum. Cras in arcu sed metus rutrum iaculis. Nulla non tempor erat. Duis in egestas nunc.",
-                            Descricaoresumida = "Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat",
+                            Descricao = "Placa para Manicures tiratem fotos de suas clientes após fazerem a unha para promover a divulgação da profissional.",
+                            Descricaoresumida = "Placa para Manicures tirarem fotos das unhas",
                             Destaque = true,
-                            Nome = "Letra B",
+                            Nome = "Placa de Manicure com Logo 2",
                             Peso = 0m,
-                            Preco = 18.49m
+                            Preco = 40m
                         },
                         new
                         {
                             Id = 9,
-                            Descricao = "Aenean sit amet gravida nisi. Nam fermentum est felis, quis feugiat nunc fringilla sit amet. Ut in blandit ipsum. Quisque luctus dui at ante aliquet, in hendrerit lectus interdum. Morbi elementum sapien rhoncus pretium maximus. Nulla lectus enim, cursus et elementum sed, sodales vitae eros. Ut ex quam, porta consequat interdum in, faucibus eu velit. Quisque rhoncus ex ac libero varius molestie. Aenean tempor sit amet orci nec iaculis. Cras sit amet nulla libero. Curabitur dignissim, nunc nec laoreet consequat, purus nunc porta lacus, vel efficitur tellus augue in ipsum. Cras in arcu sed metus rutrum iaculis. Nulla non tempor erat. Duis in egestas nunc.",
-                            Descricaoresumida = "Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat",
+                            Descricao = "Marca Páginas inspirado na banda RHCP com as cores principais e cordinha.",
+                            Descricaoresumida = "Marca Página Elegante",
                             Destaque = true,
-                            Nome = "Letra D",
+                            Nome = "Marca Página 1",
                             Peso = 0m,
-                            Preco = 93.20m
+                            Preco = 30m
                         },
                         new
                         {
                             Id = 10,
-                            Descricao = "Aenean sit amet gravida nisi. Nam fermentum est felis, quis feugiat nunc fringilla sit amet. Ut in blandit ipsum. Quisque luctus dui at ante aliquet, in hendrerit lectus interdum. Morbi elementum sapien rhoncus pretium maximus. Nulla lectus enim, cursus et elementum sed, sodales vitae eros. Ut ex quam, porta consequat interdum in, faucibus eu velit. Quisque rhoncus ex ac libero varius molestie. Aenean tempor sit amet orci nec iaculis. Cras sit amet nulla libero. Curabitur dignissim, nunc nec laoreet consequat, purus nunc porta lacus, vel efficitur tellus augue in ipsum. Cras in arcu sed metus rutrum iaculis. Nulla non tempor erat. Duis in egestas nunc.",
-                            Descricaoresumida = "Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat",
+                            Descricao = "Marca Páginas elegante com nome, símbolo, brilho e cordinha.",
+                            Descricaoresumida = "Marca Página Elegante com Nome",
                             Destaque = true,
-                            Nome = "Placa Manicure",
+                            Nome = "Marca Página com Nome",
                             Peso = 0m,
-                            Preco = 75.0m
+                            Preco = 30m
                         },
                         new
                         {
                             Id = 11,
-                            Descricao = "Aenean sit amet gravida nisi. Nam fermentum est felis, quis feugiat nunc fringilla sit amet. Ut in blandit ipsum. Quisque luctus dui at ante aliquet, in hendrerit lectus interdum. Morbi elementum sapien rhoncus pretium maximus. Nulla lectus enim, cursus et elementum sed, sodales vitae eros. Ut ex quam, porta consequat interdum in, faucibus eu velit. Quisque rhoncus ex ac libero varius molestie. Aenean tempor sit amet orci nec iaculis. Cras sit amet nulla libero. Curabitur dignissim, nunc nec laoreet consequat, purus nunc porta lacus, vel efficitur tellus augue in ipsum. Cras in arcu sed metus rutrum iaculis. Nulla non tempor erat. Duis in egestas nunc.",
-                            Descricaoresumida = "Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat",
+                            Descricao = "Marca Página elegante com formato diferente lembrando a cauda de uma sereia e com brilho.",
+                            Descricaoresumida = "Marca Página Elegante de cauda de sereia",
                             Destaque = true,
-                            Nome = "Placa Manicure",
+                            Nome = "Marca Página cauda",
                             Peso = 0m,
-                            Preco = 63.15m
+                            Preco = 30m
                         });
                 });
 
@@ -569,17 +566,47 @@ namespace DmResinas.Migrations
                         },
                         new
                         {
+                            ProdutoId = 1,
+                            CategoriaId = (byte)4
+                        },
+                        new
+                        {
                             ProdutoId = 2,
-                            CategoriaId = (byte)1
+                            CategoriaId = (byte)3
+                        },
+                        new
+                        {
+                            ProdutoId = 2,
+                            CategoriaId = (byte)4
+                        },
+                        new
+                        {
+                            ProdutoId = 2,
+                            CategoriaId = (byte)2
                         },
                         new
                         {
                             ProdutoId = 3,
+                            CategoriaId = (byte)4
+                        },
+                        new
+                        {
+                            ProdutoId = 4,
                             CategoriaId = (byte)2
                         },
                         new
                         {
                             ProdutoId = 4,
+                            CategoriaId = (byte)3
+                        },
+                        new
+                        {
+                            ProdutoId = 4,
+                            CategoriaId = (byte)4
+                        },
+                        new
+                        {
+                            ProdutoId = 5,
                             CategoriaId = (byte)1
                         },
                         new
@@ -589,27 +616,67 @@ namespace DmResinas.Migrations
                         },
                         new
                         {
-                            ProdutoId = 6,
-                            CategoriaId = (byte)1
+                            ProdutoId = 5,
+                            CategoriaId = (byte)4
                         },
                         new
                         {
-                            ProdutoId = 7,
+                            ProdutoId = 6,
                             CategoriaId = (byte)2
                         },
                         new
                         {
-                            ProdutoId = 8,
-                            CategoriaId = (byte)1
+                            ProdutoId = 6,
+                            CategoriaId = (byte)3
                         },
                         new
                         {
-                            ProdutoId = 9,
+                            ProdutoId = 6,
+                            CategoriaId = (byte)4
+                        },
+                        new
+                        {
+                            ProdutoId = 7,
                             CategoriaId = (byte)6
                         },
                         new
                         {
+                            ProdutoId = 7,
+                            CategoriaId = (byte)3
+                        },
+                        new
+                        {
+                            ProdutoId = 8,
+                            CategoriaId = (byte)6
+                        },
+                        new
+                        {
+                            ProdutoId = 8,
+                            CategoriaId = (byte)3
+                        },
+                        new
+                        {
+                            ProdutoId = 9,
+                            CategoriaId = (byte)5
+                        },
+                        new
+                        {
+                            ProdutoId = 9,
+                            CategoriaId = (byte)3
+                        },
+                        new
+                        {
                             ProdutoId = 10,
+                            CategoriaId = (byte)5
+                        },
+                        new
+                        {
+                            ProdutoId = 10,
+                            CategoriaId = (byte)3
+                        },
+                        new
+                        {
+                            ProdutoId = 11,
                             CategoriaId = (byte)5
                         },
                         new
@@ -659,6 +726,85 @@ namespace DmResinas.Migrations
                     b.HasIndex("ProdutoId");
 
                     b.ToTable("ProdutoFotos");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            ProdutoId = 1,
+                            ArquivoFoto = "/images/Produtos/1/1.png",
+                            Destaque = true
+                        },
+                        new
+                        {
+                            Id = 2,
+                            ProdutoId = 2,
+                            ArquivoFoto = "/images/Produtos/2/1.png",
+                            Destaque = true
+                        },
+                        new
+                        {
+                            Id = 3,
+                            ProdutoId = 3,
+                            ArquivoFoto = "/images/Produtos/3/1.png",
+                            Destaque = true
+                        },
+                        new
+                        {
+                            Id = 4,
+                            ProdutoId = 4,
+                            ArquivoFoto = "/images/Produtos/4/1.png",
+                            Destaque = true
+                        },
+                        new
+                        {
+                            Id = 5,
+                            ProdutoId = 5,
+                            ArquivoFoto = "/images/Produtos/5/1.png",
+                            Destaque = true
+                        },
+                        new
+                        {
+                            Id = 6,
+                            ProdutoId = 6,
+                            ArquivoFoto = "/images/Produtos/6/1.png",
+                            Destaque = true
+                        },
+                        new
+                        {
+                            Id = 7,
+                            ProdutoId = 7,
+                            ArquivoFoto = "/images/Produtos/7/1.png",
+                            Destaque = true
+                        },
+                        new
+                        {
+                            Id = 8,
+                            ProdutoId = 8,
+                            ArquivoFoto = "/images/Produtos/8/1.png",
+                            Destaque = true
+                        },
+                        new
+                        {
+                            Id = 9,
+                            ProdutoId = 9,
+                            ArquivoFoto = "/images/Produtos/9/1.png",
+                            Destaque = true
+                        },
+                        new
+                        {
+                            Id = 10,
+                            ProdutoId = 10,
+                            ArquivoFoto = "/images/Produtos/10/1.png",
+                            Destaque = true
+                        },
+                        new
+                        {
+                            Id = 11,
+                            ProdutoId = 11,
+                            ArquivoFoto = "/images/Produtos/11/1.png",
+                            Destaque = true
+                        });
                 });
 
             modelBuilder.Entity("DmResinas.Models.Tamanho", b =>
@@ -706,7 +852,7 @@ namespace DmResinas.Migrations
                     b.HasData(
                         new
                         {
-                            UsuarioId = "86dbd1e2-28ee-400f-8915-bbeb5a58e321",
+                            UsuarioId = "dc787b7e-cc4d-4ec5-9151-17477b204801",
                             DataNascimento = new DateTime(2006, 3, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Foto = "/img/users/avatar.png",
                             Nome = "Bard0u"
@@ -741,22 +887,22 @@ namespace DmResinas.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "be4fed93-b887-49c5-a786-8bfdf8fa1c54",
-                            ConcurrencyStamp = "aec03673-6e4e-476a-aedc-14b5448eeee7",
+                            Id = "a48e283f-afd3-4981-b99a-9afb30f8d0f7",
+                            ConcurrencyStamp = "3f43072e-1d0a-409f-b2d1-a61c76b26212",
                             Name = "Administrador",
                             NormalizedName = "ADMINISTRADOR"
                         },
                         new
                         {
-                            Id = "9649b275-801e-468d-ab3b-a5a5668102ea",
-                            ConcurrencyStamp = "2156eb15-2102-4542-8d04-cda7c8d9e664",
+                            Id = "ff2d19f3-f4d8-4059-b9e4-b7fd1d11bb44",
+                            ConcurrencyStamp = "f439ed65-285c-4f73-93a4-022262cf333c",
                             Name = "Funcionário",
                             NormalizedName = "FUNCIONARIO"
                         },
                         new
                         {
-                            Id = "4931f139-d83c-47d9-a66a-afa60fc40bf5",
-                            ConcurrencyStamp = "75fce8f9-9b6a-4f41-8b96-aaed609bd66c",
+                            Id = "155ed309-1d97-45f5-8eeb-0d88f004f544",
+                            ConcurrencyStamp = "53d8be61-036d-44b3-a850-56d12f67ed4f",
                             Name = "Cliente",
                             NormalizedName = "CLIENTE"
                         });
@@ -851,17 +997,17 @@ namespace DmResinas.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "86dbd1e2-28ee-400f-8915-bbeb5a58e321",
+                            Id = "dc787b7e-cc4d-4ec5-9151-17477b204801",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "d1ddeafa-3bcb-4ea6-977a-ee41be6e5f0d",
+                            ConcurrencyStamp = "8a732f09-0237-4661-b360-cce13cd283bc",
                             Email = "admin@dmresinas.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@DMRESINAS.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAEAACcQAAAAEJ0RJ42iepS/C1JNg5zCd07IIxuzJhZtlJjVredic4Y/9EZ5W1VnFi+7PSBJqzumeQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEIyiFdiOC/Aa6G6/zXbqhAED5v9Z87WUKhbmfQvFCb79/m4QtjB1lTUOqhvadSFxhw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "732b3a56-69c2-4fa1-8533-e9dce2565867",
+                            SecurityStamp = "ceb68fb4-353f-49a8-a0fb-7785ae1ed447",
                             TwoFactorEnabled = false,
                             UserName = "Admin"
                         });
@@ -929,18 +1075,18 @@ namespace DmResinas.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "86dbd1e2-28ee-400f-8915-bbeb5a58e321",
-                            RoleId = "be4fed93-b887-49c5-a786-8bfdf8fa1c54"
+                            UserId = "dc787b7e-cc4d-4ec5-9151-17477b204801",
+                            RoleId = "a48e283f-afd3-4981-b99a-9afb30f8d0f7"
                         },
                         new
                         {
-                            UserId = "86dbd1e2-28ee-400f-8915-bbeb5a58e321",
-                            RoleId = "9649b275-801e-468d-ab3b-a5a5668102ea"
+                            UserId = "dc787b7e-cc4d-4ec5-9151-17477b204801",
+                            RoleId = "ff2d19f3-f4d8-4059-b9e4-b7fd1d11bb44"
                         },
                         new
                         {
-                            UserId = "86dbd1e2-28ee-400f-8915-bbeb5a58e321",
-                            RoleId = "4931f139-d83c-47d9-a66a-afa60fc40bf5"
+                            UserId = "dc787b7e-cc4d-4ec5-9151-17477b204801",
+                            RoleId = "155ed309-1d97-45f5-8eeb-0d88f004f544"
                         });
                 });
 

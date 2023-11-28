@@ -23,6 +23,32 @@ html {
   margin: 0;
 }
 
+/* Catálogo */
+.containerTopoCatalogo {
+  margin: 80px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tituloCatalogo {
+    display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tituloCatalogo h1 {
+  margin-left: 11px;
+  font-family: "Italiana", sans-serif;
+  font-weight: 600;
+  font-size: 40px;
+  letter-spacing: 10px;
+}
+
+.tituloCatalogo img.flor1{
+  transform: rotate(10deg);
+}
+
 /* Login */
 
 .containerLogin {

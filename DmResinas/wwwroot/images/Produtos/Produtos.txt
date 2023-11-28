@@ -1,76 +1,79 @@
 Letra A com Nome
--Descrição Resumida: Chaveiro em formato de Letra A
--Descriçao: Chaveiro em formato de Letra A, com nome, folha de ouro e cordinha.
+-Descrição Resumida: 4 em formato de Letra A
+-Descriçao: 4 em formato de Letra A, com nome, 1 e cordinha.
 -Preço: 20
 -Cor: Azul
--Categorias: Folha de ouro, Chaveiro
+-Categorias: 1, 4
 
 Letra B com Nome
--Descrição Resumida: Chaveiro em formato de Letra B
--Descriçao: Chaveiro em formato de Letra B, com pingente borboleta, flores, brilho, nome e cordinha.
+-Descrição Resumida: 4 em formato de Letra B
+-Descriçao: 4 em formato de Letra B, com pingente borboleta, 2, brilho, nome e cordinha.
 -Preço: 20
 -Cor: Roxa e Transparente
--Categorias: Glitter, Chaveiro, Flores
+-Categorias: 3, 4, 2
 
 Letra D
--Descrição Resumida: Chaveiro em formato de Letra D
--Descriçao: Chaveiro em formato de Letra D, com efeito de fumaça, borboletas e cordinha.
+-Descrição Resumida: 4 em formato de Letra D
+-Descriçao: 4 em formato de Letra D, com efeito de fumaça, borboletas e cordinha.
 -Preço: 20
 -Cor: Rosa e Transparente
--Categorias: Chaveiro
+-Categorias: 4
 
 Letra K
--Descrição Resumida: Chaveiro em formato de Letra K
--Descriçao: Chaveiro em formato de Letra K, com flores e brilho na argola prata.
+-Descrição Resumida: 4 em formato de Letra K
+-Descriçao: 4 em formato de Letra K, com 2 e brilho na argola prata.
 -Preço: 20
 -Cor: Verde e Transparente
--Categorias: Flores, Chaveiro, Glitter
+-Categorias: 2, 4, 3
+//////////////////////////////////////////////
+
 
 Letra L
--Descrição Resumida: Chaveiro em formato de Letra L
--Descriçao: Chaveiro em formato de Letra L, com flores na resina totalmente transparente e folha de ouro.
+-Descrição Resumida: 4 em formato de Letra L
+-Descriçao: 4 em formato de Letra L, com 2 na resina totalmente transparente e 1.
 -Preço: 20
 -Cor: Amarela e Transparente
--Categorias: Folha de ouro, Chaveiro, Flores
+-Categorias: 1, 4, 2
  
 Letra N
--Descrição Resumida: Chaveiro em formato de Letra N
--Descriçao: Chaveiro em formato de Letra N, com flores e brilho na argola dourada.
+-Descrição Resumida: 4 em formato de Letra N
+-Descriçao: 4 em formato de Letra N, com 2 e brilho na argola dourada.
 -Preço: 20
 -Cor: Azul
--Categorias: Chaveiro, Flores, Glitter
+-Categorias: 4, 2, 3
 
-Placa de Manicure com Logo 1
--Descrição Resumida: Placa para Manicures tirarem fotos das unhas
--Descriçao: Placa para Manicures tiratem fotos de suas clientes após fazerem a unha para promover a divulgação da profissional.
+///////////////////////////////////////////////////
+6 de Manicure com Logo 1
+-Descrição Resumida: 6 para Manicures tirarem fotos das unhas
+-Descriçao: 6 para Manicures tiratem fotos de suas clientes após fazerem a unha para promover a divulgação da profissional.
 -Preço: 40
 -Cor: Rosa Pink e Branca
--Categorias: Placa, Glitter
+-Categorias: 6, 3
 
-Placa de Manicure com Logo 2
--Descrição Resumida: Placa para Manicures tirarem fotos das unhas
--Descriçao: Placa para Manicures tiratem fotos de suas clientes após fazerem a unha para promover a divulgação da profissional.
+6 de Manicure com Logo 2
+-Descrição Resumida: 6 para Manicures tirarem fotos das unhas
+-Descriçao: 6 para Manicures tiratem fotos de suas clientes após fazerem a unha para promover a divulgação da profissional.
 -Preço: 40
 -Cor: Rosa Clara e Branca
--Categorias: Placa, Glitter
+-Categorias: 6, 3
 
-Marca Página 1
--Descrição Resumida: Marca Página Elegante
--Descriçao: Marca Páginas inspirado na banda RHCP com as cores principais e cordinha.
+5 1
+-Descrição Resumida: 5 Elegante
+-Descriçao: 5 inspirado na banda RHCP com as cores principais e cordinha.
 -Preço: 30
 -Cor: Preto e Vermelho
--Categorias: Glitter, Marca Página
+-Categorias: 3, 5
 
-Marca Página com Nome 2
--Descrição Resumida: Marca Página Elegante com Nome
--Descriçao: Marca Páginas elegante com nome, símbolo, brilho e cordinha.
+5 com Nome 2
+-Descrição Resumida: 5 Elegante com Nome
+-Descriçao: 5 elegante com nome, símbolo, brilho e cordinha.
 -Preço: 30
 -Cor: Roxo e Transparente
--Categorias: Glitter, Marca Página
+-Categorias: 3, 5
 
-Marca Página cauda 3
--Descrição Resumida: Marca Página Elegante de cauda de sereia
--Descriçao: Marca Página elegante com formato diferente lembrando a cauda de uma sereia e com brilho.
+5 cauda 3
+-Descrição Resumida: 5 Elegante de cauda de sereia
+-Descriçao: 5 elegante com formato diferente lembrando a cauda de uma sereia e com brilho.
 -Preço: 30
 -Cor: Azul Claro
--Categorias: Glitter, Marca Página
+-Categorias: 3, 5

@@ -2,110 +2,138 @@
 @{
 	ViewData["Title"] = "Catálogo";
 }
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+@section Styles {
 
 	<link rel="stylesheet" href="~/css/animate.css">
 	<link rel="stylesheet" href="~/css/style.css">
+}
 
-</head>
+<div class="hero-wrap hero-bread d-flex justify-content-center" style="background-color: #f5f5f5;">
+	<img src="../images/catalogo.png" style="width: 70%; height: 70%">
+</div>
 
-<body class="goto-here">
-
-
-	<div class="hero-wrap hero-bread d-flex justify-content-center" style="background-color: #f5f5f5;">
-		<img src="../images/catalogo.png" style="width: 70%; height: 70%">
+<header class="containerTopoCatalogo">
+	<div class="tituloCatalogo">
+		<img class="flor1"
+			src="https://cdn.discordapp.com/attachments/826872414147313764/1165147408041255002/image.png?ex=6545cb15&is=65335615&hm=f02c2435a8b6ff3c9ca96b40e3034e2266b5e4ab9533a6594650e1eabdff71aa&"
+			width="30" height="30" />
+		<h1> CATÁLOGO</h1>
+		<img src="https://cdn.discordapp.com/attachments/826872414147313764/1165147408041255002/image.png?ex=6545cb15&is=65335615&hm=f02c2435a8b6ff3c9ca96b40e3034e2266b5e4ab9533a6594650e1eabdff71aa&"
+			width="30" height="30" />
 	</div>
+	<h2>Encontre o produto que está procurando.</h2>
+</header>
 
-	<header class="containerTopoCatalogo">
-		<div class="tituloCatalogo">
-			<img class="flor1"
-				src="https://cdn.discordapp.com/attachments/826872414147313764/1165147408041255002/image.png?ex=6545cb15&is=65335615&hm=f02c2435a8b6ff3c9ca96b40e3034e2266b5e4ab9533a6594650e1eabdff71aa&"
-				width="30" height="30" />
-			<h1> CATÁLOGO</h1>
-			<img src="https://cdn.discordapp.com/attachments/826872414147313764/1165147408041255002/image.png?ex=6545cb15&is=65335615&hm=f02c2435a8b6ff3c9ca96b40e3034e2266b5e4ab9533a6594650e1eabdff71aa&"
-				width="30" height="30" />
-		</div>
-		<h2>Encontre o produto que está procurando.</h2>
-		<form id="form">
-			<input type="search" id="query" name="q" placeholder="Search...">
-			<button>Search</button>
-		</form>
-	</header>
-
-	<section class="ftco-section">
-		<div class="container2">
-			<div class="row justify-content-center">
-				<div class="group">
-				<button id="btn-all" class="btn my-2 text-white bg-secondary btn-filter cursor-pointer"
-					onclick="filter('all', '#f8f9fa')">
-					Ver Todos
-				</button>
-				@foreach (var categoria in Model.Categorias)
-				{
-					<button id="btn-@categoria.Id" onclick="filter('@categoria.Id')">
-						@categoria.Nome
-					</button>
-				}
-				</div>
+<section class="ftco-section">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-md-10 mb-5 text-center">
+				<ul class="product-category">
+					<li><a href="javascript:void(0)" style="background-color: #D7911A; color: white">Todos</a></li>
+					<li><a href="javascript:void(0)">Chaveiros</a></li>
+					<li><a href="javascript:void(0)">Marca-Páginas</a></li>
+					<li><a href="javascript:void(0)">Placas</a></li>
+					<li><a href="javascript:void(0)">Outros...</a></li>
+				</ul>
 			</div>
+		</div>
 
-			<div class="row d-flex justify-content-center">
+		<div class="row d-flex justify-content-center">
+			@foreach (var produto in Model.Produtos)
+			{
 				<div class="col-md-9 col-lg-3 ftco-animate">
-					<div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-4 g-3">
-						<div class="container">
-
-							<div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-4 g-3">
-								@foreach (var produto in Model.Produtos)
-								{
-									<a asp-controller="Home" asp-action="Produto" asp-route-id="@produto.Id"
-										class="text-decoration-none">
-										<div class="col">
-											<div class="card shadow-sm">
-												<img class="bd-placeholder-img card-img-top" width="100%" height="400"
-													src="@produto.Fotos">
-												<div class="card-body">
-													<p class="card-text text-center">@produto.Nome</p>
-													<div class="d-flex align-items-center mb-2">
-														@foreach (ProdutoCategoria categoria in produto.Categorias)
-														{
-															<span
-																class="badge bg-secondary me-2">@categoria.Categoria.Nome</span>
-														}
-													</div>
-													<div class="d-flex justify-content-between align-items-center">
-
-														<small class="text-body-secondary">@produto.Preco</small>
-													</div>
-												</div>
-											</div>
-										</div>
-									</a>
-								}
+					<div class="product">
+						<a asp-controller="Home" asp-action="Produto" asp-route-id="@produto.Id" class="img-prod">
+							<img class="img-fluid" src="@produto.Fotos.Where(f=> f.Destaque).Select(f => f.ArquivoFoto).Single()" alt="Colorlib Template">
+							<div class="overlay"></div>
+						</a>
+						<div class="text py-3 pb-4 px-3 text-center">
+							<h3><a asp-controller="Home" asp-action="Produto" asp-route-id="@produto.Id">@produto.Nome</a>
+							</h3>
+							<div class="d-flex">
+								<div class="pricing">
+									<p class="price"><span>@produto.Preco</span></p>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-	</section>
+			}
+		</div>
+</section>
 
 
-
-	<script src="~/js/jquery.min.js"></script>
+@section Scripts {
 	<script src="~/js/jquery-migrate-3.0.1.min.js"></script>
-	<script src="~/js/bootstrap.min.js"></script>
 	<script src="~/js/jquery.waypoints.min.js"></script>
 	<script src="~/js/jquery.stellar.min.js"></script>
 	<script src="~/js/owl.carousel.min.js"></script>
 	<script src="~/js/aos.js"></script>
 	<script src="~/js/scrollax.min.js"></script>
+	<script src="~/js/jquery.magnific-popup.min.js"></script>
 	<script src="~/js/main.js"></script>
 
-</body>
 
-</html>
+
+
+	<!--Filtro
+
+
+	<script>
+	function Filter()
+        {
+            let filtroTipo = [];
+            if (document.getElementById("AllTypes").checked === false)
+            {
+                let tipos = document.getElementsByClassName("tipo");
+                for (let i = 0; i < tipos.length; i++) {
+                    if (tipos[i].checked === true) {
+                        filtroTipo.push(tipos[i].name);
+                    }
+                }
+            }
+	items[i].style.display = display;
+
+	 function CheckTypesCount(){
+            let count = 0;
+            let items = document.getElementsByClassName("tipo");
+            for (let i = 0; i < items.length; i++) {
+                if (items[i].checked === true) {
+                    count += 1;
+                }
+            };
+            if (document.getElementById("AllTypes").checked === true) {
+                count += 1;
+            }
+            return count;
+        }
+
+        function FilterAllTypes() {
+            if (CheckTypesCount() == 0){
+                document.getElementById("AllTypes").checked = true;
+            }
+            else
+            {
+                let items = document.getElementsByClassName("tipo");
+                for (let i = 0; i < items.length; i++) {
+                    items[i].checked = false;
+                };
+            }
+            Filter();
+        }
+
+        function FilterType() {
+            if (CheckTypesCount() == 0){
+                document.getElementById("AllTypes").checked = true;
+            }
+            else
+            {
+                document.getElementById("AllTypes").checked = false;
+            };
+            Filter();
+        }
+	</script>
+
+	
+-->
+}

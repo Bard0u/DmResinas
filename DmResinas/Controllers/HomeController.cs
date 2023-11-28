@@ -38,7 +38,9 @@ public class HomeController : Controller
     {
         CatalogoDto catalogo = new() {
             Categorias = _context.Categorias.ToList(),
-            Produtos = _context.Produtos.Include(t => t.Categorias).ToList()
+            Produtos = _context.Produtos
+                .Include(t => t.Categorias)
+                .Include(f => f.Fotos).ToList()
         };
         return View(catalogo);
     }
