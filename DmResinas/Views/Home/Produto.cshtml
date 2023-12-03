@@ -4,25 +4,35 @@
 }
 
 <div class="album py-5">
-		@foreach (ProdutoFoto ProdutoFotos in Model.Fotos)
+    <div class="containerTudoProduto">
+        <section class="containerPrincipalProduto">
+            @foreach (ProdutoFoto ProdutoFotos in Model.Fotos)
             {
-				<img class="img-fluid" src="@ProdutoFotos.Produto.Fotos.Select(f => f.ArquivoFoto).Single()" alt="Colorlib Template">
-				<div class="overlay"></div>
+                <img class="imagemProduto" src="@ProdutoFotos.Produto.Fotos.Select(f => f.ArquivoFoto).Single()"
+                    alt="Colorlib Template">
+                <div class="overlay"></div>
             }
-    <div class="text-center mb-3">
-        <h1>@Model.Nome</h1>
-    </div>
-
-    <div class="container">
-        <div class="row">
-            <div class="col-md-9">
-                <p>@Model.Descricao</p>
-                <p>Preço: @Model.Preco</p>
-              @foreach (ProdutoCategoria ProdutoCategorias in Model.Categorias)
-            {
-                <h2><span class="badge bg-secondary me-2">@ProdutoCategorias.Categoria.Nome</span></h2>
-            }
+            <div class="containerInfoPrincipalProduto">
+                <h1>@Model.Nome</h1>
+                <p class="precoProduto">R$@Model.Preco</p>
+                <p class="descricaoProduto">@Model.Descricao</p>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-9">
+                            @foreach (ProdutoCategoria ProdutoCategorias in Model.Categorias)
+                            {
+                                <h2><span class="badge bg-secondary me-2">@ProdutoCategorias.Categoria.Nome</span></h2>
+                            }
+                        </div>
+                    </div>
+                </div>
+                <a href="https://contate.me/dmresinas">
+                    <button class="botaoComprarProduto">
+                        <p>Comprar</p>
+                        <img class="zapLogoProduto" src="~/img/zaplogo.png" />
+                    </button>
+                </a>
             </div>
-        </div>
+        </section>
     </div>
 </div>

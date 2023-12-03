@@ -1,65 +1,54 @@
 ﻿@model DmResinas.DTO.LoginDto
 @{
     ViewData["Title"] = "Login";
-    Layout = "~/Views/Shared/_LayoutAccount.cshtml";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 @section Styles{
     <link rel="stylesheet" href="~/css/site.css">
 }
 
-<main class="mainLogin">
-    <div class="containerLogin">
-        <form method="post">
-            <div class="text-center mb-5">
-                <img src="~/img/logo.png" alt="Logo" width="250">
-            </div>
-            <input type="hidden" asp-for="ReturnUrl">
-            <div asp-validation-summary="All" class="text-danger" hidden></div>
-
-            <div class="mb-3">
-                <label asp-for="Email" class="form-label"></label>
-                <input asp-for="Email" class="form-control">
-                <span asp-validation-for="Email" class="text-danger"></span>
-            </div>
-
-            <div class="mb-3">
-                <label asp-for="Password" class="form-label"></label>
-                <input asp-for="Password" class="form-control">
-                <span asp-validation-for="Password" class="text-danger"></span>
-            </div>
-
-            <div class="mb-3 form-check ">
-                <input asp-for="RememberMe" type="checkbox" class="form-check-input">
-                <label class="form-check-label" asp-for="RememberMe"></label>
-                <a asp-action="Forget" class="d-block text-center mt-3 forgetPassword">Esqueceu sua Senha?</a>
-            </div>
-            <div class="botaoLogin">
-                <button type="submit" style="background-color: #C58A3E; width:260px; height: 50px; color: white; border: none">Entrar</button>
-                <div class="separator">
-                    <h6 style="margin-top: 30px;">Novo por Aqui?</h6>
+<body>
+    <main class="mainLogin">
+        <div class="containerLogin">
+            <form method="post">
+                <div class="text-center mb-5">
+                    <img src="~/img/logo.png" alt="Logo" width="250" style="z-index: 50;">
                 </div>
-                <a asp-action="Register" style="justify-content: center; display: flex; align-items: center; width:260px; height: 50px; color: #C58A3E; border: #C58A3E solid 1px">Criar Conta</a>
-            </div>
-        </form>
-    </div>
-</main>
+                <input type="hidden" asp-for="ReturnUrl">
+                <div asp-validation-summary="All" class="text-danger" hidden></div>
 
-@section Scripts {
-    <partial name="_ValidationScriptsPartial"></partial>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-    <script>
-        let mensagemErro = '';
-        $('.validation-summary-errors ul li').each(function () {
-            mensagemErro += $(this).text() + '<br>';
-        });
-        if (mensagemErro != '') {
-            Swal.fire(
-                'Acesso Negado',
-                mensagemErro,
-                'error'
-            );
-        }
-    </script>
-}
+                <div class="wrap-input100 validate-input">
+                    <input asp-for="Email" class="input-100" placeholder="Digite seu email ou usuário">
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
 
+                <div class="wrap-input100 validate-input">
+                    <input asp-for="Password" class="input-100" placeholder="Digite sua senha">
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+
+                <div class="botaoLogin">
+                    <button type="submit" style="background-color: #C58A3E; width:260px; height: 50px; color: white; border: none">Entrar</button>
+            </form>
+        </div>
+    </main>
+
+    @section Scripts {
+        <partial name="_ValidationScriptsPartial"></partial>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+        <script>
+            let mensagemErro = '';
+            $('.validation-summary-errors ul li').each(function () {
+                mensagemErro += $(this).text() + '<br>';
+            });
+            if (mensagemErro != '') {
+                Swal.fire(
+                    'Acesso Negado',
+                    mensagemErro,
+                    'error'
+                );
+            }
+        </script>
+    }
+</body>

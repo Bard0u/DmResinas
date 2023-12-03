@@ -23,7 +23,28 @@ html {
   margin: 0;
 }
 
+input {
+  width: 100%;
+	outline: none;
+	border: none;
+}
+
+.wrap-input100 {
+  width: 100%;
+  position: relative;
+  border-bottom: 2px solid #adadad;
+  margin-bottom: 37px;
+}
+
 /* Catálogo */
+
+.headercatalogo {
+  background-image: url("../images/catalogo.png");
+  background-size: cover;
+  width: 100%;
+  height: 500px;
+}
+
 .containerTopoCatalogo {
   margin: 80px 0px;
   display: flex;
@@ -49,19 +70,125 @@ html {
   transform: rotate(10deg);
 }
 
+
+/* Produto */
+
+.containerTudoProduto {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.containerPrincipalProduto {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.containerInfoPrincipalProduto h1 {
+  color: #000;
+  text-align: start;
+  font-family: Inter;
+  font-size: 45px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.containerInfoPrincipalProduto a {
+  margin-top: 120px;
+  height: 74px;
+  width: 300px;
+  text-decoration: none;
+}
+
+p.descricaoProduto {
+  color: gray;
+  font-family: "Abel", sans-serif;
+}
+
+.precoProduto {
+  color: #000;
+  text-align: start;
+  font-family: Roboto;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.botaoComprarProduto {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  background: #C58A3E;
+  border-radius: 5px;
+  color: white;
+  padding: 10px 30px;
+  font-size: 14px;
+  border: 1px solid #C58A3E;
+  font-family: Montserrat;
+  transition: ease 0.9s;
+  height: 74px;
+  width: 300px;
+}
+
+.botaoComprarProduto p {
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  transition: ease 0.9s;
+  margin-right: 32px;
+  margin-left: 26px;
+  text-decoration: none;
+  margin-bottom: 0;
+}
+
+.zapLogoProduto {
+  z-index: 1000;
+  width: 150px;
+  height: auto;
+  pointer-events: none;
+  cursor: default;
+}
+
+.containerInfoPrincipalProduto {
+  display: flex;
+  flex-direction: column;
+  margin-left: 100px;
+  width: 500px;
+}
+
+.imagemProduto {
+  max-width: 300px;
+  max-height: 500px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+
+
 /* Login */
 
 .containerLogin {
-  margin-top: 55px;
+  margin-top: 70px;
+  box-shadow: 5px 5px 10px rgba(41, 41, 41, 0.3);
+  border-radius: 7px;
   display: flex;
-  height: fit-content;
-  width: 600px;
+  height: 450px;
+  width: 500px;
   border: #C58A3E solid 1px;
   justify-content: center;
   align-items: center;
+  padding-bottom: 80px;
 }
 
 .mainLogin {
+  margin-bottom: 150px;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -204,6 +331,8 @@ p.textoSobre {
 /* Página Dicas */
 
 .containerTudoDicas {
+  font-family: 'Abel', sans-serif;
+  text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -486,6 +615,7 @@ h1#tresDicas {
 
 .accordion .accordion-content p {
   font-family: "Abel", sans-serif;
+  text-align: start;
   font-size: 1rem;
   font-weight: 300;
   margin: 2em 0;

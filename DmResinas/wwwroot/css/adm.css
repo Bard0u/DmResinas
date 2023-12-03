@@ -7,12 +7,12 @@ main {
 }
 
 .nav-link:hover {
-    background-color: darkred !important;
+    background-color: #E6BC74 !important;
     color: white;
 }
 
 .nav-link.active {
-    background-color: rgb(104, 4, 4) !important; 
+    background-color: #C58A3E !important; 
     color: white;
 }
 
