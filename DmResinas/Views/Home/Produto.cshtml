@@ -16,15 +16,11 @@
                 <h1>@Model.Nome</h1>
                 <p class="precoProduto">R$@Model.Preco</p>
                 <p class="descricaoProduto">@Model.Descricao</p>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-9">
-                            @foreach (ProdutoCategoria ProdutoCategorias in Model.Categorias)
-                            {
-                                <h2><span class="badge bg-secondary me-2">@ProdutoCategorias.Categoria.Nome</span></h2>
-                            }
-                        </div>
-                    </div>
+                <div class="containerTagsProduto">
+                    @foreach (ProdutoCategoria ProdutoCategorias in Model.Categorias)
+                    {
+                        <h2><span class="badge bg-secondary me-2">@ProdutoCategorias.Categoria.Nome</span></h2>
+                    }
                 </div>
                 <a href="https://contate.me/dmresinas">
                     <button class="botaoComprarProduto">

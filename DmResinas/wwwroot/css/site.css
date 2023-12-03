@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Italiana&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Hind:300,400&display=swap');
@@ -46,10 +46,14 @@ input {
 }
 
 .containerTopoCatalogo {
-  margin: 80px 0px;
+  margin-top: 80px;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.filtro {
+  margin-top: 20px;
 }
 
 .tituloCatalogo {
@@ -114,7 +118,7 @@ p.descricaoProduto {
   font-family: Roboto;
   font-size: 30px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 300;
   line-height: normal;
 }
 
@@ -936,6 +940,19 @@ body {
 
 .palavrado {
   text-align: right;
+}
+
+.containerMoldes {
+  text-align: center;
+  justify-content: center;
+  display: grid;
+  grid-gap: 5px;
+  grid-template: repeat(5, 1fr) / repeat(5, 200px );
+}
+
+.containerMoldes div img{
+  width: 200px;
+  height: auto;
 }
 
 footer {

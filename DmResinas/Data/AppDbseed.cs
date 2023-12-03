@@ -211,7 +211,7 @@ public class AppDbSeed
         List<Categoria> categorias = new() {
             new Categoria() {
                 Id = 1,
-                Nome = "Folha de Ouro",
+                Nome = "Folha-de-Ouro",
                 Foto = @"images/categorias/1.png",
                 Filtrar = true,
                 Banner = true
@@ -239,7 +239,7 @@ public class AppDbSeed
             },
             new Categoria() {
                 Id = 5,
-                Nome = "Marca Páginas",
+                Nome = "Marca-Páginas",
                 Foto = "",
                 Filtrar = true,
                 Banner = false,

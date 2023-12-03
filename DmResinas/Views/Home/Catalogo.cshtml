@@ -8,7 +8,9 @@
 	<link rel="stylesheet" href="~/css/style.css">
 }
 
-<div class="headercatalogo"></div>
+<div class="hero-wrap hero-bread d-flex justify-content-center" style="background-color: #f5f5f5;">
+	<img src="../images/catalogo.png" style="width: 70%; height: 70%">
+</div>
 
 <header class="containerTopoCatalogo">
 	<div class="tituloCatalogo">
@@ -22,25 +24,28 @@
 	<h2>Encontre o produto que está procurando.</h2>
 </header>
 
-<section class="ftco-section">
+<section class="filtro">
 	<div class="container">
 		<div class="row justify-content-center">
 			<div class="col-md-10 mb-5 text-center">
-				<ul class="product-category">
-					<li><a href="javascript:void(0)" style="background-color: #D7911A; color: white">Todos</a></li>
-					<li><a href="javascript:void(0)">Chaveiros</a></li>
-					<li><a href="javascript:void(0)">Marca-Páginas</a></li>
-					<li><a href="javascript:void(0)">Placas</a></li>
-					<li><a href="javascript:void(0)">Outros...</a></li>
-				</ul>
+				<button id="btn-all" class="btn my-2  btn-filter cursor-pointer" style="background-color: #D7911A; color: white" onclick="filter('all', '#f8f9fa')">
+                    Ver Todos
+                </button>
+				@foreach (var categoria in Model.Categorias)
+                {
+                    <button id="btn-@categoria.Nome.ToLower()" class="btn my-2  btn-filter cursor-pointer" onclick="filter('@categoria.Nome.ToLower()')">
+                        @categoria.Nome
+                    </button>
+                }
 			</div>
 		</div>
+		
 
 		<div class="row d-flex justify-content-center">
 			@foreach (var produto in Model.Produtos)
 			{
 				<div class="col-md-9 col-lg-3 ftco-animate">
-					<div class="product">
+					<div class="product @string.Join(' ',produto.Categorias.Select(t =>t .Categoria.Nome)).ToLower()">
 						<a asp-controller="Home" asp-action="Produto" asp-route-id="@produto.Id" class="img-prod">
 							<img class="img-fluid" src="@produto.Fotos.Where(f=> f.Destaque).Select(f => f.ArquivoFoto).Single()" alt="Colorlib Template">
 							<div class="overlay"></div>
@@ -52,12 +57,21 @@
 								<div class="pricing">
 									<p class="price"><span>@produto.Preco</span></p>
 								</div>
+								<div class="tipodoproduto">
+								@foreach (var categoria in produto.Categorias)
+                                    {
+                                        <a asp-action="Index" asp-routetipo="@categoria.Categoria.Nome.ToLower()" class="btn my-2 text-white"></a>
+									
+                                    }
+								</div>
 							</div>
 						</div>
 					</div>
+					
 				</div>
 			}
 		</div>
+		
 </section>
 
 
@@ -73,65 +87,36 @@
 
 
 
-
-	<!--Filtro
-
-
-	<script>
-	function Filter()
-        {
-            let filtroTipo = [];
-            if (document.getElementById("AllTypes").checked === false)
-            {
-                let tipos = document.getElementsByClassName("tipo");
-                for (let i = 0; i < tipos.length; i++) {
-                    if (tipos[i].checked === true) {
-                        filtroTipo.push(tipos[i].name);
-                    }
-                }
-            }
-	items[i].style.display = display;
-
-	 function CheckTypesCount(){
-            let count = 0;
-            let items = document.getElementsByClassName("tipo");
-            for (let i = 0; i < items.length; i++) {
-                if (items[i].checked === true) {
-                    count += 1;
-                }
-            };
-            if (document.getElementById("AllTypes").checked === true) {
-                count += 1;
-            }
-            return count;
+<script>
+	function filter(categorias) {
+    let cards, i;
+    let count = 0;
+    cards = document.getElementsByClassName("product");
+    buttons = document.getElementsByClassName("btn-filter");
+    for (i = 0; i < cards.length; i++) {
+        cards[i].parentElement.style.display = 'none';
+        if (cards[i].classList.contains(categorias) || categorias === "all") {
+            cards[i].parentElement.style.display = 'block';
+            count += 1;
+        };
+    };
+    for (i = 0; i < buttons.length; i++) {
+        if (buttons[i].id == `btn-${categorias}`) {
+            buttons[i].classList.remove("btn-sm");
+            buttons[i].classList.add("btn-lg");
         }
-
-        function FilterAllTypes() {
-            if (CheckTypesCount() == 0){
-                document.getElementById("AllTypes").checked = true;
-            }
-            else
-            {
-                let items = document.getElementsByClassName("tipo");
-                for (let i = 0; i < items.length; i++) {
-                    items[i].checked = false;
-                };
-            }
-            Filter();
+        else {
+            buttons[i].classList.remove("btn-lg");
+            buttons[i].classList.add("btn-sm");
         }
-
-        function FilterType() {
-            if (CheckTypesCount() == 0){
-                document.getElementById("AllTypes").checked = true;
-            }
-            else
-            {
-                document.getElementById("AllTypes").checked = false;
-            };
-            Filter();
-        }
-	</script>
+    };
+    if (categorias === "all") {
+        document.getElementById("btn-all").classList.remove("btn-sm");
+        document.getElementById("btn-all").classList.add("btn-lg");
+    };
+}
+</script>
 
 	
--->
+
 }
