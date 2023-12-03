@@ -4,6 +4,11 @@
 }
 
 <div class="album py-5">
+		@foreach (ProdutoFoto ProdutoFotos in Model.Fotos)
+            {
+				<img class="img-fluid" src="@ProdutoFotos.Produto.Fotos.Select(f => f.ArquivoFoto).Single()" alt="Colorlib Template">
+				<div class="overlay"></div>
+            }
     <div class="text-center mb-3">
         <h1>@Model.Nome</h1>
     </div>

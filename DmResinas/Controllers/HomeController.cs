@@ -31,12 +31,14 @@ public class HomeController : Controller
                    .Include(p => p.Categorias)
                    .ThenInclude(c => c.Categoria)
                    .Include(p => p.Cores)
+                   .Include(f => f.Fotos).ToList()
                    .SingleOrDefault();
         return View(produto);
     }
     public IActionResult Catalogo(int? id)
     {
-        CatalogoDto catalogo = new() {
+        CatalogoDto catalogo = new()
+        {
             Categorias = _context.Categorias.ToList(),
             Produtos = _context.Produtos
                 .Include(t => t.Categorias)
