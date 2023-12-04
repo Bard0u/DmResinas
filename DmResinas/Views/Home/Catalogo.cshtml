@@ -22,7 +22,7 @@
 	<h2>Encontre o produto que está procurando.</h2>
 </header>
 
-<section class="filtro">
+<section class="containerTudoCatalogo">
 	<div class="row justify-content-center">
 		<div class="col-md-10 mb-5 text-center">
 			<button id="btn-all" class="btn my-2  btn-filter cursor-pointer"
@@ -31,7 +31,7 @@
 			</button>
 			@foreach (var categoria in Model.Categorias)
 			{
-				<button id="btn-@categoria.Nome.ToLower()" class="btn my-2  btn-filter cursor-pointer"
+				<button id="btn-@categoria.Nome.ToLower()" class="botaoFiltro"
 					onclick="filter('@categoria.Nome.ToLower()')">
 					@categoria.Nome
 				</button>
@@ -44,8 +44,8 @@
 		@foreach (var produto in Model.Produtos)
 		{
 			<div class="itemCatalogo">
-				<div id="produtoCatalogo" class="product @string.Join(' ',produto.Categorias.Select(t =>t .Categoria.Nome)).ToLower()">
-					<a asp-controller="Home" asp-action="Produto" asp-route-id="@produto.Id" class="img-prod">
+				<div class="product @string.Join(' ',produto.Categorias.Select(t =>t .Categoria.Nome)).ToLower()">
+					<a id="imagemCatalogo" asp-controller="Home" asp-action="Produto" asp-route-id="@produto.Id" class="img-prod">
 						<img class="img-fluid"
 							src="@produto.Fotos.Where(f=> f.Destaque).Select(f => f.ArquivoFoto).Single()"
 							alt="Colorlib Template">
@@ -54,9 +54,9 @@
 					<div class="text py-3 pb-4 px-3 text-center">
 						<h3><a asp-controller="Home" asp-action="Produto" asp-route-id="@produto.Id">@produto.Nome</a>
 						</h3>
-						<div class="d-flex">
+						<div class="precoCatalogo">
 							<div class="pricing">
-								<p class="price"><span>@produto.Preco</span></p>
+								<p class="price"><span>R$@produto.Preco</span></p>
 							</div>
 							<div class="tipodoproduto">
 								@foreach (var categoria in produto.Categorias)
@@ -90,6 +90,19 @@
 
 
 	<script>
+		produtos = document.getElementsByClassName("product");
+		for (i = 0; i < produtos.length; i++) {
+			if (produtos[i].classList.contains("marca-páginas")) {
+				produtos[i].parentElement.id = "marcapaginaCatalogo";
+			}
+			else if (produtos[i].classList.contains("chaveiros")) {
+				produtos[i].parentElement.id = "chaveiroCatalogo";
+			}
+			else if (produtos[i].classList.contains("placa")) {
+				produtos[i].parentElement.id = "placaCatalogo";
+			};
+		};
+
 		function filter(categorias) {
 			let cards, i;
 			let count = 0;

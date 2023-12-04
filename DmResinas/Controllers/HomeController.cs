@@ -56,11 +56,6 @@ public class HomeController : Controller
         return View();
     }
 
-    public IActionResult Produto()
-    {
-        return View();
-    }
-
     public IActionResult Privacy()
     {
         return View();

@@ -1177,24 +1177,53 @@ input {
 }
 
 .itemCatalogo {
-  width: 100%;
+  margin: 0 20px;
   height: auto;
 }
 
-#produtoCatalogo {
-  width: 100%;
-  height: auto;
+#imagemCatalogo {
+  border: 1px solid #D7911A;
+}
+
+#chaveiroCatalogo {
+  width: 250px;
+}
+
+#placaCatalogo {
+  width: 350px;
+}
+
+#marcapaginaCatalogo {
+  width: 250px;
+  height: 770px;
+}
+
+.botaoFiltro {
+  background-color: #000;
+}
+
+.botaoFiltro:focus {     
+  background-color:yellow;    
+}
+
+.precoCatalogo {
+  text-align: center;
 }
 
 .containerCatalogo {
-  display: grid;
-  justify-items: center;
-  align-items: center;
-  grid-template-columns: 1fr 1fr 1fr;
+  display: flex;
+  justify-content: center;
+  align-items: top;
+  flex-wrap: wrap;
+  width: 60%;
 }
 
-.filtro {
+.containerTudoCatalogo {
   margin-top: 20px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .tituloCatalogo {
@@ -1213,6 +1242,10 @@ input {
 
 .tituloCatalogo img.flor1{
   transform: rotate(10deg);
+}
+
+#marca-páginas {
+  display: none;
 }
 
 
