@@ -144,5 +144,3 @@ swipe.on("swiperight", (ev) => {
   }
 })()
 
-
-

@@ -27,7 +27,7 @@ public class AppDbSeed
             new Cor() {
                 Id = 4,
                 Nome = "Verde Água",
-                CodigoHexa = "#85dedc"
+                CodigoHexa = "#85DECB"
             },
             new Cor() {
                 Id = 5,
@@ -42,7 +42,7 @@ public class AppDbSeed
             new Cor() {
                 Id = 7,
                 Nome = "Azul Turquesa",
-                CodigoHexa = "#1b4a82"
+                CodigoHexa = "#00E0FF"
             },
             new Cor() {
                 Id = 8,
@@ -52,7 +52,7 @@ public class AppDbSeed
             new Cor() {
                 Id = 9,
                 Nome = "Bege",
-                CodigoHexa = "#7ab5f9"
+                CodigoHexa = "#D6B563"
             },
             new Cor() {
                 Id = 10,
@@ -461,6 +461,121 @@ public class AppDbSeed
             //////////////////////////////////
         };
         builder.Entity<ProdutoCategoria>().HasData(produtoCategorias);
+
+         List<ProdutoCor> produtoCores = new() {
+            new ProdutoCor() {
+                ProdutoId = 1,
+                CorId = 2 
+            },
+            new ProdutoCor() {
+                ProdutoId = 1,
+                CorId = 10
+            },
+            ////////////////////////////////
+            new ProdutoCor() {
+                ProdutoId = 2,
+                CorId = 3
+            },
+            new ProdutoCor() {
+                ProdutoId = 2,
+                CorId = 13
+            },
+            new ProdutoCor() {
+                ProdutoId = 2,
+                CorId = 22
+            },
+            /////////////////////////////////
+            new ProdutoCor() {
+                ProdutoId = 3,
+                CorId = 19
+            },
+            /////////////////////////////////
+            new ProdutoCor() {
+                ProdutoId = 4,
+                CorId = 26
+            },
+            new ProdutoCor() {
+                ProdutoId = 4,
+                CorId = 31
+            },
+            new ProdutoCor() {
+                ProdutoId = 4,
+                CorId = 34
+            },
+            ////////////////////////////////
+            new ProdutoCor() {
+                ProdutoId = 5,
+                CorId = 12
+            },
+            new ProdutoCor() {
+                ProdutoId = 5,
+                CorId = 32
+            },
+            new ProdutoCor() {
+                ProdutoId = 5,
+                CorId = 34
+            },
+            /////////////////////////////////
+            new ProdutoCor() {
+                ProdutoId = 6,
+                CorId = 22
+            },
+            new ProdutoCor() {
+                ProdutoId = 6,
+                CorId = 33
+            },
+            new ProdutoCor() {
+                ProdutoId = 6,
+                CorId = 34
+            },
+            //////////////////////////////////
+            new ProdutoCor() {
+                ProdutoId = 7,
+                CorId = 16
+            },
+            new ProdutoCor() {
+                ProdutoId = 7,
+                CorId = 23
+            },
+            //////////////////////////////////
+            new ProdutoCor() {
+                ProdutoId = 8,
+                CorId = 36
+            },
+            new ProdutoCor() {
+                ProdutoId = 8,
+                CorId = 23
+            },
+            //////////////////////////////////
+            new ProdutoCor() {
+                ProdutoId = 9,
+                CorId = 15
+            },
+            new ProdutoCor() {
+                ProdutoId = 9,
+                CorId = 35
+            },
+            //////////////////////////////////
+            new ProdutoCor() {
+                ProdutoId = 10,
+                CorId = 25
+            },
+            new ProdutoCor() {
+                ProdutoId = 10,
+                CorId = 38
+            },
+            //////////////////////////////////
+            new ProdutoCor() {
+                ProdutoId = 11,
+                CorId = 25
+            },
+            new ProdutoCor() {
+                ProdutoId = 11,
+                CorId = 36
+            }
+            //////////////////////////////////
+        };
+        builder.Entity<ProdutoCor>().HasData(produtoCores);
 
         List<ProdutoFoto> produtoFotos = new();
         produtoFotos.Add(new ProdutoFoto()

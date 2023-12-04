@@ -6,22 +6,32 @@
 <div class="album py-5">
     <div class="containerTudoProduto">
         <section class="containerPrincipalProduto">
-            @foreach (ProdutoFoto ProdutoFotos in Model.Fotos)
-            {
-                <img class="imagemProduto" src="@ProdutoFotos.Produto.Fotos.Select(f => f.ArquivoFoto).Single()"
-                    alt="Colorlib Template">
-                <div class="overlay"></div>
-            }
+            <div class="containerFotoProduto">
+                @foreach (ProdutoFoto ProdutoFotos in Model.Fotos)
+                {
+                    <img class="imagemProduto" src="@ProdutoFotos.Produto.Fotos.Select(f => f.ArquivoFoto).Single()"
+                        alt="Colorlib Template">
+                    <div class="overlay"></div>
+                }
+            </div>
             <div class="containerInfoPrincipalProduto">
                 <h1>@Model.Nome</h1>
                 <p class="precoProduto">R$@Model.Preco</p>
                 <p class="descricaoProduto">@Model.Descricao</p>
                 <div class="containerTagsProduto">
+                <p>Categorias da Peça:</p>
                     @foreach (ProdutoCategoria ProdutoCategorias in Model.Categorias)
                     {
                         <h2><span class="badge bg-secondary me-2">@ProdutoCategorias.Categoria.Nome</span></h2>
                     }
+                    <p>Cores Presentes:</p>
+                    @foreach (ProdutoCor ProdutoCores in Model.Cores)
+                    {
+                        
+                        <h2><span class="badge bg-secondary me-2" style="background-color:@ProdutoCores.Cor.CodigoHexa">@ProdutoCores.Cor.Nome</span></h2>
+                    }
                 </div>
+
                 <a href="https://contate.me/dmresinas">
                     <button class="botaoComprarProduto">
                         <p>Comprar</p>
@@ -32,3 +42,5 @@
         </section>
     </div>
 </div>
+
+

@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DmResinas.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20231128140301_criar-banco")]
+    [Migration("20231203214737_criar-banco")]
     partial class criarbanco
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -58,7 +58,7 @@ namespace DmResinas.Migrations
                             Banner = true,
                             Filtrar = true,
                             Foto = "images/categorias/1.png",
-                            Nome = "Folha de Ouro"
+                            Nome = "Folha-de-Ouro"
                         },
                         new
                         {
@@ -90,7 +90,7 @@ namespace DmResinas.Migrations
                             Banner = false,
                             Filtrar = true,
                             Foto = "",
-                            Nome = "Marca Páginas"
+                            Nome = "Marca-Páginas"
                         },
                         new
                         {
@@ -703,6 +703,133 @@ namespace DmResinas.Migrations
                     b.HasIndex("CorId");
 
                     b.ToTable("ProdutoCor");
+
+                    b.HasData(
+                        new
+                        {
+                            ProdutoId = 1,
+                            CorId = (byte)2
+                        },
+                        new
+                        {
+                            ProdutoId = 1,
+                            CorId = (byte)10
+                        },
+                        new
+                        {
+                            ProdutoId = 2,
+                            CorId = (byte)3
+                        },
+                        new
+                        {
+                            ProdutoId = 2,
+                            CorId = (byte)13
+                        },
+                        new
+                        {
+                            ProdutoId = 2,
+                            CorId = (byte)22
+                        },
+                        new
+                        {
+                            ProdutoId = 3,
+                            CorId = (byte)19
+                        },
+                        new
+                        {
+                            ProdutoId = 4,
+                            CorId = (byte)26
+                        },
+                        new
+                        {
+                            ProdutoId = 4,
+                            CorId = (byte)31
+                        },
+                        new
+                        {
+                            ProdutoId = 4,
+                            CorId = (byte)34
+                        },
+                        new
+                        {
+                            ProdutoId = 5,
+                            CorId = (byte)12
+                        },
+                        new
+                        {
+                            ProdutoId = 5,
+                            CorId = (byte)32
+                        },
+                        new
+                        {
+                            ProdutoId = 5,
+                            CorId = (byte)34
+                        },
+                        new
+                        {
+                            ProdutoId = 6,
+                            CorId = (byte)22
+                        },
+                        new
+                        {
+                            ProdutoId = 6,
+                            CorId = (byte)33
+                        },
+                        new
+                        {
+                            ProdutoId = 6,
+                            CorId = (byte)34
+                        },
+                        new
+                        {
+                            ProdutoId = 7,
+                            CorId = (byte)16
+                        },
+                        new
+                        {
+                            ProdutoId = 7,
+                            CorId = (byte)23
+                        },
+                        new
+                        {
+                            ProdutoId = 8,
+                            CorId = (byte)36
+                        },
+                        new
+                        {
+                            ProdutoId = 8,
+                            CorId = (byte)23
+                        },
+                        new
+                        {
+                            ProdutoId = 9,
+                            CorId = (byte)15
+                        },
+                        new
+                        {
+                            ProdutoId = 9,
+                            CorId = (byte)35
+                        },
+                        new
+                        {
+                            ProdutoId = 10,
+                            CorId = (byte)25
+                        },
+                        new
+                        {
+                            ProdutoId = 10,
+                            CorId = (byte)38
+                        },
+                        new
+                        {
+                            ProdutoId = 11,
+                            CorId = (byte)25
+                        },
+                        new
+                        {
+                            ProdutoId = 11,
+                            CorId = (byte)36
+                        });
                 });
 
             modelBuilder.Entity("DmResinas.Models.ProdutoFoto", b =>
@@ -854,7 +981,7 @@ namespace DmResinas.Migrations
                     b.HasData(
                         new
                         {
-                            UsuarioId = "dc787b7e-cc4d-4ec5-9151-17477b204801",
+                            UsuarioId = "71997eb9-4aab-48b1-b37d-600eb963f751",
                             DataNascimento = new DateTime(2006, 3, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Foto = "/img/users/avatar.png",
                             Nome = "Bard0u"
@@ -889,22 +1016,22 @@ namespace DmResinas.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "a48e283f-afd3-4981-b99a-9afb30f8d0f7",
-                            ConcurrencyStamp = "3f43072e-1d0a-409f-b2d1-a61c76b26212",
+                            Id = "5146868c-de71-4e59-aa6d-1812d408131e",
+                            ConcurrencyStamp = "89bb16b4-3327-4785-a0f1-204c8e777969",
                             Name = "Administrador",
                             NormalizedName = "ADMINISTRADOR"
                         },
                         new
                         {
-                            Id = "ff2d19f3-f4d8-4059-b9e4-b7fd1d11bb44",
-                            ConcurrencyStamp = "f439ed65-285c-4f73-93a4-022262cf333c",
+                            Id = "25bd59d8-9578-4eda-9716-a3edb6b9b651",
+                            ConcurrencyStamp = "c5da71ea-c6b2-4e01-8a1f-be414aedf1f3",
                             Name = "Funcionário",
                             NormalizedName = "FUNCIONARIO"
                         },
                         new
                         {
-                            Id = "155ed309-1d97-45f5-8eeb-0d88f004f544",
-                            ConcurrencyStamp = "53d8be61-036d-44b3-a850-56d12f67ed4f",
+                            Id = "4cfc98d8-bcc9-490a-a16c-0b24d8264c0c",
+                            ConcurrencyStamp = "4279dc3d-14e5-4109-b223-762b27acf7bd",
                             Name = "Cliente",
                             NormalizedName = "CLIENTE"
                         });
@@ -999,17 +1126,17 @@ namespace DmResinas.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "dc787b7e-cc4d-4ec5-9151-17477b204801",
+                            Id = "71997eb9-4aab-48b1-b37d-600eb963f751",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "8a732f09-0237-4661-b360-cce13cd283bc",
+                            ConcurrencyStamp = "f32a881e-9295-4dcb-b59f-c6a4e268a2e0",
                             Email = "admin@dmresinas.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@DMRESINAS.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAEAACcQAAAAEIyiFdiOC/Aa6G6/zXbqhAED5v9Z87WUKhbmfQvFCb79/m4QtjB1lTUOqhvadSFxhw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAECJDO5PJEkyyEPMI7U65M6Tl/5uDOI/wJclHT66/ucFoeDS2E9FvzuMlK1ZvcW1Iig==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "ceb68fb4-353f-49a8-a0fb-7785ae1ed447",
+                            SecurityStamp = "e6cdcff3-62fd-4304-987e-f91c88d84942",
                             TwoFactorEnabled = false,
                             UserName = "Admin"
                         });
@@ -1077,18 +1204,18 @@ namespace DmResinas.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "dc787b7e-cc4d-4ec5-9151-17477b204801",
-                            RoleId = "a48e283f-afd3-4981-b99a-9afb30f8d0f7"
+                            UserId = "71997eb9-4aab-48b1-b37d-600eb963f751",
+                            RoleId = "5146868c-de71-4e59-aa6d-1812d408131e"
                         },
                         new
                         {
-                            UserId = "dc787b7e-cc4d-4ec5-9151-17477b204801",
-                            RoleId = "ff2d19f3-f4d8-4059-b9e4-b7fd1d11bb44"
+                            UserId = "71997eb9-4aab-48b1-b37d-600eb963f751",
+                            RoleId = "25bd59d8-9578-4eda-9716-a3edb6b9b651"
                         },
                         new
                         {
-                            UserId = "dc787b7e-cc4d-4ec5-9151-17477b204801",
-                            RoleId = "155ed309-1d97-45f5-8eeb-0d88f004f544"
+                            UserId = "71997eb9-4aab-48b1-b37d-600eb963f751",
+                            RoleId = "4cfc98d8-bcc9-490a-a16c-0b24d8264c0c"
                         });
                 });
 

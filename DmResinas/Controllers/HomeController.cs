@@ -31,6 +31,7 @@ public class HomeController : Controller
                    .Include(p => p.Categorias)
                    .ThenInclude(c => c.Categoria)
                    .Include(p => p.Cores)
+                   .ThenInclude(c => c.Cor)
                    .Include(f => f.Fotos).ToList()
                    .SingleOrDefault();
         return View(produto);
@@ -54,7 +55,8 @@ public class HomeController : Controller
     {
         return View();
     }
-    public IActionResult Perfil()
+
+    public IActionResult Produto()
     {
         return View();
     }

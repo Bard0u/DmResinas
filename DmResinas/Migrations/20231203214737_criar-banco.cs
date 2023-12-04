@@ -412,26 +412,26 @@ namespace DmResinas.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "155ed309-1d97-45f5-8eeb-0d88f004f544", "53d8be61-036d-44b3-a850-56d12f67ed4f", "Cliente", "CLIENTE" },
-                    { "a48e283f-afd3-4981-b99a-9afb30f8d0f7", "3f43072e-1d0a-409f-b2d1-a61c76b26212", "Administrador", "ADMINISTRADOR" },
-                    { "ff2d19f3-f4d8-4059-b9e4-b7fd1d11bb44", "f439ed65-285c-4f73-93a4-022262cf333c", "Funcionário", "FUNCIONARIO" }
+                    { "25bd59d8-9578-4eda-9716-a3edb6b9b651", "c5da71ea-c6b2-4e01-8a1f-be414aedf1f3", "Funcionário", "FUNCIONARIO" },
+                    { "4cfc98d8-bcc9-490a-a16c-0b24d8264c0c", "4279dc3d-14e5-4109-b223-762b27acf7bd", "Cliente", "CLIENTE" },
+                    { "5146868c-de71-4e59-aa6d-1812d408131e", "89bb16b4-3327-4785-a0f1-204c8e777969", "Administrador", "ADMINISTRADOR" }
                 });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "dc787b7e-cc4d-4ec5-9151-17477b204801", 0, "8a732f09-0237-4661-b360-cce13cd283bc", "admin@dmresinas.com", true, false, null, "ADMIN@DMRESINAS.COM", "ADMIN", "AQAAAAEAACcQAAAAEIyiFdiOC/Aa6G6/zXbqhAED5v9Z87WUKhbmfQvFCb79/m4QtjB1lTUOqhvadSFxhw==", null, false, "ceb68fb4-353f-49a8-a0fb-7785ae1ed447", false, "Admin" });
+                values: new object[] { "71997eb9-4aab-48b1-b37d-600eb963f751", 0, "f32a881e-9295-4dcb-b59f-c6a4e268a2e0", "admin@dmresinas.com", true, false, null, "ADMIN@DMRESINAS.COM", "ADMIN", "AQAAAAEAACcQAAAAECJDO5PJEkyyEPMI7U65M6Tl/5uDOI/wJclHT66/ucFoeDS2E9FvzuMlK1ZvcW1Iig==", null, false, "e6cdcff3-62fd-4304-987e-f91c88d84942", false, "Admin" });
 
             migrationBuilder.InsertData(
                 table: "Categoria",
                 columns: new[] { "Id", "Banner", "CategoriaPaiId", "Filtrar", "Foto", "Nome" },
                 values: new object[,]
                 {
-                    { (byte)1, true, null, true, "images/categorias/1.png", "Folha de Ouro" },
+                    { (byte)1, true, null, true, "images/categorias/1.png", "Folha-de-Ouro" },
                     { (byte)2, true, null, true, "images/categorias/2.png", "Flores" },
                     { (byte)3, true, null, false, "images/categorias/3.png", "Glitter" },
                     { (byte)4, false, null, true, "", "Chaveiros" },
-                    { (byte)5, false, null, true, "", "Marca Páginas" },
+                    { (byte)5, false, null, true, "", "Marca-Páginas" },
                     { (byte)6, false, null, true, "", "Placa" }
                 });
 
@@ -504,9 +504,9 @@ namespace DmResinas.Migrations
                 columns: new[] { "RoleId", "UserId" },
                 values: new object[,]
                 {
-                    { "155ed309-1d97-45f5-8eeb-0d88f004f544", "dc787b7e-cc4d-4ec5-9151-17477b204801" },
-                    { "a48e283f-afd3-4981-b99a-9afb30f8d0f7", "dc787b7e-cc4d-4ec5-9151-17477b204801" },
-                    { "ff2d19f3-f4d8-4059-b9e4-b7fd1d11bb44", "dc787b7e-cc4d-4ec5-9151-17477b204801" }
+                    { "25bd59d8-9578-4eda-9716-a3edb6b9b651", "71997eb9-4aab-48b1-b37d-600eb963f751" },
+                    { "4cfc98d8-bcc9-490a-a16c-0b24d8264c0c", "71997eb9-4aab-48b1-b37d-600eb963f751" },
+                    { "5146868c-de71-4e59-aa6d-1812d408131e", "71997eb9-4aab-48b1-b37d-600eb963f751" }
                 });
 
             migrationBuilder.InsertData(
@@ -542,6 +542,38 @@ namespace DmResinas.Migrations
                 });
 
             migrationBuilder.InsertData(
+                table: "ProdutoCor",
+                columns: new[] { "CorId", "ProdutoId" },
+                values: new object[,]
+                {
+                    { (byte)2, 1 },
+                    { (byte)10, 1 },
+                    { (byte)3, 2 },
+                    { (byte)13, 2 },
+                    { (byte)22, 2 },
+                    { (byte)19, 3 },
+                    { (byte)26, 4 },
+                    { (byte)31, 4 },
+                    { (byte)34, 4 },
+                    { (byte)12, 5 },
+                    { (byte)32, 5 },
+                    { (byte)34, 5 },
+                    { (byte)22, 6 },
+                    { (byte)33, 6 },
+                    { (byte)34, 6 },
+                    { (byte)16, 7 },
+                    { (byte)23, 7 },
+                    { (byte)23, 8 },
+                    { (byte)36, 8 },
+                    { (byte)15, 9 },
+                    { (byte)35, 9 },
+                    { (byte)25, 10 },
+                    { (byte)38, 10 },
+                    { (byte)25, 11 },
+                    { (byte)36, 11 }
+                });
+
+            migrationBuilder.InsertData(
                 table: "ProdutoFotos",
                 columns: new[] { "Id", "ProdutoId", "ArquivoFoto", "Destaque" },
                 values: new object[,]
@@ -562,7 +594,7 @@ namespace DmResinas.Migrations
             migrationBuilder.InsertData(
                 table: "Usuario",
                 columns: new[] { "UsuarioId", "DataNascimento", "Foto", "Nome" },
-                values: new object[] { "dc787b7e-cc4d-4ec5-9151-17477b204801", new DateTime(2006, 3, 22, 0, 0, 0, 0, DateTimeKind.Unspecified), "/img/users/avatar.png", "Bard0u" });
+                values: new object[] { "71997eb9-4aab-48b1-b37d-600eb963f751", new DateTime(2006, 3, 22, 0, 0, 0, 0, DateTimeKind.Unspecified), "/img/users/avatar.png", "Bard0u" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
