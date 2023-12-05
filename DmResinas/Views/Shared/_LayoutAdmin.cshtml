@@ -30,7 +30,7 @@
     <div class="container-fluid p-0">
         <main role="main" class="d-flex flex-nowrap">
             <div id="sidebar" class="d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary" style="width: 280px;">
-                <a asp-action="Index" asp-controller="Admin"
+                <a asp-action="Index" asp-controller="Home"
                     class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
                     <img class="img-fluid" src="~/img/logo.png" alt="Logo">
                 </a>
@@ -39,21 +39,21 @@
                     <li>
                         <a asp-action="Index" asp-controller="Produtos"
                             class="nav-link @(ViewBag.Title == "Produtos" ? "active" : "link-body-emphasis")">
-                            <i class="bi bi-film me-2"></i>
+                            <i class="bi bi-bag-fill"></i>
                             Produtos
                         </a>
                     </li>
                     <li>
                         <a asp-action="Index" asp-controller="Categories"
                             class="nav-link @(ViewBag.Title == "Categorias" ? "active" : "link-body-emphasis")">
-                            <i class="bi bi-list-stars me-2"></i>
+                            <i class="bi bi-list-task"></i>
                             Categorias
                         </a>
                     </li>
                     <li>
                         <a asp-action="Index" asp-controller="Cores"
                             class="nav-link @(ViewBag.Title == "Cores" ? "active" : "link-body-emphasis")">
-                            <i class="bi bi-people-fill me-2"></i>
+                            <i class="bi bi-palette-fill"></i>
                             Cores
                         </a>
                     </li>
@@ -63,14 +63,10 @@
                     <a href="#"
                         class="d-flex align-items-center link-body-emphasis text-decoration-none dropdown-toggle"
                         data-bs-toggle="dropdown" aria-expanded="false">
-                        <strong>@User.Identity?.Name</strong>
+                        <img src="../images/iconeadm.png" width="40px" height="40px">
+                        <strong style="padding-left: 15px;">@User.Identity?.Name</strong>
                     </a>
                     <ul class="dropdown-menu text-small shadow">
-                        <li><a class="dropdown-item" href="#">Perfil</a></li>
-                        <li><a class="dropdown-item" href="#">Configurações</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
                         <li>
                             <form class="form-inline" asp-controller="Account" asp-action="Logout">
                                 <button type="submit" class="dropdown-item">

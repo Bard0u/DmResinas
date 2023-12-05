@@ -8,35 +8,32 @@
 	<link rel="stylesheet" href="~/css/style.css">
 }
 
-<div class="headerCatalogo" style="background-color: #f5f5f5;"></div>
+<div class="headerCatalogo" style="background-color: #f5f5f5;">
+	<p class="presente">o presente</p>
+	<p class="perfeito">Perfeito</p>
+</div>
 
 <header class="containerTopoCatalogo">
 	<div class="tituloCatalogo">
-		<img class="flor1"
-			src="https://cdn.discordapp.com/attachments/826872414147313764/1165147408041255002/image.png?ex=6545cb15&is=65335615&hm=f02c2435a8b6ff3c9ca96b40e3034e2266b5e4ab9533a6594650e1eabdff71aa&"
-			width="30" height="30" />
-		<h1> CATÁLOGO</h1>
-		<img src="https://cdn.discordapp.com/attachments/826872414147313764/1165147408041255002/image.png?ex=6545cb15&is=65335615&hm=f02c2435a8b6ff3c9ca96b40e3034e2266b5e4ab9533a6594650e1eabdff71aa&"
-			width="30" height="30" />
+		<img src="https://cdn.discordapp.com/attachments/826872414147313764/1165147408041255002/image.png?ex=6545cb15&is=65335615&hm=f02c2435a8b6ff3c9ca96b40e3034e2266b5e4ab9533a6594650e1eabdff71aa&" width="30" height="30" />
+		<h1>CATÁLOGO</h1>
+		<img src="https://cdn.discordapp.com/attachments/826872414147313764/1165147408041255002/image.png?ex=6545cb15&is=65335615&hm=f02c2435a8b6ff3c9ca96b40e3034e2266b5e4ab9533a6594650e1eabdff71aa&" width="30" height="30" />
 	</div>
-	<h2>Encontre o produto que está procurando.</h2>
+	<h2>Encontre o produto que está procurando</h2>
 </header>
 
 <section class="containerTudoCatalogo">
-	<div class="row justify-content-center">
-		<div class="col-md-10 mb-5 text-center">
-			<button id="btn-all" class="btn my-2  btn-filter cursor-pointer"
-				style="background-color: #D7911A; color: white" onclick="filter('all', '#f8f9fa')">
-				Ver Todos
+	<div class="containerFiltroCatalogo">
+		<button class="botaoFiltroCatalogo" onclick="filter('all', '#f8f9fa')">
+			Ver Todos
+		</button>
+		@foreach (var categoria in Model.Categorias)
+		{
+			<button id="btn-@categoria.Nome.ToLower()" class="botaoFiltroCatalogo"
+				onclick="filter('@categoria.Nome.ToLower()'); ">
+				@categoria.Nome
 			</button>
-			@foreach (var categoria in Model.Categorias)
-			{
-				<button id="btn-@categoria.Nome.ToLower()" class="botaoFiltro"
-					onclick="filter('@categoria.Nome.ToLower()')">
-					@categoria.Nome
-				</button>
-			}
-		</div>
+		}
 	</div>
 
 
@@ -45,7 +42,8 @@
 		{
 			<div class="itemCatalogo">
 				<div class="product @string.Join(' ',produto.Categorias.Select(t =>t .Categoria.Nome)).ToLower()">
-					<a id="imagemCatalogo" asp-controller="Home" asp-action="Produto" asp-route-id="@produto.Id" class="img-prod">
+					<a id="imagemCatalogo" asp-controller="Home" asp-action="Produto" asp-route-id="@produto.Id"
+						class="img-prod">
 						<img class="img-fluid"
 							src="@produto.Fotos.Where(f=> f.Destaque).Select(f => f.ArquivoFoto).Single()"
 							alt="Colorlib Template">
@@ -90,6 +88,16 @@
 
 
 	<script>
+		const btnElList = document.querySelectorAll('.botaoFiltroCatalogo');
+
+		btnElList.forEach(btnEl => {
+			btnEl.addEventListener('click', () => {
+				document.querySelector('.clicou')?.classList.remove('clicou');
+				btnEl.classList.add('clicou');
+			});
+		});
+
+
 		produtos = document.getElementsByClassName("product");
 		for (i = 0; i < produtos.length; i++) {
 			if (produtos[i].classList.contains("marca-páginas")) {

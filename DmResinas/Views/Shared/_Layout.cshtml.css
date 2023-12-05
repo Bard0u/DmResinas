@@ -1,6 +1,45 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 
+.botaoindex {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background: #D7911A;
+  border-radius: 30px;
+  color: white;
+  text-align: center;
+  font-size: 13px;
+  border: 1px solid #D7911A;
+  font-family: 'Inter';
+  letter-spacing: 2px;
+  height: 55px;
+  width: 200px;
+  padding: 0 19px;
+}
+
+.botaoindex p {
+  margin-bottom: 0;
+}
+
+.itemmenu {
+  font-family: 'Inter'; 
+  font-size: 13px;
+  text-decoration: none;
+  justify-content: space-evenly;
+  list-style:none;
+}
+
+.itemmenu ul { 
+  display: flex;
+  
+}
+
+.itemmenu ul li {
+  list-style-type: none;
+    padding-right: 14px;
+}
+
 a.navbar-brand {
   white-space: normal;
   text-align: center;
@@ -12,18 +51,11 @@ a.navbar-brand {
   border-width: 50px;
 }
 
-a {
-  color: #0077cc;
-}
-
 ul {
   margin:0;
   padding:0;
   list-style-type:none;
   text-align:center;
-}
-li {
-  display:inline-block;
 }
 
 .coloridinho {
@@ -64,18 +96,6 @@ li {
 
 .justify-content-center {
   margin: 0px
-}
-
-.btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
-}
-
-.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
 }
 
 .border-top {

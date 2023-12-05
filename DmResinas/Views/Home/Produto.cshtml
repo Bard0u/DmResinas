@@ -17,19 +17,33 @@
             <div class="containerInfoPrincipalProduto">
                 <h1>@Model.Nome</h1>
                 <p class="precoProduto">R$@Model.Preco</p>
-                <p class="descricaoProduto">@Model.Descricao</p>
                 <div class="containerTagsProduto">
-                <p>Categorias da Peça:</p>
-                    @foreach (ProdutoCategoria ProdutoCategorias in Model.Categorias)
-                    {
-                        <h2><span class="badge bg-secondary me-2">@ProdutoCategorias.Categoria.Nome</span></h2>
-                    }
-                    <p>Cores Presentes:</p>
-                    @foreach (ProdutoCor ProdutoCores in Model.Cores)
-                    {
-                        
-                        <h2><span class="badge bg-secondary me-2" style="background-color:@ProdutoCores.Cor.CodigoHexa">@ProdutoCores.Cor.Nome</span></h2>
-                    }
+                    <div class="containerCategoriasProduto">
+                        <h2>Detalhes da peça:</h2>
+                        <ul>
+                            @foreach (ProdutoCategoria ProdutoCategorias in Model.Categorias)
+                            {
+                                <li>
+                                    <h3 class="tagsProduto">@ProdutoCategorias.Categoria.Nome</h3>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                    <div class="containerCoresProduto">
+                        <h2>Cores do modelo:</h2>
+                        @foreach (ProdutoCor ProdutoCores in Model.Cores)
+                        {
+                            <div class="itemCoresProduto">
+                                <div class="circuloCorProduto"
+                                    style="Background-color:@ProdutoCores.Cor.CodigoHexa.ToLower()"></div>
+                                <h3>@ProdutoCores.Cor.Nome</h3>
+                            </div>
+                        }
+                    </div>
+                </div>
+                <div class="containerDescricaoProduto">
+                    <h2>Descrição:</h2>
+                    <p class="descricaoProduto">@Model.Descricao</p>
                 </div>
 
                 <a href="https://contate.me/dmresinas">
@@ -42,5 +56,3 @@
         </section>
     </div>
 </div>
-
-
