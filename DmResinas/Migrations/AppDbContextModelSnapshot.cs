@@ -142,7 +142,7 @@ namespace DmResinas.Migrations
                         new
                         {
                             Id = (byte)4,
-                            CodigoHexa = "#85dedc",
+                            CodigoHexa = "#85DECB",
                             Nome = "Verde Água"
                         },
                         new
@@ -160,7 +160,7 @@ namespace DmResinas.Migrations
                         new
                         {
                             Id = (byte)7,
-                            CodigoHexa = "#1b4a82",
+                            CodigoHexa = "#00E0FF",
                             Nome = "Azul Turquesa"
                         },
                         new
@@ -172,7 +172,7 @@ namespace DmResinas.Migrations
                         new
                         {
                             Id = (byte)9,
-                            CodigoHexa = "#7ab5f9",
+                            CodigoHexa = "#D6B563",
                             Nome = "Bege"
                         },
                         new
@@ -405,7 +405,7 @@ namespace DmResinas.Migrations
                         new
                         {
                             Id = 1,
-                            Descricao = "Chaveiro em formato de Letra A, com nome, folha de ouro e cordinha.",
+                            Descricao = "Elegante e refinado, nosso chaveiro de letra A é uma obra-prima artesanal feita com resina de alta qualidade, realçada por uma delicada folha de ouro que confere um toque de sofisticação. A cor é totalmente personalizável, permitindo que você escolha a tonalidade que melhor reflete seu estilo único. Este chaveiro é mais do que um acessório funcional; é uma expressão de sua individualidade, combinando design contemporâneo com um toque de luxo. Leve consigo não apenas suas chaves, mas uma peça exclusiva que reflete seu gosto refinado.",
                             Descricaoresumida = "Chaveiro em formato de Letra A",
                             Destaque = true,
                             Nome = "Letra A com Nome",
@@ -415,7 +415,7 @@ namespace DmResinas.Migrations
                         new
                         {
                             Id = 2,
-                            Descricao = "Chaveiro em formato de Letra B, com pingente borboleta, flores, brilho, nome e cordinha.",
+                            Descricao = "Deslumbre-se com a sofisticação do nosso chaveiro exclusivo de letra B, meticulosamente confeccionado em resina de alta qualidade que irradia um brilho sutil. Uma delicada flor adorna a peça, acrescentando um toque de elegância, enquanto um pingente de borboleta simboliza transformação e beleza. A cor personalizável oferece a oportunidade de personalizar esta obra de arte conforme seu estilo e preferências únicas. Este não é apenas um chaveiro, é uma declaração de estilo refinado, perfeito para aqueles que apreciam acessórios distintos e atemporais.",
                             Descricaoresumida = "Chaveiro em formato de Letra B",
                             Destaque = true,
                             Nome = "Letra B com Nome",
@@ -425,7 +425,7 @@ namespace DmResinas.Migrations
                         new
                         {
                             Id = 3,
-                            Descricao = "Chaveiro em formato de Letra D, com efeito de fumaça, borboletas e cordinha.",
+                            Descricao = "Explore a elegância contemporânea com nosso chaveiro exclusivo de letra D, esculpido com maestria em resina de alta qualidade. Intrigantes borboletas douradas adornam a peça, conferindo-lhe um toque de sofisticação e leveza. O efeito de fumaça sutil proporciona uma aura única, elevando a peça a um patamar de distinção. A cor personalizável permite que você dê vida à sua visão estética, transformando este chaveiro em um acessório verdadeiramente único. Uma fusão de design inovador e artesanato excepcional, este chaveiro não apenas organiza suas chaves, mas também acrescenta um toque de requinte ao seu estilo diário.",
                             Descricaoresumida = "Chaveiro em formato de Letra D",
                             Destaque = true,
                             Nome = "Letra D",
@@ -435,67 +435,17 @@ namespace DmResinas.Migrations
                         new
                         {
                             Id = 4,
-                            Descricao = "Chaveiro em formato de Letra K, com flores e brilho na argola prata.",
-                            Descricaoresumida = "Chaveiro em formato de Letra K",
-                            Destaque = true,
-                            Nome = "Letra K",
-                            Peso = 0m,
-                            Preco = 20m
-                        },
-                        new
-                        {
-                            Id = 5,
-                            Descricao = "Chaveiro em formato de Letra L, com flores na resina totalmente transparente e folha de ouro.",
-                            Descricaoresumida = "Chaveiro em formato de Letra L",
-                            Destaque = true,
-                            Nome = "Letra L",
-                            Peso = 0m,
-                            Preco = 20m
-                        },
-                        new
-                        {
-                            Id = 6,
-                            Descricao = "Chaveiro em formato de Letra N, com flores e brilho na argola dourada.",
-                            Descricaoresumida = "Chaveiro em formato de Letra N",
-                            Destaque = true,
-                            Nome = "Letra N",
-                            Peso = 0m,
-                            Preco = 20m
-                        },
-                        new
-                        {
-                            Id = 7,
-                            Descricao = "Placa para Manicures tiratem fotos de suas clientes após fazerem a unha para promover a divulgação da profissional.",
-                            Descricaoresumida = "Placa para Manicures tirarem fotos das unhas",
-                            Destaque = true,
-                            Nome = "Placa de Manicure com Logo 1",
-                            Peso = 0m,
-                            Preco = 40m
-                        },
-                        new
-                        {
-                            Id = 8,
-                            Descricao = "Placa para Manicures tiratem fotos de suas clientes após fazerem a unha para promover a divulgação da profissional.",
-                            Descricaoresumida = "Placa para Manicures tirarem fotos das unhas",
-                            Destaque = true,
-                            Nome = "Placa de Manicure com Logo 2",
-                            Peso = 0m,
-                            Preco = 40m
-                        },
-                        new
-                        {
-                            Id = 9,
-                            Descricao = "Marca Páginas inspirado na banda RHCP com as cores principais e cordinha.",
+                            Descricao = "Desfrute de momentos de leitura ainda mais refinados com nosso marcador de páginas exclusivo, meticulosamente elaborado em resina de alta qualidade e enriquecido com uma delicada folha de ouro. Este marcador transcende a funcionalidade, elevando-se a uma obra de arte que reflete sua sofisticação pessoal. A cor personalizável oferece a liberdade de harmonizar o marcador com seu estilo único, enquanto a folha de ouro adiciona um toque de luxo discreto. Seja em romances envolventes ou textos profundos, este marcador não só preserva sua página, mas também acrescenta um toque de elegância ao seu momento de leitura. Experimente a fusão sublime de estética refinada e praticidade inigualável.",
                             Descricaoresumida = "Marca Página Elegante",
                             Destaque = true,
-                            Nome = "Marca Página 1",
+                            Nome = "Marca Página Três Cores",
                             Peso = 0m,
                             Preco = 30m
                         },
                         new
                         {
-                            Id = 10,
-                            Descricao = "Marca Páginas elegante com nome, símbolo, brilho e cordinha.",
+                            Id = 5,
+                            Descricao = "Evoque um toque de glamour em suas leituras com nosso marcador de páginas exclusivo, meticulosamente confeccionado em resina e acentuado por um brilho sutil de glitter. Personalize-o com seu nome, elevando-o de simples acessório a uma peça verdadeiramente única. A cor, à sua escolha, possibilita uma sintonia perfeita com seu estilo pessoal. Este marcador é mais do que uma simples ferramenta funcional; é uma expressão de sua individualidade refinada, combinando design contemporâneo com um toque de sofisticação. Deixe sua marca nas páginas com este acessório que equilibra o brilho discreto com a personalização elegante.",
                             Descricaoresumida = "Marca Página Elegante com Nome",
                             Destaque = true,
                             Nome = "Marca Página com Nome",
@@ -504,13 +454,63 @@ namespace DmResinas.Migrations
                         },
                         new
                         {
-                            Id = 11,
-                            Descricao = "Marca Página elegante com formato diferente lembrando a cauda de uma sereia e com brilho.",
+                            Id = 6,
+                            Descricao = "Encante-se com a beleza atemporal do nosso marcador de páginas, esculpido em resina com a graciosa forma de uma cauda de sereia. Uma fusão de elegância e fantasia, este marcador acrescenta um toque de sofisticação à sua leitura diária. A cor personalizável permite que você adapte esta peça singular ao seu estilo pessoal, transformando cada momento de pausa na narrativa em uma experiência verdadeiramente cativante. Seja mergulhando em clássicos literários ou navegando por novos horizontes, este marcador de cauda de sereia é um símbolo subtil de sua apreciação pela estética refinada e pela magia da literatura.",
                             Descricaoresumida = "Marca Página Elegante de cauda de sereia",
                             Destaque = true,
-                            Nome = "Marca Página cauda",
+                            Nome = "Marca Página Sereia",
                             Peso = 0m,
                             Preco = 30m
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Descricao = "Celebre a individualidade com nosso chaveiro exclusivo de letra K, meticulosamente esculpido em resina de alta qualidade, enriquecido com a beleza intemporal de flores delicadamente dispostas. O toque sutil de glitter adiciona uma pitada de sofisticação, elevando este acessório a uma peça única que reflete sua personalidade distinta. A cor personalizável oferece a liberdade de adaptar o chaveiro ao seu estilo pessoal, tornando-o mais do que um simples objeto funcional, mas uma declaração de elegância e originalidade. Seja para organizar suas chaves ou para adornar sua bolsa, este chaveiro é uma expressão encantadora de estilo refinado e apreço pela beleza artística.",
+                            Descricaoresumida = "Chaveiro em formato de Letra K",
+                            Destaque = true,
+                            Nome = "Letra K",
+                            Peso = 0m,
+                            Preco = 20m
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Descricao = "Explore a elegância única com nosso chaveiro exclusivo de letra L, meticulosamente esculpido em resina de alta qualidade e enriquecido com o luxo discreto de uma folha de ouro. Uma flor delicada adiciona um toque de sofisticação, transformando este chaveiro em uma peça de arte funcional. A cor personalizável permite que você adapte este acessório refinado ao seu estilo pessoal, tornando-o mais do que apenas um item utilitário, mas uma expressão distinta de sua individualidade. Seja em suas chaves ou como um adorno refinado, este chaveiro é um testemunho de estilo refinado e apreço pela qualidade artesanal.",
+                            Descricaoresumida = "Chaveiro em formato de Letra L",
+                            Destaque = true,
+                            Nome = "Letra L",
+                            Peso = 0m,
+                            Preco = 20m
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Descricao = "Desperte a sofisticação com nosso chaveiro exclusivo de letra N, uma peça de resina cuidadosamente trabalhada, enriquecida com a sutileza do glitter que confere um brilho discreto. Uma flor delicadamente esculpida adiciona um toque de elegância, transformando este acessório em uma expressão refinada de estilo pessoal. A cor personalizável permite uma adaptação perfeita ao seu gosto distinto, tornando este chaveiro mais do que uma simples utilidade, mas uma declaração de individualidade. Seja em sua bolsa ou organizando suas chaves, este chaveiro é uma fusão harmoniosa de design contemporâneo e toques artísticos, criando um acessório que transcende o ordinário.",
+                            Descricaoresumida = "Chaveiro em formato de Letra N",
+                            Destaque = true,
+                            Nome = "Letra N",
+                            Peso = 0m,
+                            Preco = 20m
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Descricao = "Placa para Manicures tiratem fotos de suas clientes após fazerem a unha para promover a divulgação da profissional.",
+                            Descricaoresumida = "Placa para Manicures com Logomarca e nome da profissional",
+                            Destaque = true,
+                            Nome = "Placa de Manicure com Logotipo",
+                            Peso = 0m,
+                            Preco = 40m
+                        },
+                        new
+                        {
+                            Id = 11,
+                            Descricao = "Placa para Manicures tiratem fotos de suas clientes após fazerem a unha para promover a divulgação da profissional.",
+                            Descricaoresumida = "Placa para Manicures tirarem fotos das unhas",
+                            Destaque = true,
+                            Nome = "Placa de Manicure com Logotipo",
+                            Peso = 0m,
+                            Preco = 40m
                         });
                 });
 
@@ -592,37 +592,22 @@ namespace DmResinas.Migrations
                         new
                         {
                             ProdutoId = 4,
-                            CategoriaId = (byte)2
-                        },
-                        new
-                        {
-                            ProdutoId = 4,
-                            CategoriaId = (byte)3
-                        },
-                        new
-                        {
-                            ProdutoId = 4,
-                            CategoriaId = (byte)4
-                        },
-                        new
-                        {
-                            ProdutoId = 5,
                             CategoriaId = (byte)1
                         },
                         new
                         {
-                            ProdutoId = 5,
-                            CategoriaId = (byte)2
+                            ProdutoId = 4,
+                            CategoriaId = (byte)5
                         },
                         new
                         {
                             ProdutoId = 5,
-                            CategoriaId = (byte)4
+                            CategoriaId = (byte)3
                         },
                         new
                         {
-                            ProdutoId = 6,
-                            CategoriaId = (byte)2
+                            ProdutoId = 5,
+                            CategoriaId = (byte)5
                         },
                         new
                         {
@@ -632,12 +617,12 @@ namespace DmResinas.Migrations
                         new
                         {
                             ProdutoId = 6,
-                            CategoriaId = (byte)4
+                            CategoriaId = (byte)5
                         },
                         new
                         {
                             ProdutoId = 7,
-                            CategoriaId = (byte)6
+                            CategoriaId = (byte)2
                         },
                         new
                         {
@@ -646,28 +631,38 @@ namespace DmResinas.Migrations
                         },
                         new
                         {
-                            ProdutoId = 8,
-                            CategoriaId = (byte)6
+                            ProdutoId = 7,
+                            CategoriaId = (byte)4
                         },
                         new
                         {
                             ProdutoId = 8,
+                            CategoriaId = (byte)1
+                        },
+                        new
+                        {
+                            ProdutoId = 8,
+                            CategoriaId = (byte)2
+                        },
+                        new
+                        {
+                            ProdutoId = 8,
+                            CategoriaId = (byte)4
+                        },
+                        new
+                        {
+                            ProdutoId = 9,
+                            CategoriaId = (byte)2
+                        },
+                        new
+                        {
+                            ProdutoId = 9,
                             CategoriaId = (byte)3
                         },
                         new
                         {
                             ProdutoId = 9,
-                            CategoriaId = (byte)5
-                        },
-                        new
-                        {
-                            ProdutoId = 9,
-                            CategoriaId = (byte)3
-                        },
-                        new
-                        {
-                            ProdutoId = 10,
-                            CategoriaId = (byte)5
+                            CategoriaId = (byte)4
                         },
                         new
                         {
@@ -676,13 +671,18 @@ namespace DmResinas.Migrations
                         },
                         new
                         {
-                            ProdutoId = 11,
-                            CategoriaId = (byte)5
+                            ProdutoId = 10,
+                            CategoriaId = (byte)6
                         },
                         new
                         {
                             ProdutoId = 11,
                             CategoriaId = (byte)3
+                        },
+                        new
+                        {
+                            ProdutoId = 11,
+                            CategoriaId = (byte)6
                         });
                 });
 
@@ -706,127 +706,62 @@ namespace DmResinas.Migrations
                         new
                         {
                             ProdutoId = 1,
-                            CorId = (byte)2
-                        },
-                        new
-                        {
-                            ProdutoId = 1,
-                            CorId = (byte)10
-                        },
-                        new
-                        {
-                            ProdutoId = 2,
-                            CorId = (byte)3
-                        },
-                        new
-                        {
-                            ProdutoId = 2,
-                            CorId = (byte)13
-                        },
-                        new
-                        {
-                            ProdutoId = 2,
-                            CorId = (byte)22
-                        },
-                        new
-                        {
-                            ProdutoId = 3,
-                            CorId = (byte)19
-                        },
-                        new
-                        {
-                            ProdutoId = 4,
-                            CorId = (byte)26
-                        },
-                        new
-                        {
-                            ProdutoId = 4,
-                            CorId = (byte)31
-                        },
-                        new
-                        {
-                            ProdutoId = 4,
-                            CorId = (byte)34
-                        },
-                        new
-                        {
-                            ProdutoId = 5,
-                            CorId = (byte)12
-                        },
-                        new
-                        {
-                            ProdutoId = 5,
-                            CorId = (byte)32
-                        },
-                        new
-                        {
-                            ProdutoId = 5,
-                            CorId = (byte)34
-                        },
-                        new
-                        {
-                            ProdutoId = 6,
-                            CorId = (byte)22
-                        },
-                        new
-                        {
-                            ProdutoId = 6,
-                            CorId = (byte)33
-                        },
-                        new
-                        {
-                            ProdutoId = 6,
-                            CorId = (byte)34
-                        },
-                        new
-                        {
-                            ProdutoId = 7,
                             CorId = (byte)16
                         },
                         new
                         {
+                            ProdutoId = 2,
+                            CorId = (byte)27
+                        },
+                        new
+                        {
+                            ProdutoId = 3,
+                            CorId = (byte)29
+                        },
+                        new
+                        {
+                            ProdutoId = 4,
+                            CorId = (byte)1
+                        },
+                        new
+                        {
+                            ProdutoId = 4,
+                            CorId = (byte)5
+                        },
+                        new
+                        {
+                            ProdutoId = 5,
+                            CorId = (byte)2
+                        },
+                        new
+                        {
+                            ProdutoId = 6,
+                            CorId = (byte)7
+                        },
+                        new
+                        {
                             ProdutoId = 7,
-                            CorId = (byte)23
-                        },
-                        new
-                        {
-                            ProdutoId = 8,
-                            CorId = (byte)36
-                        },
-                        new
-                        {
-                            ProdutoId = 8,
-                            CorId = (byte)23
-                        },
-                        new
-                        {
-                            ProdutoId = 9,
-                            CorId = (byte)15
-                        },
-                        new
-                        {
-                            ProdutoId = 9,
                             CorId = (byte)35
                         },
                         new
                         {
-                            ProdutoId = 10,
-                            CorId = (byte)25
+                            ProdutoId = 8,
+                            CorId = (byte)2
+                        },
+                        new
+                        {
+                            ProdutoId = 9,
+                            CorId = (byte)16
                         },
                         new
                         {
                             ProdutoId = 10,
-                            CorId = (byte)38
+                            CorId = (byte)32
                         },
                         new
                         {
                             ProdutoId = 11,
-                            CorId = (byte)25
-                        },
-                        new
-                        {
-                            ProdutoId = 11,
-                            CorId = (byte)36
+                            CorId = (byte)12
                         });
                 });
 
@@ -880,56 +815,56 @@ namespace DmResinas.Migrations
                         {
                             Id = 4,
                             ProdutoId = 4,
-                            ArquivoFoto = "/images/Produtos/4/1.png",
+                            ArquivoFoto = "/images/Produtos/9/1.png",
                             Destaque = true
                         },
                         new
                         {
                             Id = 5,
                             ProdutoId = 5,
-                            ArquivoFoto = "/images/Produtos/5/1.png",
+                            ArquivoFoto = "/images/Produtos/10/1.png",
                             Destaque = true
                         },
                         new
                         {
                             Id = 6,
                             ProdutoId = 6,
-                            ArquivoFoto = "/images/Produtos/6/1.png",
+                            ArquivoFoto = "/images/Produtos/11/1.png",
                             Destaque = true
                         },
                         new
                         {
                             Id = 7,
                             ProdutoId = 7,
-                            ArquivoFoto = "/images/Produtos/7/1.png",
+                            ArquivoFoto = "/images/Produtos/4/1.png",
                             Destaque = true
                         },
                         new
                         {
                             Id = 8,
                             ProdutoId = 8,
-                            ArquivoFoto = "/images/Produtos/8/1.png",
+                            ArquivoFoto = "/images/Produtos/5/1.png",
                             Destaque = true
                         },
                         new
                         {
                             Id = 9,
                             ProdutoId = 9,
-                            ArquivoFoto = "/images/Produtos/9/1.png",
+                            ArquivoFoto = "/images/Produtos/6/1.png",
                             Destaque = true
                         },
                         new
                         {
                             Id = 10,
                             ProdutoId = 10,
-                            ArquivoFoto = "/images/Produtos/10/1.png",
+                            ArquivoFoto = "/images/Produtos/7/1.png",
                             Destaque = true
                         },
                         new
                         {
                             Id = 11,
                             ProdutoId = 11,
-                            ArquivoFoto = "/images/Produtos/11/1.png",
+                            ArquivoFoto = "/images/Produtos/8/1.png",
                             Destaque = true
                         });
                 });
@@ -979,7 +914,7 @@ namespace DmResinas.Migrations
                     b.HasData(
                         new
                         {
-                            UsuarioId = "71997eb9-4aab-48b1-b37d-600eb963f751",
+                            UsuarioId = "66ab7735-dfc0-49bb-9379-02c7ff3cc738",
                             DataNascimento = new DateTime(2006, 3, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Foto = "/img/users/avatar.png",
                             Nome = "Bard0u"
@@ -1014,22 +949,22 @@ namespace DmResinas.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "5146868c-de71-4e59-aa6d-1812d408131e",
-                            ConcurrencyStamp = "89bb16b4-3327-4785-a0f1-204c8e777969",
+                            Id = "869d3187-0ff2-4880-9d27-c22da1ec1619",
+                            ConcurrencyStamp = "f74f0355-6414-468e-ac3e-a405b5084404",
                             Name = "Administrador",
                             NormalizedName = "ADMINISTRADOR"
                         },
                         new
                         {
-                            Id = "25bd59d8-9578-4eda-9716-a3edb6b9b651",
-                            ConcurrencyStamp = "c5da71ea-c6b2-4e01-8a1f-be414aedf1f3",
+                            Id = "330a0642-f381-47eb-bc76-d5b5a4e20c37",
+                            ConcurrencyStamp = "2d2bd2d7-1b92-4e97-8edf-ab02bce0fe98",
                             Name = "Funcionário",
                             NormalizedName = "FUNCIONARIO"
                         },
                         new
                         {
-                            Id = "4cfc98d8-bcc9-490a-a16c-0b24d8264c0c",
-                            ConcurrencyStamp = "4279dc3d-14e5-4109-b223-762b27acf7bd",
+                            Id = "71d01fef-da3d-4140-8bb7-01651ce361e3",
+                            ConcurrencyStamp = "53c87255-0979-4197-a4c4-25c8359d0e66",
                             Name = "Cliente",
                             NormalizedName = "CLIENTE"
                         });
@@ -1124,17 +1059,17 @@ namespace DmResinas.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "71997eb9-4aab-48b1-b37d-600eb963f751",
+                            Id = "66ab7735-dfc0-49bb-9379-02c7ff3cc738",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "f32a881e-9295-4dcb-b59f-c6a4e268a2e0",
+                            ConcurrencyStamp = "2778597a-bd73-41b1-a743-67cd055f13a7",
                             Email = "admin@dmresinas.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@DMRESINAS.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAEAACcQAAAAECJDO5PJEkyyEPMI7U65M6Tl/5uDOI/wJclHT66/ucFoeDS2E9FvzuMlK1ZvcW1Iig==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEJzO2VQeUvyuNHUgxoCbbN+MizjrH0JRuoudx1ia4HLs2i0kjxjngRCDgVZWN4BiGQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "e6cdcff3-62fd-4304-987e-f91c88d84942",
+                            SecurityStamp = "8bbda3a9-3456-458c-9d71-3488333d752b",
                             TwoFactorEnabled = false,
                             UserName = "Admin"
                         });
@@ -1202,18 +1137,18 @@ namespace DmResinas.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "71997eb9-4aab-48b1-b37d-600eb963f751",
-                            RoleId = "5146868c-de71-4e59-aa6d-1812d408131e"
+                            UserId = "66ab7735-dfc0-49bb-9379-02c7ff3cc738",
+                            RoleId = "869d3187-0ff2-4880-9d27-c22da1ec1619"
                         },
                         new
                         {
-                            UserId = "71997eb9-4aab-48b1-b37d-600eb963f751",
-                            RoleId = "25bd59d8-9578-4eda-9716-a3edb6b9b651"
+                            UserId = "66ab7735-dfc0-49bb-9379-02c7ff3cc738",
+                            RoleId = "330a0642-f381-47eb-bc76-d5b5a4e20c37"
                         },
                         new
                         {
-                            UserId = "71997eb9-4aab-48b1-b37d-600eb963f751",
-                            RoleId = "4cfc98d8-bcc9-490a-a16c-0b24d8264c0c"
+                            UserId = "66ab7735-dfc0-49bb-9379-02c7ff3cc738",
+                            RoleId = "71d01fef-da3d-4140-8bb7-01651ce361e3"
                         });
                 });
 

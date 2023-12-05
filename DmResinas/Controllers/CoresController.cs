@@ -2,9 +2,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using DmResinas.Data;
 using DmResinas.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace DmResinas.Controllers
 {
+    [Authorize(Roles = "Administrador")]
     public class CoresController : Controller
     {
         private readonly AppDbContext _context;
